@@ -3,14 +3,14 @@ export const LANGUAGES = [
 ]
 
 export const LANGUAGES_TEXT = {
-  "ES":{
+  "ES": {
     info:
       {
         intro: 'Hola, soy',
         personalTitle: 'Desarrollador de Software'
       }
   },
-  "EN":{
+  "EN": {
     info:
       {
         intro: 'Hello, I\'m',

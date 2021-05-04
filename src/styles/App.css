@@ -2,17 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .info-section {
   top: 41%;
   left: 20%;
@@ -68,6 +57,18 @@
   width: 100%;
   height: 3rem;
   right: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.header-container {
+  position: fixed;
+  width: 100%;
+  height: 3rem;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .icons {
@@ -77,6 +78,17 @@
 
 .icon-container {
   margin: 0 10px;
+}
+
+.selected-language{
+  text-decoration: underline;
+  color: #1B75BC !important;
+}
+
+.language-option{
+  margin: 0 10px;
+  color: white;
+  cursor: pointer;
 }
 
 @media (max-width: 1000px) {
