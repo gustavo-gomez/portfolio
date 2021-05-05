@@ -1,12 +1,22 @@
+import {useEffect} from 'react';
 import './styles/App.css';
 import {LANGUAGES_TEXT} from './util/Languages'
 import Footer from "./Footer";
 import {connect} from 'react-redux';
 import {setLanguage} from "./actions/languageAction";
+import ReactGA from 'react-ga';
 
 const Portfolio = ({selectedLanguage, setLanguage}) => {
 
+  useEffect(() => {
+    ReactGA.pageview('Home')
+  }, []);
+
   const changeLanguage = (language) => {
+    ReactGA.event({
+      category: 'LANGUAGE',
+      action: `Change to ${language}`
+    });
     setLanguage(language)
   }
 
