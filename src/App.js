@@ -8,7 +8,8 @@ import ReactGA from 'react-ga';
 const App = () => {
 
   useEffect(() => {
-    ReactGA.initialize('G-CP30XF5G1K');
+    if(process.env.NODE_ENV === 'production')
+      ReactGA.initialize(process.env.REACT_APP_ANALYTICS_TRACKING_CODE);
   }, []);
 
   return (

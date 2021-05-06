@@ -1,3 +1,5 @@
+import ReactGA from 'react-ga';
+
 export const ICON_TYPE = {
   LINKEDIN: "LINKEDIN",
   GITHUB: "GITHUB",
@@ -115,9 +117,17 @@ const getSvg = type => {
 }
 
 const Icon = ({iconType, link, className, style}) => {
+  const press = () => {
+    ReactGA.outboundLink(
+      {
+        label: iconType
+      },
+      () => {}
+    );
+  }
   return (
     <div>
-      <a className={`icon-container ${className}`} href={link} style={{...style}} target='_blank' rel='noreferrer'>
+      <a className={`icon-container ${className}`} href={link} style={{...style}} target='_blank' rel='noreferrer' onClick={press}>
         {getSvg(iconType)}
       </a>
     </div>
