@@ -7,10 +7,10 @@ import ReactGA from 'react-ga';
 
 const App = () => {
 
-  useEffect(() => {
-    if(process.env.NODE_ENV === 'production')
-      ReactGA.initialize(process.env.REACT_APP_ANALYTICS_TRACKING_CODE);
-  }, []);
+  // useEffect(() => {
+  //   if(process.env.NODE_ENV === 'production')
+  //     ReactGA.initialize(process.env.REACT_APP_ANALYTICS_TRACKING_CODE);
+  // }, []);
 
   return (
     <Provider store={store}>
