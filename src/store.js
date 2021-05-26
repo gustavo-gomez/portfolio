@@ -1,6 +1,8 @@
-import {createStore} from 'redux';
-import rootReducer from './reducers/reducer';
+import { configureStore } from '@reduxjs/toolkit';
+import generalSettingsReducer from './slices/generalSettingsSlice'
 
-const store = createStore(rootReducer);
-
-export default store;
+export const store = configureStore({
+  reducer: {
+    generalSettings: generalSettingsReducer,
+  },
+});
