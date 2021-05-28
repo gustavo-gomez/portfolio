@@ -4,7 +4,6 @@ import {LANGUAGES_TEXT} from '../util/Languages'
 import {selectedLanguage, currentDarkMode} from '../slices/generalSettingsSlice'
 import {useSelector} from 'react-redux';
 import photo from '../images/photo.jpg'
-import blob from '../images/blob3.png'
 import Icon, {getSvg, ICON_TYPE} from "../util/Icon";
 
 const Home = () => {
