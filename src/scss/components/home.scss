@@ -1,0 +1,153 @@
+@import '../abstracts/variables';
+
+.info-section {
+  margin: 10% 15%;
+  color: $letters;
+  display: flex;
+  height: min-content;
+  width: 70%;
+
+  .icons-container {
+    display: flex;
+    width: 55%;
+    justify-content: space-evenly;
+    margin-top: 30px;
+  }
+
+  .left-section-container {
+    text-align: left;
+    width: 50%;
+    animation: 1.1s ease-out 0s 1 slideLeftToRight;
+
+    pre {
+      margin: 0;
+      font-family: inherit;
+    }
+  }
+
+  .greeting {
+    font-size: 2rem;
+  }
+
+  .personal-title {
+    font-size: 5rem;
+  }
+
+  .right-section-container {
+    width: 50%;
+    animation: 1.1s ease-out 0s 1 slideRightToLeft;
+
+    .photo {
+      width: 58%;
+      border: 3px solid #1B75BC;
+      border-radius: 50%;
+      //background-image: url(./blob3.png);
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
+
+  .name {
+    color: $blue_principal !important;
+    font-weight: bold;
+    font-size: 3rem;
+  }
+
+  .blob {
+    position: absolute;
+    top: 0;
+    left: 0;
+    fill: #3b7fd9;
+    width: 30vmax;
+    z-index: -100;
+    animation: move 10s ease-in-out infinite;
+    transform-origin: 100% 50%;
+  }
+
+  @keyframes move {
+    0% {
+      transform: scale(1) translate(10px, -30px);
+    }
+    38% {
+      transform: scale(0.8, 1) translate(80vw, 30vh) rotate(160deg);
+    }
+    40% {
+      transform: scale(0.8, 1) translate(80vw, 30vh) rotate(160deg);
+    }
+    78% {
+      transform: scale(1.3) translate(0vw, 50vh) rotate(-20deg);
+    }
+    80% {
+      transform: scale(1.3) translate(0vw, 50vh) rotate(-20deg);
+    }
+    100% {
+      transform: scale(1) translate(10px, -30px);
+    }
+  }
+}
+
+.darkMode {
+  color: $letters_dark_mode !important;
+
+  img {
+    border-color: white !important;
+  }
+}
+
+@keyframes slideRightToLeft {
+  0% {
+    transform: translateX(5%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeftToRight {
+  0% {
+    transform: translateX(-5%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 750px) {
+  .info-section {
+    flex-direction: column;
+    margin: 10% 15% 50% 15%;
+    display: flex;
+    //justify-content: space-evenly;
+    height: 70%;
+    justify-content: space-around;
+
+    .icons-container {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .personal-title {
+      font-size: 3.5rem;
+    }
+
+    .left-section-container {
+      width: 100%;
+    }
+
+    .right-section-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .blob {
+      width: 20vmax;
+      transform-origin: 50% 50%;
+    }
+  }
+}

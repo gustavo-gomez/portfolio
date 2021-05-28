@@ -2,7 +2,7 @@ import {createSlice} from '@reduxjs/toolkit';
 
 const initialState = {
   selectedLanguage: 'ES',
-  darkMode: false
+  darkMode: 'light'
 }
 
 export const generalSettingsSlice = createSlice({

@@ -1,0 +1,63 @@
+import {useEffect} from 'react';
+import '../scss/components/home.scss';
+import {LANGUAGES_TEXT} from '../util/Languages'
+import {selectedLanguage, currentDarkMode} from '../slices/generalSettingsSlice'
+import {useSelector} from 'react-redux';
+import photo from '../images/photo.jpg'
+import blob from '../images/blob3.png'
+import Icon, {getSvg, ICON_TYPE} from "../util/Icon";
+
+const Home = () => {
+  const language = useSelector(selectedLanguage);
+  const themeColor = useSelector(currentDarkMode);
+  const isDarkMode = themeColor === 'dark'
+  // const dispatch = useDispatch();
+
+
+  useEffect(() => {
+  }, []);
+
+  return (
+    <section className={`info-section ${isDarkMode ? 'darkMode' : ''}`}>
+      <div className={'left-section-container'}>
+        <div className={'greeting'}>
+          {LANGUAGES_TEXT[language].info.intro}
+          <span className={'name'}> Gustavo</span>
+        </div>
+        <pre className={'personal-title'}>{LANGUAGES_TEXT[language].info.personalTitle}</pre>
+        <div className={'message'}>
+          {LANGUAGES_TEXT[language].info.message}
+        </div>
+        <div className={'icons-container'}>
+          <Icon
+            iconType={ICON_TYPE.LINKEDIN}
+            link={'https://www.linkedin.com/in/luis-gustavo-gomez-fasanando-b523158b/'}
+            className={'icon'}
+          />
+          <Icon
+            iconType={ICON_TYPE.WHATSAPP}
+            link={'https://wa.me/51945248578?text=Hola%20Gustavo!'}
+          />
+          <Icon
+            iconType={ICON_TYPE.GITHUB}
+            link={'https://github.com/gustavo-gomez'}
+          />
+          <Icon
+            iconType={ICON_TYPE.STACKOVERFLOW}
+            link={'https://stackoverflow.com/users/5759160/gustavo-g%c3%b3mez-fasanando'}
+          />
+        </div>
+      </div>
+      <div className={'right-section-container'}>
+        <img className={'photo'} src={photo} alt='profile'/>
+        {/*<img className={'photo-back'} src={blob} alt='blob'/>*/}
+        {/*{getSvg(ICON_TYPE.BLOB)}*/}
+      </div>
+      <div className={'blob'}>
+        {getSvg(ICON_TYPE.BLOB)}
+      </div>
+    </section>
+  );
+}
+
+export default Home

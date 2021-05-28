@@ -1,0 +1,29 @@
+@import '../abstracts/variables';
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  right: 0;
+  //display: flex;
+  //justify-content: center;
+  svg {
+    //background: url('https://farm9.staticflickr.com/8461/8048823381_0fbc2d8efb.jpg') no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    display: block;
+    z-index: -1;
+    //background-image: url(./src/images/back.svg);
+  }
+}
+
+
+//
+//.darkMode {
+//  color: $letters_dark_mode
+//}
+
+//@media (max-width: 1000px) {
+//}
+
+
