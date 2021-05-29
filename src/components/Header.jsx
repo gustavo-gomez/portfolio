@@ -33,6 +33,14 @@ const Header = ({currentSection, setCurrentSection}) => {
       {/*    })*/}
       {/*  }*/}
       {/*</div>*/}
+
+      <div className="switch">
+        <input type="checkbox" className="switch__input" id="Switch"/>
+          <label className="switch__label" htmlFor="Switch">
+            <span className="switch__indicator"/>
+            <span className="switch__decoration"/>
+          </label>
+      </div>
       <div className={'language-container'}>
         <span
           className={`language-option ${language === 'EN' ? 'selected-language' : ''}`}
