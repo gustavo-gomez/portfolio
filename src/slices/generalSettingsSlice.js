@@ -1,4 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
+import {themeColors} from "../util/Constans";
 
 const initialState = {
   selectedLanguage: 'ES',
@@ -13,6 +14,7 @@ export const generalSettingsSlice = createSlice({
       state.selectedLanguage = action.payload
     },
     changeDarkMode: (state, action) => {
+      document.body.style.setProperty('--background-color', themeColors[action.payload].backgroundColor)
       state.darkMode = action.payload
     }
   }

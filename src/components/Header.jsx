@@ -1,14 +1,16 @@
 import '../scss/components/header.scss';
-import {selectedLanguage, changeLanguage, currentDarkMode} from '../slices/generalSettingsSlice'
+import {selectedLanguage, changeLanguage, currentDarkMode, changeDarkMode} from '../slices/generalSettingsSlice'
 import ReactGA from 'react-ga';
 import {useSelector, useDispatch} from 'react-redux';
 import {LANGUAGES_TEXT} from "../util/Languages";
 
 const Header = ({currentSection, setCurrentSection}) => {
+
   const language = useSelector(selectedLanguage);
   const themeColor = useSelector(currentDarkMode);
-  const isDarkMode = themeColor === 'dark'
   const dispatch = useDispatch();
+
+  const isDarkMode = themeColor === 'dark'
 
   const onChangeLanguage = (language) => {
     ReactGA.event({
@@ -16,6 +18,11 @@ const Header = ({currentSection, setCurrentSection}) => {
       action: `Change to ${language}`
     });
     dispatch(changeLanguage(language))
+  }
+
+  const onChangeLightMode = (e) => {
+    console.log('onChangeLightMode: ', e)
+    dispatch(changeDarkMode(isDarkMode ? 'light' : 'dark'))
   }
 
   return (
@@ -35,7 +42,7 @@ const Header = ({currentSection, setCurrentSection}) => {
       {/*</div>*/}
 
       <div className="switch">
-        <input type="checkbox" className="switch__input" id="Switch"/>
+        <input type="checkbox" className="switch__input" id="Switch" onClick={(e) => onChangeLightMode(e)}/>
           <label className="switch__label" htmlFor="Switch">
             <span className="switch__indicator"/>
             <span className="switch__decoration"/>

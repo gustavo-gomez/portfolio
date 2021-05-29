@@ -33,8 +33,6 @@ const App = () => {
   const onChangeDarkMode = (e) => {
     const themeName = e.matches ? 'dark' : 'light'
     dispatch(changeDarkMode(themeName))
-    // document.body.style.setProperty('--color', themeColors[themeName].color)
-    document.body.style.setProperty('--background-color', themeColors[themeName].backgroundColor)
   }
 
   return (
