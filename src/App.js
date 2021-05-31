@@ -5,7 +5,11 @@ import {useDispatch} from 'react-redux';
 import ReactGA from 'react-ga';
 import {changeLanguage, changeDarkMode} from './slices/generalSettingsSlice'
 import './scss/components/App.scss'
-import {themeColors} from './util/Constans'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 const App = () => {
 
@@ -37,9 +41,20 @@ const App = () => {
 
   return (
     <Fragment>
-      <Portfolio/>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Portfolio/>
+          </Route>
+          <Route path="/about">
+            <div>About</div>
+          </Route>
+          <Route>
+            <div>NOT FOUND</div>
+          </Route>
+        </Switch>
+      </Router>
     </Fragment>
-
   )
 }
 

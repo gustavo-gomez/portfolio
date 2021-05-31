@@ -10,8 +10,6 @@ const Home = () => {
   const language = useSelector(selectedLanguage);
   const themeColor = useSelector(currentDarkMode);
   const isDarkMode = themeColor === 'dark'
-  // const dispatch = useDispatch();
-
 
   useEffect(() => {
   }, []);
@@ -31,26 +29,27 @@ const Home = () => {
           <Icon
             iconType={ICON_TYPE.LINKEDIN}
             link={'https://www.linkedin.com/in/luis-gustavo-gomez-fasanando-b523158b/'}
-            className={'icon'}
+            className={'social-icons hover'}
           />
           <Icon
             iconType={ICON_TYPE.WHATSAPP}
             link={'https://wa.me/51945248578?text=Hola%20Gustavo!'}
+            className={'social-icons hover'}
           />
           <Icon
             iconType={ICON_TYPE.GITHUB}
             link={'https://github.com/gustavo-gomez'}
+            className={'social-icons hover'}
           />
           <Icon
             iconType={ICON_TYPE.STACKOVERFLOW}
             link={'https://stackoverflow.com/users/5759160/gustavo-g%c3%b3mez-fasanando'}
+            className={'social-icons hover'}
           />
         </div>
       </div>
       <div className={'right-section-container'}>
         <img className={'photo'} src={photo} alt='profile'/>
-        {/*<img className={'photo-back'} src={blob} alt='blob'/>*/}
-        {/*{getSvg(ICON_TYPE.BLOB)}*/}
       </div>
       <div className={'blob'}>
         {getSvg(ICON_TYPE.BLOB)}

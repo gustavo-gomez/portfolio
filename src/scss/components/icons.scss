@@ -1,10 +1,42 @@
 @import '../abstracts/variables';
 
 
-.icon-container{
-  margin: 0 10px;
-  .icons{
-    height: 30px;
+.icon-container {
+
+  svg {
     cursor: pointer;
+  }
+}
+
+.hover {
+  &:hover {
+    transform: scale(1.4);
+  }
+}
+
+.light-dark-icon {
+  svg {
+    padding: 3px;
+    height: 25px;
+  }
+}
+
+.yellow {
+  svg {
+    fill: #ecd21f;
+  }
+}
+
+.social-icons {
+  svg {
+    height: 30px;
+  }
+}
+
+@media (max-width: 850px) {
+  .hover {
+    &:hover {
+      transform: none;
+    }
   }
 }
