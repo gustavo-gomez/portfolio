@@ -94,6 +94,11 @@
   }
 }
 
+html,body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
 @keyframes slideRightToLeft {
   0% {
     transform: translateX(5%);

@@ -1,17 +1,92 @@
 import '../scss/components/header.scss';
-import {selectedLanguage, changeLanguage, currentDarkMode, changeDarkMode} from '../slices/generalSettingsSlice'
+import {
+  selectedLanguage,
+  changeLanguage,
+  currentDarkMode,
+  changeDarkMode,
+} from '../slices/generalSettingsSlice'
 import ReactGA from 'react-ga';
 import {useSelector, useDispatch} from 'react-redux';
 import {LANGUAGES_TEXT} from "../util/Languages";
-import Icon, {ICON_TYPE} from "../util/Icon";
+import Icon, {getSvg, ICON_TYPE} from "../util/Icon";
+import {NavLink, useHistory, useLocation} from "react-router-dom";
+import MediaQuery from 'react-responsive'
+import {useEffect, useState} from "react";
 
-const Header = ({currentSection, setCurrentSection}) => {
+const MobileHeader = ({language, isDarkMode, location, onClickNav, isMenuOpen, setIsMenuOpen}) => {
+  return (
+    <div className={`header-container-mobile ${isDarkMode ? 'darkMode' : ''}`}>
+      {/*<div className={'sections-container'}>*/}
+      <span
+        id={'menu'}
+        className={'menu-mobile-icon'}
+        onClick={() => setIsMenuOpen(prev => !prev)}
+      >
+        {getSvg(ICON_TYPE.MENU)}
+      </span>
+      <div className={`menu-options ${isMenuOpen ? 'opened' : ''}`}>
+        {
+          LANGUAGES_TEXT[language].sections.map(section => {
+            return (
+              <button
+                id={section.id}
+                className={`menu-item ${section.id === location.pathname ? 'active' : ''}`}
+                onClick={() => onClickNav(section.id)}
+                // style={{opacity: 0.9, transform: 'scale(0.5) translateY(-40px) translateX(0px)'}}
+              >
+                {getSvg(section.icon, "menu-icon")}
+              </button>
+            )
+          })
+        }
+      </div>
+      {/*</div>*/}
+    </div>
+  )
+}
+const WebHeader = ({language, isDarkMode, onChangeLightMode, onClickNav, location}) => {
+  return (
+    <div className={`header-container ${isDarkMode ? 'darkMode' : ''}`}>
+      <div className={'sections-container'}>
+        {
+          LANGUAGES_TEXT[language].sections.map(section => {
+            return (
+              <span
+                // exact
+                // to={`${section.id}`}
+                key={section.id}
+                // activeClassName="selected-section"
+                onClick={() => onClickNav(section.id)}
+                className={`section-title ${section.id === location.pathname ? 'selected-section' : ''}`}
+              >
+                {section.name}
+              </span>
+            )
+          })
+        }
+      </div>
+      <div className={'settings-container'}>
+        <div className={'dark-mode-switch'}>
+          <Icon
+            iconType={isDarkMode ? ICON_TYPE.SUN : ICON_TYPE.MOON}
+            onClick={onChangeLightMode}
+            className={`light-dark-icon ${isDarkMode ? 'yellow' : ''}`}
+          />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+const Header = () => {
 
   const language = useSelector(selectedLanguage);
   const themeColor = useSelector(currentDarkMode);
   const dispatch = useDispatch();
-
+  const location = useLocation();
+  const history = useHistory();
   const isDarkMode = themeColor === 'dark'
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const onChangeLanguage = (language) => {
     ReactGA.event({
@@ -25,49 +100,33 @@ const Header = ({currentSection, setCurrentSection}) => {
     dispatch(changeDarkMode(isDarkMode ? 'light' : 'dark'))
   }
 
-  return (
-    <div className={`header-container ${isDarkMode ? 'darkMode' : ''}`}>
-      <div className={'sections-container'}>
-        {
-          LANGUAGES_TEXT[language].sections.map(section => {
-            return (
-              <span
-                onClick={() => setCurrentSection(section.id)}
-                className={`section-title ${currentSection === section.id ? 'selected-section' : ''} `}>
-                {section.name}
-              </span>
-            )
-          })
-        }
-      </div>
+  const onClickNav = (sectionId) => {
+    history.push(sectionId);
+  }
 
-      <div className={'settings-container'}>
-        <div className={'dark-mode-switch'}>
-          <Icon
-            iconType={isDarkMode ? ICON_TYPE.SUN : ICON_TYPE.MOON}
-            onClick={onChangeLightMode}
-            className={`light-dark-icon ${isDarkMode ? 'yellow' : ''}`}
-          />
-        </div>
-        {/*<div className="switch">*/}
-        {/*  <input type="checkbox" className="switch__input" id="Switch" onClick={(e) => onChangeLightMode(e)}/>*/}
-        {/*  <label className="switch__label" htmlFor="Switch">*/}
-        {/*    <span className="switch__indicator"/>*/}
-        {/*    <span className="switch__decoration"/>*/}
-        {/*  </label>*/}
-        {/*</div>*/}
-        {/*<span*/}
-        {/*  className={`language-option ${language === 'EN' ? 'selected-language' : ''}`}*/}
-        {/*  onClick={() => onChangeLanguage('EN')}>*/}
-        {/*EN*/}
-        {/*</span>*/}
-        {/*<span*/}
-        {/*  className={`language-option ${language === 'ES' ? 'selected-language' : ''}`}*/}
-        {/*  onClick={() => onChangeLanguage('ES')}>*/}
-        {/*ES*/}
-        {/*</span>*/}
-      </div>
-    </div>
+  return (
+    <>
+      <MediaQuery minWidth={850}>
+        <WebHeader
+          language={language}
+          location={location}
+          onChangeLightMode={onChangeLightMode}
+          onClickNav={onClickNav}
+          isDarkMode={isDarkMode}
+        />
+      </MediaQuery>
+      <MediaQuery maxWidth={849}>
+        <MobileHeader
+          language={language}
+          location={location}
+          onClickNav={onClickNav}
+          isDarkMode={isDarkMode}
+          isMenuOpen={isMenuOpen}
+          setIsMenuOpen={setIsMenuOpen}
+        />
+      </MediaQuery>
+    </>
+
   );
 }
 

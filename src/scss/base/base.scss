@@ -1,5 +1,6 @@
 :root {
   --background-color: #fefefe;
+  --duration: .7s;
 }
 
 body {
@@ -28,6 +29,6 @@ html,body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  //overflow-x: hidden;
+  //overflow-y: hidden;
 }

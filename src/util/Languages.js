@@ -1,3 +1,5 @@
+import {ICON_TYPE} from "./Icon";
+
 export const LANGUAGES = [
   'EN', 'ES'
 ]
@@ -12,12 +14,24 @@ export const LANGUAGES_TEXT = {
       },
     sections: [
       {
-        id: 'home',
-        name: 'Home'
+        id: '/',
+        name: 'Home',
+        icon: ICON_TYPE.HOME
       },
       {
-        id: 'about',
-        name: 'Acerca de mi'
+        id: '/about',
+        name: 'Sobre mi',
+        icon: ICON_TYPE.ABOUT
+      },
+      {
+        id: '/blog',
+        name: 'Blog',
+        icon: ICON_TYPE.BLOG
+      },
+      {
+        id: '/contact',
+        name: 'Contacto',
+        icon: ICON_TYPE.CONTACT
       }
     ]
   },
@@ -30,13 +44,26 @@ export const LANGUAGES_TEXT = {
       },
     sections: [
       {
-        id: 'home',
-        name: 'Home'
+        id: '/',
+        name: 'Home',
+        icon: ICON_TYPE.HOME
       },
       {
-        id: 'about',
-        name: 'About me'
+        id: '/about',
+        name: 'About me',
+        icon: ICON_TYPE.ABOUT
+      },
+      {
+        id: '/blog',
+        name: 'Blog',
+        icon: ICON_TYPE.BLOG
+      },
+      {
+        id: '/contact',
+        name: 'Contact',
+        icon: ICON_TYPE.CONTACT
       }
     ]
   }
 }
+
