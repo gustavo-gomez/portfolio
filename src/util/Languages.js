@@ -13,8 +13,10 @@ export const LANGUAGES_TEXT = {
         message: '¿Necesitas desarrollar un software? Contáctame!'
       },
     contact: {
-      title: 'Contacto',
-      description: 'Tienes un proyecto en mente?'
+      title: 'Estemos en contacto',
+      subTitle: '¿Tienes un proyecto en mente?',
+      description: 'Si deseas realizar un proyecto, puedes enviarme un mensaje',
+      mailSubject: 'Hola Gustavo'
     },
     sections: [
       {
@@ -47,8 +49,10 @@ export const LANGUAGES_TEXT = {
         message: 'Do you wat to build a software? Text me! '
       },
     contact: {
-      title: 'Be In Touch',
-      description: 'have an idea?'
+      title: 'Be in Touch',
+      subTitle: 'Do you have an idea in mind?',
+      description: 'If you want to build a project, feel free to text me',
+      mailSubject: 'Hello Gustavo'
     },
     sections: [
       {

@@ -16,7 +16,6 @@ import {useEffect, useState} from "react";
 const MobileHeader = ({language, isDarkMode, location, onClickNav, isMenuOpen, setIsMenuOpen}) => {
   return (
     <div className={`header-container-mobile ${isDarkMode ? 'darkMode' : ''}`}>
-      {/*<div className={'sections-container'}>*/}
       <span
         id={'menu'}
         className={'menu-mobile-icon'}
@@ -32,7 +31,6 @@ const MobileHeader = ({language, isDarkMode, location, onClickNav, isMenuOpen, s
                 id={section.id}
                 className={`menu-item ${section.id === location.pathname ? 'active' : ''}`}
                 onClick={() => onClickNav(section.id)}
-                // style={{opacity: 0.9, transform: 'scale(0.5) translateY(-40px) translateX(0px)'}}
               >
                 {getSvg(section.icon, "menu-icon")}
               </button>
@@ -40,7 +38,6 @@ const MobileHeader = ({language, isDarkMode, location, onClickNav, isMenuOpen, s
           })
         }
       </div>
-      {/*</div>*/}
     </div>
   )
 }
