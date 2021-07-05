@@ -1,0 +1,166 @@
+@import '../abstracts/variables';
+@import '../abstracts/placeholders';
+
+.contact-section {
+  padding: 10rem 5rem 1rem 5rem;
+  @extend %display-flex-center;
+  flex-direction: column;
+  height: 50vh;
+  color: $letters;
+
+  .contact-body {
+    flex-direction: row;
+    width: 80%;
+    @extend %display-flex-center;
+
+    .icons-container {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      .contact-icon {
+        width: 100px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .description-container {
+      @extend %display-flex-center;
+      flex-direction: column;
+      width: 50%;
+      text-align: center;
+
+      h1 {
+        font-size: 60px;
+        color: $blue_principal;
+      }
+
+      p {
+        font-size: 31px;
+        margin-block-end: 0;
+        margin-block-start: 0;
+      }
+    }
+  }
+
+  .darkMode {
+    p {
+      color: white !important;
+    }
+  }
+}
+
+
+.contact-background {
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.8);
+  //background-blend-mode: darken;
+  background-position: center center;
+}
+
+.dark-mode-background {
+  background-blend-mode: darken
+}
+
+@media (max-width: 1600px) {
+  .contact-section {
+    padding: 10rem 0 0 0;
+
+    .contact-body {
+      width: 87%;
+    }
+  }
+}
+
+@media (max-width: 1150px) {
+  .contact-section {
+    padding: 10rem 0 0 0;
+
+    .contact-body {
+      .description-container {
+        h1 {
+          font-size: 58px;
+        }
+
+        p {
+          font-size: 29px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1050px) {
+  .contact-section {
+    .contact-body {
+      width: 93%;
+      .icons-container {
+        .contact-icon {
+          width: 95px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .contact-section {
+    .contact-body {
+      .description-container {
+        h1 {
+          font-size: 56px;
+        }
+
+        p {
+          font-size: 27px;
+        }
+      }
+      .icons-container {
+        .contact-icon {
+          width: 90px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .contact-section {
+    padding: 2rem 1rem 1rem 1rem;
+    flex-direction: column;
+    height: 85vh;
+
+    .contact-body {
+      flex-direction: column-reverse;
+      width: 90%;
+      height: 100%;
+
+      .icons-container {
+        width: 100%;
+        height: 50%;
+
+        .contact-icon {
+          width: 70px;
+        }
+      }
+
+      .description-container {
+        width: 100%;
+        height: 50%;
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+
+}

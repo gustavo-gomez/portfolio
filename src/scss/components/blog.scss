@@ -1,0 +1,95 @@
+@import '../abstracts/variables';
+
+.blogs-container {
+  padding-top: 10rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  //margin: 20px 0;
+
+  .article-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+
+    .article-item {
+      width: 80%;
+      height: 300px;
+      border: 1px solid blue;
+      border-radius: 35px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      cursor: pointer;
+      background-color: white;
+      -webkit-box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.87);
+      box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.87);
+
+      .title {
+        font-family: sans-serif;
+        font-size: 2rem;
+        margin: 20px 42px;
+      }
+
+      .article-footer {
+        flex-direction: row;
+        margin: 20px 42px;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+
+        img {
+          width: 60px;
+          border-radius: 50%;
+        }
+
+        .extra-info {
+          display: flex;
+          flex-direction: row;
+
+          .article-icon {
+            width: 20px;
+          }
+        }
+
+        .dot-icon {
+          width: 10px;
+        }
+      }
+    }
+  }
+}
+
+html, body {
+  //overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+
+@media (max-width: 1500px) {
+
+}
+
+@media (max-width: 1300px) {
+
+}
+
+@media (max-width: 1150px) {
+
+}
+
+@media (max-width: 1050px) {
+
+}
+
+@media (max-width: 950px) {
+}
+
+@media (max-width: 850px) {
+
+}
+
+@media (max-width: 700px) {
+
+}

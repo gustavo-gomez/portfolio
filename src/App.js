@@ -1,4 +1,4 @@
-import {useEffect, Fragment} from 'react'
+import {useEffect, Fragment, Suspense, lazy} from 'react'
 import './scss/components/App.scss';
 import Portfolio from './components/Portfolio'
 import {useDispatch} from 'react-redux';
@@ -10,12 +10,21 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
+import Blog from "./components/Blog";
+import Contact from "./components/Contact";
+
+
+const About = lazy(() => import('./components/About'));
 
 const App = () => {
 
   const dispatch = useDispatch();
+  // const location = useLocation();
 
   useEffect(() => {
+    // console.log('LOCATION: ', location.pathname)
+    console.log('win loc: ', window.location.href)
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => onChangeDarkMode(e));
 
     // Google Analytics
@@ -42,17 +51,25 @@ const App = () => {
   return (
     <Fragment>
       <Router>
-        <Switch>
-          <Route exact path="/">
-            <Portfolio/>
-          </Route>
-          <Route path="/about">
-            <div>About</div>
-          </Route>
-          <Route>
-            <div>NOT FOUND</div>
-          </Route>
-        </Switch>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Switch>
+            <Route exact path="/">
+              <Portfolio/>
+            </Route>
+            <Route path="/about">
+              <About/>
+            </Route>
+            {/*<Route path="/blog">*/}
+            {/*  <Blog/>*/}
+            {/*</Route>*/}
+            <Route path="/contact">
+              <Contact/>
+            </Route>
+            <Route>
+              <div>NOT FOUND</div>
+            </Route>
+          </Switch>
+        </Suspense>
       </Router>
     </Fragment>
   )
