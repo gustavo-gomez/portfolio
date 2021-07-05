@@ -59,9 +59,9 @@ const App = () => {
             <Route path="/about">
               <About/>
             </Route>
-            <Route path="/blog">
-              <Blog/>
-            </Route>
+            {/*<Route path="/blog">*/}
+            {/*  <Blog/>*/}
+            {/*</Route>*/}
             <Route path="/contact">
               <Contact/>
             </Route>

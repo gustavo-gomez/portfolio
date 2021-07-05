@@ -12,6 +12,10 @@ export const LANGUAGES_TEXT = {
         personalTitle: 'Ingeniero\nde Software',
         message: '¿Necesitas desarrollar un software? Contáctame!'
       },
+    contact: {
+      title: 'Contacto',
+      description: 'Tienes un proyecto en mente?'
+    },
     sections: [
       {
         id: '/',
@@ -23,11 +27,11 @@ export const LANGUAGES_TEXT = {
         name: 'Sobre mi',
         icon: ICON_TYPE.ABOUT
       },
-      {
-        id: '/blog',
-        name: 'Blog',
-        icon: ICON_TYPE.BLOG
-      },
+      // {
+      //   id: '/blog',
+      //   name: 'Blog',
+      //   icon: ICON_TYPE.BLOG
+      // },
       {
         id: '/contact',
         name: 'Contacto',
@@ -42,6 +46,10 @@ export const LANGUAGES_TEXT = {
         personalTitle: 'Software\nEngineer',
         message: 'Do you wat to build a software? Text me! '
       },
+    contact: {
+      title: 'Be In Touch',
+      description: 'have an idea?'
+    },
     sections: [
       {
         id: '/',
@@ -53,11 +61,11 @@ export const LANGUAGES_TEXT = {
         name: 'About me',
         icon: ICON_TYPE.ABOUT
       },
-      {
-        id: '/blog',
-        name: 'Blog',
-        icon: ICON_TYPE.BLOG
-      },
+      // {
+      //   id: '/blog',
+      //   name: 'Blog',
+      //   icon: ICON_TYPE.BLOG
+      // },
       {
         id: '/contact',
         name: 'Contact',
