@@ -1,0 +1,75 @@
+@import '../abstracts/variables';
+@import '../abstracts/placeholders';
+
+.contact-section {
+  padding: 10rem 5rem 1rem 5rem;
+  @extend %display-flex-center;
+  flex-direction: column;
+  height: 75vh;
+
+  .contact-body {
+    flex-direction: row;
+    width: 70%;
+    @extend %display-flex-center;
+
+    .icons-container {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      .contact-icon {
+        width: 100px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .description-container {
+      @extend %display-flex-center;
+      flex-direction: column;
+      width: 50%;
+    }
+  }
+}
+
+
+.contact-background {
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.8);
+  //background-blend-mode: darken;
+  background-position: center center;
+}
+
+@media (max-width: 1500px) {
+
+}
+
+@media (max-width: 1300px) {
+
+}
+
+@media (max-width: 1150px) {
+
+}
+
+@media (max-width: 1050px) {
+
+}
+
+@media (max-width: 950px) {
+}
+
+@media (max-width: 850px) {
+
+}
+
+@media (max-width: 700px) {
+
+}
