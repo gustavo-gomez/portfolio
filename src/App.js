@@ -10,8 +10,6 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import { useHistory, useLocation } from "react-router-dom";
-import Blog from "./components/Blog";
 import Contact from "./components/Contact";
 
 
@@ -23,8 +21,6 @@ const App = () => {
   // const location = useLocation();
 
   useEffect(() => {
-    // console.log('LOCATION: ', location.pathname)
-    console.log('win loc: ', window.location.href)
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => onChangeDarkMode(e));
 
     // Google Analytics
@@ -56,15 +52,15 @@ const App = () => {
             <Route exact path="/">
               <Portfolio/>
             </Route>
-            <Route path="/about">
-              <About/>
-            </Route>
+            {/*<Route path="/about">*/}
+            {/*  <About/>*/}
+            {/*</Route>*/}
             {/*<Route path="/blog">*/}
             {/*  <Blog/>*/}
             {/*</Route>*/}
-            <Route path="/contact">
-              <Contact/>
-            </Route>
+            {/*<Route path="/contact">*/}
+            {/*  <Contact/>*/}
+            {/*</Route>*/}
             <Route>
               <div>NOT FOUND</div>
             </Route>

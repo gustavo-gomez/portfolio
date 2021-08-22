@@ -1,16 +1,11 @@
 import {useEffect, useState} from 'react';
 import '../scss/components/blog.scss';
-import {selectedLanguage, currentDarkMode} from '../slices/generalSettingsSlice'
-import {useSelector} from 'react-redux';
 import {getSvg, ICON_TYPE} from "../util/Icon";
 import Header from "./Header";
 
 const Blog = () => {
 
   const [articles, setArticles] = useState([]);
-  const language = useSelector(selectedLanguage);
-  const themeColor = useSelector(currentDarkMode);
-  const isDarkMode = themeColor === 'dark'
 
   useEffect(() => {
     fetch('https://dev.to/api/articles?username=gustavogomez')

@@ -26,26 +26,26 @@ export const LANGUAGES_TEXT = {
         'etapas de desarrollo',
     },
     sections: [
-      {
-        id: '/',
-        name: 'Home',
-        icon: ICON_TYPE.HOME
-      },
-      {
-        id: '/about',
-        name: 'Sobre mi',
-        icon: ICON_TYPE.ABOUT
-      },
+      // {
+      //   id: '/',
+      //   name: 'Home',
+      //   icon: ICON_TYPE.HOME
+      // },
+      // {
+      //   id: '/about',
+      //   name: 'Sobre mi',
+      //   icon: ICON_TYPE.ABOUT
+      // },
       // {
       //   id: '/blog',
       //   name: 'Blog',
       //   icon: ICON_TYPE.BLOG
       // },
-      {
-        id: '/contact',
-        name: 'Contacto',
-        icon: ICON_TYPE.CONTACT
-      }
+      // {
+      //   id: '/contact',
+      //   name: 'Contacto',
+      //   icon: ICON_TYPE.CONTACT
+      // }
     ]
   },
   "EN": {
@@ -61,27 +61,34 @@ export const LANGUAGES_TEXT = {
       description: 'If you want to build a project, feel free to text me',
       mailSubject: 'Hello Gustavo'
     },
+    about: {
+      title: 'Hello! I\'m Gustavo',
+      description:
+        'Ingeniero de Software, apacionado por el desarrollo de\n' +
+        'software. Tengo experiencia participando en las diferentes\n' +
+        'etapas de desarrollo',
+    },
     sections: [
-      {
-        id: '/',
-        name: 'Home',
-        icon: ICON_TYPE.HOME
-      },
-      {
-        id: '/about',
-        name: 'About',
-        icon: ICON_TYPE.ABOUT
-      },
+      // {
+      //   id: '/',
+      //   name: 'Home',
+      //   icon: ICON_TYPE.HOME
+      // },
+      // {
+      //   id: '/about',
+      //   name: 'About',
+      //   icon: ICON_TYPE.ABOUT
+      // },
       // {
       //   id: '/blog',
       //   name: 'Blog',
       //   icon: ICON_TYPE.BLOG
       // },
-      {
-        id: '/contact',
-        name: 'Contact',
-        icon: ICON_TYPE.CONTACT
-      }
+      // {
+      //   id: '/contact',
+      //   name: 'Contact',
+      //   icon: ICON_TYPE.CONTACT
+      // }
     ]
   }
 }

@@ -1,11 +1,11 @@
 import '../scss/components/header.scss';
 import {
   selectedLanguage,
-  changeLanguage,
+  // changeLanguage,
   currentDarkMode,
   changeDarkMode,
 } from '../slices/generalSettingsSlice'
-import ReactGA from 'react-ga';
+// import ReactGA from 'react-ga';
 import {useSelector, useDispatch} from 'react-redux';
 import {LANGUAGES_TEXT} from "../util/Languages";
 import Icon, {getSvg, ICON_TYPE} from "../util/Icon";
@@ -82,13 +82,13 @@ const Header = () => {
   const isDarkMode = themeColor === 'dark'
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const onChangeLanguage = (language) => {
-    ReactGA.event({
-      category: 'LANGUAGE',
-      action: `Change to ${language}`
-    });
-    dispatch(changeLanguage(language))
-  }
+  // const onChangeLanguage = (language) => {
+  //   ReactGA.event({
+  //     category: 'LANGUAGE',
+  //     action: `Change to ${language}`
+  //   });
+  //   dispatch(changeLanguage(language))
+  // }
 
   const onChangeLightMode = () => {
     dispatch(changeDarkMode(isDarkMode ? 'light' : 'dark'))

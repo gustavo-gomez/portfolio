@@ -24,7 +24,7 @@ const About = () => {
             <pre>{LANGUAGES_TEXT[language].about.description}</pre>
           </div>
           <div className={'icons-container'}>
-            <img src={about}/>
+            <img src={about} alt={"about"}/>
           </div>
         </div>
       </div>
