@@ -11,20 +11,11 @@ import { useHistory, useLocation} from "react-router-dom";
 const Portfolio = (props) => {
 
   const history = useHistory();
-  const location = useLocation();
-  const [currentSection, setCurrentSection] = useState('home')
 
   useEffect(() => {
 
     ReactGA.pageview('Home')
   }, []);
-
-
-  const setSelectedSection = (id) => {
-    console.log('id: ', id)
-    history.push(`/${id}`)
-    setCurrentSection(id)
-  }
 
   return (
     <div className="App">

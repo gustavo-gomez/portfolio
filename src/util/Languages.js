@@ -18,6 +18,13 @@ export const LANGUAGES_TEXT = {
       description: 'Si deseas realizar un proyecto, puedes enviarme un mensaje',
       mailSubject: 'Hola Gustavo'
     },
+    about: {
+      title: 'Hola! Soy Gustavo',
+      description:
+        'Ingeniero de Software, apacionado por el desarrollo de\n' +
+        'software. Tengo experiencia participando en las diferentes\n' +
+        'etapas de desarrollo',
+    },
     sections: [
       {
         id: '/',
@@ -62,7 +69,7 @@ export const LANGUAGES_TEXT = {
       },
       {
         id: '/about',
-        name: 'About me',
+        name: 'About',
         icon: ICON_TYPE.ABOUT
       },
       // {

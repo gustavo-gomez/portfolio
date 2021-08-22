@@ -9,9 +9,9 @@ import ReactGA from 'react-ga';
 import {useSelector, useDispatch} from 'react-redux';
 import {LANGUAGES_TEXT} from "../util/Languages";
 import Icon, {getSvg, ICON_TYPE} from "../util/Icon";
-import {NavLink, useHistory, useLocation} from "react-router-dom";
+import {useHistory, useLocation} from "react-router-dom";
 import MediaQuery from 'react-responsive'
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
 const MobileHeader = ({language, isDarkMode, location, onClickNav, isMenuOpen, setIsMenuOpen}) => {
   return (
@@ -49,10 +49,7 @@ const WebHeader = ({language, isDarkMode, onChangeLightMode, onClickNav, locatio
           LANGUAGES_TEXT[language].sections.map(section => {
             return (
               <span
-                // exact
-                // to={`${section.id}`}
                 key={section.id}
-                // activeClassName="selected-section"
                 onClick={() => onClickNav(section.id)}
                 className={`section-title ${section.id === location.pathname ? 'selected-section' : ''}`}
               >

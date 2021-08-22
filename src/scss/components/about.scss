@@ -1,7 +1,55 @@
 @import '../abstracts/variables';
+@import '../abstracts/placeholders';
 
 .about-section {
+  padding: 4rem 5rem 1rem 1rem;
+  @extend %display-flex-center;
+  flex-direction: column;
+  height: 50vh;
+  color: $letters;
 
+  .about-body {
+    flex-direction: row;
+    width: 70%;
+    @extend %display-flex-center;
+
+    .icons-container {
+      width: 50%;
+      @extend %display-flex-center;
+      img{
+        height: 400px;
+      }
+    }
+
+    .description-container {
+      display: flex;
+      align-items: start;
+      justify-content: center;
+      flex-direction: column;
+      width: 50%;
+
+      h1 {
+      text-align: start;
+        font-size: 45px;
+        color: $blue_principal;
+      }
+
+      pre {
+        font-size: 24px;
+        //margin-block-end: 0;
+        //margin-block-start: 0;
+        //white-space: normal;
+        font-family: inherit;
+        margin: 0;
+      }
+    }
+  }
+
+  .darkMode {
+    p {
+      color: white !important;
+    }
+  }
 }
 
 
