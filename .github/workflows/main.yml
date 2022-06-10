@@ -33,12 +33,9 @@ jobs:
         with:
 
           node-version: 14.x
+            - run: yarn install
 
-
-
-            - run: npm install
-
-      - run: npm run test
+      - run: yarn test
 
 
 
