@@ -9,11 +9,6 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
 
-      - name: Load Config Files
-        run: |
-          echo "${{secrets.GAE_CONFIG}}" | base64 --decode > config/gae.env 
-          echo "${{secrets.GCP_SA_KEY}}" > config/portfolio-v1-5606eddf4394.json
-
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
