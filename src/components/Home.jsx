@@ -3,7 +3,7 @@ import '../scss/components/home.scss';
 import {LANGUAGES_TEXT} from '../util/Languages'
 import {selectedLanguage, currentDarkMode} from '../slices/generalSettingsSlice'
 import {useSelector} from 'react-redux';
-import photo from '../images/photo.jpg'
+import photo from '../images/photo.webp'
 import Icon, {getSvg, ICON_TYPE} from "../util/Icon";
 
 const Home = () => {
