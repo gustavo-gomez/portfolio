@@ -1,46 +1,12 @@
 import '../scss/components/header.scss';
-import {
-  selectedLanguage,
-  // changeLanguage,
-  currentDarkMode,
-  changeDarkMode,
-} from '../slices/generalSettingsSlice'
+import {changeDarkMode, currentDarkMode, selectedLanguage,} from '../slices/generalSettingsSlice'
 // import ReactGA from 'react-ga';
-import {useSelector, useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {LANGUAGES_TEXT} from "../util/Languages";
-import Icon, {getSvg, ICON_TYPE} from "../util/Icon";
-import {useHistory, useLocation} from "react-router-dom";
-import MediaQuery from 'react-responsive'
+import Icon, {ICON_TYPE} from "../util/Icon";
+import {useLocation, useNavigate} from "react-router-dom";
 import {useState} from "react";
 
-const MobileHeader = ({language, isDarkMode, location, onClickNav, isMenuOpen, setIsMenuOpen}) => {
-  return (
-    <div className={`header-container-mobile ${isDarkMode ? 'darkMode' : ''}`}>
-      <span
-        id={'menu'}
-        className={'menu-mobile-icon'}
-        onClick={() => setIsMenuOpen(prev => !prev)}
-      >
-        {getSvg(ICON_TYPE.MENU)}
-      </span>
-      <div className={`menu-options ${isMenuOpen ? 'opened' : ''}`}>
-        {
-          LANGUAGES_TEXT[language].sections.map(section => {
-            return (
-              <button
-                id={section.id}
-                className={`menu-item ${section.id === location.pathname ? 'active' : ''}`}
-                onClick={() => onClickNav(section.id)}
-              >
-                {getSvg(section.icon, "menu-icon")}
-              </button>
-            )
-          })
-        }
-      </div>
-    </div>
-  )
-}
 const WebHeader = ({language, isDarkMode, onChangeLightMode, onClickNav, location}) => {
   return (
     <div className={`header-container ${isDarkMode ? 'darkMode' : ''}`}>
@@ -78,7 +44,7 @@ const Header = () => {
   const themeColor = useSelector(currentDarkMode);
   const dispatch = useDispatch();
   const location = useLocation();
-  const history = useHistory();
+  const navigate = useNavigate();
   const isDarkMode = themeColor === 'dark'
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -95,12 +61,11 @@ const Header = () => {
   }
 
   const onClickNav = (sectionId) => {
-    history.push(sectionId);
+    navigate(sectionId);
   }
 
   return (
     <>
-      <MediaQuery minWidth={850}>
         <WebHeader
           language={language}
           location={location}
@@ -108,17 +73,6 @@ const Header = () => {
           onClickNav={onClickNav}
           isDarkMode={isDarkMode}
         />
-      </MediaQuery>
-      <MediaQuery maxWidth={849}>
-        <MobileHeader
-          language={language}
-          location={location}
-          onClickNav={onClickNav}
-          isDarkMode={isDarkMode}
-          isMenuOpen={isMenuOpen}
-          setIsMenuOpen={setIsMenuOpen}
-        />
-      </MediaQuery>
     </>
 
   );
