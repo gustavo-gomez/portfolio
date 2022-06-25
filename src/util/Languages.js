@@ -1,9 +1,5 @@
 import {ICON_TYPE} from "./Icon";
 
-export const LANGUAGES = [
-  'EN', 'ES'
-]
-
 export const LANGUAGES_TEXT = {
   "ES": {
     info:
@@ -26,26 +22,26 @@ export const LANGUAGES_TEXT = {
         'etapas de desarrollo',
     },
     sections: [
-      // {
-      //   id: '/',
-      //   name: 'Home',
-      //   icon: ICON_TYPE.HOME
-      // },
-      // {
-      //   id: '/about',
-      //   name: 'Sobre mi',
-      //   icon: ICON_TYPE.ABOUT
-      // },
-      // {
-      //   id: '/blog',
-      //   name: 'Blog',
-      //   icon: ICON_TYPE.BLOG
-      // },
-      // {
-      //   id: '/contact',
-      //   name: 'Contacto',
-      //   icon: ICON_TYPE.CONTACT
-      // }
+      {
+        id: '/',
+        name: 'Home',
+        icon: ICON_TYPE.HOME
+      },
+      {
+        id: '/about',
+        name: 'Sobre mi',
+        icon: ICON_TYPE.ABOUT
+      },
+      {
+        id: '/blog',
+        name: 'Blog',
+        icon: ICON_TYPE.BLOG
+      },
+      {
+        id: '/contact',
+        name: 'Contacto',
+        icon: ICON_TYPE.CONTACT
+      }
     ]
   },
   "EN": {
@@ -69,26 +65,26 @@ export const LANGUAGES_TEXT = {
         'etapas de desarrollo',
     },
     sections: [
-      // {
-      //   id: '/',
-      //   name: 'Home',
-      //   icon: ICON_TYPE.HOME
-      // },
-      // {
-      //   id: '/about',
-      //   name: 'About',
-      //   icon: ICON_TYPE.ABOUT
-      // },
-      // {
-      //   id: '/blog',
-      //   name: 'Blog',
-      //   icon: ICON_TYPE.BLOG
-      // },
-      // {
-      //   id: '/contact',
-      //   name: 'Contact',
-      //   icon: ICON_TYPE.CONTACT
-      // }
+      {
+        id: '/',
+        name: 'Home',
+        icon: ICON_TYPE.HOME
+      },
+      {
+        id: '/about',
+        name: 'About',
+        icon: ICON_TYPE.ABOUT
+      },
+      {
+        id: '/blog',
+        name: 'Blog',
+        icon: ICON_TYPE.BLOG
+      },
+      {
+        id: '/contact',
+        name: 'Contact',
+        icon: ICON_TYPE.CONTACT
+      }
     ]
   }
 }

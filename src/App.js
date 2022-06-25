@@ -1,31 +1,27 @@
-import {useEffect, Fragment, Suspense, lazy} from 'react'
-import './scss/components/App.scss';
-import Portfolio from './components/Portfolio'
-import {useDispatch} from 'react-redux';
-import ReactGA from 'react-ga';
-import {changeLanguage, changeDarkMode} from './slices/generalSettingsSlice'
+import {Fragment, lazy, Suspense, useEffect} from 'react'
 import './scss/components/App.scss'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
-import Contact from "./components/Contact";
+import Portfolio from './components/Portfolio'
+import {useDispatch} from 'react-redux'
+import ReactGA from 'react-ga'
+import {changeDarkMode, changeLanguage} from './slices/generalSettingsSlice'
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
 
 
-const About = lazy(() => import('./components/About'));
+const About = lazy(() => import('./components/About'))
+const Blog = lazy(() => import('./components/Blog'))
+const Contact = lazy(() => import('./components/Contact'))
 
 const App = () => {
 
-  const dispatch = useDispatch();
-  // const location = useLocation();
+  const dispatch = useDispatch()
+  // const location = useLocation()
 
   useEffect(() => {
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => onChangeDarkMode(e));
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => onChangeDarkMode(e))
 
     // Google Analytics
     if (process.env.NODE_ENV === 'production')
-      ReactGA.initialize(process.env.REACT_APP_ANALYTICS_TRACKING_CODE);
+      ReactGA.initialize(process.env.REACT_APP_ANALYTICS_TRACKING_CODE)
 
     // Setup dark mode for the first time
     onChangeDarkMode(window.matchMedia('(prefers-color-scheme: dark)'))
@@ -35,9 +31,9 @@ const App = () => {
 
     return () => {
       window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change', () => {
-      });
+      })
     }
-  }, []);
+  }, [])
 
   const onChangeDarkMode = (e) => {
     const themeName = e.matches ? 'dark' : 'light'
@@ -45,30 +41,19 @@ const App = () => {
   }
 
   return (
-    <Fragment>
-      <Router>
+      <BrowserRouter>
         <Suspense fallback={<div>Loading...</div>}>
-          <Switch>
-            <Route exact path="/">
-              <Portfolio/>
-            </Route>
-            {/*<Route path="/about">*/}
-            {/*  <About/>*/}
-            {/*</Route>*/}
-            {/*<Route path="/blog">*/}
-            {/*  <Blog/>*/}
-            {/*</Route>*/}
-            {/*<Route path="/contact">*/}
-            {/*  <Contact/>*/}
-            {/*</Route>*/}
-            <Route>
-              <div>NOT FOUND</div>
-            </Route>
-          </Switch>
+          <Routes>
+            <Route exact path="/" element={ <Portfolio/>} />
+            <Route path="/about" element={<About/>} />
+
+            <Route path="/blog" element={<Blog/>} />
+            <Route path="/contact" element={<Contact/>} />
+
+          </Routes>
         </Suspense>
-      </Router>
-    </Fragment>
+      </BrowserRouter>
   )
 }
 
-export default App;
+export default App

@@ -14,10 +14,6 @@ const Portfolio = () => {
 
   return (
     <div className="App">
-      {/*<div className={'panel'}>*/}
-      {/*</div>*/}
-      {/*<div className={'panel right'}>*/}
-      {/*</div>*/}
       <Header/>
       <Home/>
       <Footer/>
