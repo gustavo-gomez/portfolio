@@ -16,7 +16,8 @@ steps:
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: 'bash'
     args: ['-c', 'gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy']
-serviceAccount: 'projects/personal-portfolio-352822/serviceAccounts/personal@personal-portfolio-352822.iam.gserviceaccount.com']
+
+serviceAccount: 'projects/personal-portfolio-352822/serviceAccounts/personal@personal-portfolio-352822.iam.gserviceaccount.com'
 options:
     logging: CLOUD_LOGGING_ONLY
 timeout: '1600s'
