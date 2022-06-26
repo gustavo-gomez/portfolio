@@ -12,3 +12,8 @@ steps:
     entrypoint: yarn
     args: ['run', 'build']
 # [END cloudbuild_yarn_node]
+
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'bash'
+    args: ['-c', 'gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy']
+timeout: '1600s'
