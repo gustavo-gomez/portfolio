@@ -4,7 +4,7 @@ export const LANGUAGES_TEXT = {
   "ES": {
     info:
       {
-        intro: 'Hola! soy12355',
+        intro: 'Hola! soy12355qwe',
         personalTitle: 'Ingeniero\nde Software',
         message: '¿Necesitas desarrollar un software? Contáctame!'
       },
