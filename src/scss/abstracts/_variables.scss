@@ -5,4 +5,34 @@ $letters: black;
 
 //Colors Dark Mode
 $letters_dark_mode: white;
-//$background_dark: #231F20;
+$background_dark: #12203D;
+
+// light mode
+$light_background: white;
+$purple_background: #3B3B7A;
+$purple_light_background: #E5E5F3;
+
+
+/* breakpoints */
+
+// Mobile devices
+$mobile-max: 480px;
+
+// iPads, Tablets
+$tablet-min: $mobile-max + 1;
+$tablet-max: 768px;
+
+// Small screens, laptops
+$desktop-xs-min: $tablet-max + 1;
+$desktop-xs-max: 1024px;
+
+// Desktops, large screens
+$desktop-min: $desktop-xs-max + 1;
+$desktop-max: 1200px;
+
+// Extra large screens
+$desktop-xl-min: $desktop-max + 1;
+
+/* end breakpoints */
+
+
