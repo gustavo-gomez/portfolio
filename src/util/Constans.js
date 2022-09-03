@@ -7,6 +7,6 @@ export const themeColors = {
   },
   dark: {
     // color: "#fff",
-    backgroundColor: "#3f3f3f",
+    backgroundColor: "#12203D",
   }
 };
