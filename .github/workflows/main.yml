@@ -1,7 +1,7 @@
 name: Deploy
 on:
   push:
-    branches: [ main1 ]
+    branches: [ main ]
 jobs:
   Deploy_to_GAE:
     runs-on: ubuntu-latest

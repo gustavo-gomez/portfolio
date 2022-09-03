@@ -1,42 +1,10 @@
-import '../scss/components/header.scss';
 import {changeDarkMode, currentDarkMode, selectedLanguage,} from '../slices/generalSettingsSlice'
 // import ReactGA from 'react-ga';
 import {useDispatch, useSelector} from 'react-redux';
 import {LANGUAGES_TEXT} from "../util/Languages";
 import Icon, {ICON_TYPE} from "../util/Icon";
 import {useLocation, useNavigate} from "react-router-dom";
-import {useState} from "react";
-
-const WebHeader = ({language, isDarkMode, onChangeLightMode, onClickNav, location}) => {
-  return (
-    <div className={`header-container ${isDarkMode ? 'darkMode' : ''}`}>
-      <div className={'sections-container'}>
-        {
-          LANGUAGES_TEXT[language].sections.map(section => {
-            return (
-              <span
-                key={section.id}
-                onClick={() => onClickNav(section.id)}
-                className={`section-title ${section.id === location.pathname ? 'selected-section' : ''}`}
-              >
-                {section.name}
-              </span>
-            )
-          })
-        }
-      </div>
-      <div className={'settings-container'}>
-        <div className={'dark-mode-switch'}>
-          <Icon
-            iconType={isDarkMode ? ICON_TYPE.SUN : ICON_TYPE.MOON}
-            onClick={onChangeLightMode}
-            className={`light-dark-icon ${isDarkMode ? 'yellow' : ''}`}
-          />
-        </div>
-      </div>
-    </div>
-  )
-}
+import Logo from "../common/logo";
 
 const Header = () => {
 
@@ -46,7 +14,6 @@ const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const isDarkMode = themeColor === 'dark'
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   // const onChangeLanguage = (language) => {
   //   ReactGA.event({
@@ -66,13 +33,37 @@ const Header = () => {
 
   return (
     <>
-        <WebHeader
-          language={language}
-          location={location}
-          onChangeLightMode={onChangeLightMode}
-          onClickNav={onClickNav}
-          isDarkMode={isDarkMode}
-        />
+      <div className={`header ${isDarkMode ? 'darkMode' : ''}`}>
+        <div className='header-body'>
+          <Logo/>
+          <div className={'sections-container'}>
+            {
+              LANGUAGES_TEXT[language].sections.map(section => {
+                return (
+                  <span
+                    key={section.id}
+                    onClick={() => onClickNav(section.id)}
+                    className={`section-title ${section.id === location.pathname ? 'selected-section' : ''}`}
+                  >
+                {section.name}
+              </span>
+                )
+              })
+            }
+            <div className={'dark-mode-switch'}>
+              <Icon
+                iconType={isDarkMode ? ICON_TYPE.SUN : ICON_TYPE.MOON}
+                onClick={onChangeLightMode}
+                className={`light-dark-icon ${isDarkMode ? 'yellow' : ''}`}
+              />
+            </div>
+            <input id="menu-toggle" type="checkbox"/>
+            <label className='hamburger-menu' htmlFor="menu-toggle">
+              <div className='menu-button'></div>
+            </label>
+          </div>
+        </div>
+      </div>
     </>
 
   );

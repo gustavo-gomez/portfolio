@@ -1,10 +1,8 @@
-import '../scss/components/footer.scss';
 import {getSvg, ICON_TYPE} from '../util/Icon';
 
 const Footer = () => {
   return (
     <div className={'footer'}>
-      {getSvg(ICON_TYPE.WAVES)}
     </div>
   )
 }

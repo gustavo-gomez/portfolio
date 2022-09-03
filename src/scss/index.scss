@@ -4,7 +4,15 @@
 
 @import 'base/base';
 
-//@import 'components/App';
-//@import 'components/footer';
-//@import 'components/home';
-//@import 'components/header';
+@import 'common/logo';
+
+
+@import 'components/about';
+@import 'components/App';
+@import 'components/blog';
+@import 'components/contact';
+@import 'components/footer';
+@import 'components/header';
+@import 'components/home';
+@import 'components/icons';
+

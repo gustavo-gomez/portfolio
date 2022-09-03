@@ -25,23 +25,19 @@ export const LANGUAGES_TEXT = {
       {
         id: '/',
         name: 'Home',
-        icon: ICON_TYPE.HOME
       },
       {
-        id: '/about',
-        name: 'Sobre mi',
-        icon: ICON_TYPE.ABOUT
+        id: '/services',
+        name: 'Servicios',
+      },
+      {
+        id: '/projects',
+        name: 'Proyectos',
       },
       {
         id: '/blog',
         name: 'Blog',
-        icon: ICON_TYPE.BLOG
       },
-      {
-        id: '/contact',
-        name: 'Contacto',
-        icon: ICON_TYPE.CONTACT
-      }
     ]
   },
   "EN": {
@@ -68,23 +64,19 @@ export const LANGUAGES_TEXT = {
       {
         id: '/',
         name: 'Home',
-        icon: ICON_TYPE.HOME
       },
       {
-        id: '/about',
-        name: 'About',
-        icon: ICON_TYPE.ABOUT
+        id: '/services',
+        name: 'Services',
+      },
+      {
+        id: '/projects',
+        name: 'Projects',
       },
       {
         id: '/blog',
         name: 'Blog',
-        icon: ICON_TYPE.BLOG
       },
-      {
-        id: '/contact',
-        name: 'Contact',
-        icon: ICON_TYPE.CONTACT
-      }
     ]
   }
 }

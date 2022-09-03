@@ -1,5 +1,4 @@
 import {useEffect} from 'react';
-import '../scss/components/App.scss';
 import Footer from "./Footer";
 import ReactGA from 'react-ga';
 import Home from './Home'
