@@ -11,6 +11,7 @@
   color: #466995;
   justify-content: center;
   padding: 5px 0;
+  font-family: "Barlow Condensed";
 
   .header-body {
     justify-content: space-between;
@@ -29,7 +30,7 @@
         line-height: 19px;
         letter-spacing: 0;
         text-align: center;
-        margin-right: 70px;
+        margin-right: 54px;
         cursor: pointer;
       }
 
@@ -42,15 +43,84 @@
         border: 2px solid #6b611f;
         border-radius: 20%;
       }
+
+      .hamburger-menu {
+        display: none;
+        width: 30px;
+        cursor: pointer;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .menu-button,
+      .menu-button::before,
+      .menu-button::after {
+        display: block;
+        background-color: #6357F6;
+        position: absolute;
+        height: 4px;
+        width: 30px;
+        transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+        border-radius: 2px;
+      }
+
+      .menu-button::before {
+        content: '';
+        margin-top: -8px;
+      }
+
+      .menu-button::after {
+        content: '';
+        margin-top: 8px;
+      }
+
+      #menu-toggle:checked + .hamburger-menu .menu-button::before {
+        margin-top: 0px;
+        transform: rotate(405deg);
+      }
+
+      #menu-toggle:checked + .hamburger-menu .menu-button {
+        background: rgba(255, 255, 255, 0);
+      }
+
+      #menu-toggle:checked + .hamburger-menu .menu-button::after {
+        margin-top: 0px;
+        transform: rotate(-405deg);
+      }
     }
   }
+}
+
+#menu-toggle {
+  display: none;
 }
 
 .darkMode {
   background: $background_dark;
   color: $letters_dark_mode !important;
+
+  .menu-button,
+  .menu-button::before,
+  .menu-button::after {
+    background-color: $letters_dark_mode !important;;
+  }
+
 }
 
-//@media (max-width: #{$screen-sm}) {
-//
-//}
+@media (max-width: #{$tablet-max}) {
+  .header {
+    .header-body {
+      .sections-container {
+        .section-title {
+          display: none;
+        }
+
+        .hamburger-menu {
+          display: flex;
+          margin-left: 50px;
+        }
+      }
+    }
+  }
+}

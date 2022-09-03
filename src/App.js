@@ -41,18 +41,18 @@ const App = () => {
   }
 
   return (
-      <BrowserRouter>
-        <Suspense fallback={<div>Loading...</div>}>
-          <Routes>
-            <Route exact path="/" element={ <Portfolio/>} />
-            <Route path="/about" element={<About/>} />
+    <BrowserRouter>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route exact path="/" element={<Portfolio/>}/>
+          <Route path="/about" element={<About/>}/>
 
-            <Route path="/blog" element={<Blog/>} />
-            <Route path="/contact" element={<Contact/>} />
+          <Route path="/blog" element={<Blog/>}/>
+          <Route path="/contact" element={<Contact/>}/>
 
-          </Routes>
-        </Suspense>
-      </BrowserRouter>
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
   )
 }
 

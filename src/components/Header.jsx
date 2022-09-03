@@ -1,4 +1,3 @@
-import '../scss/components/header.scss';
 import {changeDarkMode, currentDarkMode, selectedLanguage,} from '../slices/generalSettingsSlice'
 // import ReactGA from 'react-ga';
 import {useDispatch, useSelector} from 'react-redux';
@@ -58,6 +57,10 @@ const Header = () => {
                 className={`light-dark-icon ${isDarkMode ? 'yellow' : ''}`}
               />
             </div>
+            <input id="menu-toggle" type="checkbox"/>
+            <label className='hamburger-menu' htmlFor="menu-toggle">
+              <div className='menu-button'></div>
+            </label>
           </div>
         </div>
       </div>

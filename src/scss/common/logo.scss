@@ -1,0 +1,24 @@
+@import '../abstracts/variables';
+@import '../abstracts/placeholders';
+
+.logo-container {
+  .logo-name {
+
+  }
+
+  .logo-description {
+
+  }
+}
+
+.darkMode {
+  .logo-container {
+    .logo-name {
+      fill: white;
+    }
+
+    .logo-description {
+      fill: white;
+    }
+  }
+}

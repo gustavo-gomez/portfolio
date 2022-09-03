@@ -1,5 +1,4 @@
 import {useEffect} from 'react';
-import '../scss/components/home.scss';
 import {LANGUAGES_TEXT} from '../util/Languages'
 import {selectedLanguage, currentDarkMode} from '../slices/generalSettingsSlice'
 import {useSelector} from 'react-redux';
@@ -51,9 +50,7 @@ const Home = () => {
       <div className={'right-section-container'}>
         <img className={'photo'} src={photo} alt='profile'/>
       </div>
-      <div className={'blob'}>
-        {getSvg(ICON_TYPE.BLOB)}
-      </div>
+
     </section>
   );
 }
