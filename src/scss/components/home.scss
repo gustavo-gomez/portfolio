@@ -1,7 +1,7 @@
 @import '../abstracts/variables';
 
 .info-section {
-  margin: 10% 15%;
+  margin-top: 4rem;
   color: $letters;
   display: flex;
   height: min-content;
@@ -91,7 +91,6 @@ html,body {
 
 @media (max-width: 1500px) {
   .info-section {
-    margin: 14% 12%;
 
     .icons-container {
       width: 68%;
@@ -101,7 +100,6 @@ html,body {
 
 @media (max-width: 1300px) {
   .info-section {
-    margin: 16% 12%;
 
     .right-section-container {
       .photo {
@@ -118,7 +116,6 @@ html,body {
 
 @media (max-width: 1150px) {
   .info-section {
-    margin: 23% 12%;
 
     .right-section-container {
       .photo {
@@ -135,7 +132,6 @@ html,body {
 
 @media (max-width: 1050px) {
   .info-section {
-    margin: 27% 7%;
 
     .right-section-container {
       .photo {
@@ -147,7 +143,6 @@ html,body {
 
 @media (max-width: 950px) {
   .info-section {
-    margin: 31% 5%;
 
     .right-section-container {
       .photo {
@@ -160,7 +155,6 @@ html,body {
 @media (max-width: 850px) {
   .info-section {
     flex-direction: column;
-    margin: 3% 3% 0% 3%;
     display: flex;
     height: 70%;
     justify-content: space-evenly;
@@ -193,7 +187,6 @@ html,body {
 
 @media (max-width: 700px) {
   .info-section {
-    margin: 3% 3% 0% 3%;
     height: 85%;
 
     .right-section-container {
