@@ -22,13 +22,13 @@ jobs:
         uses: google-github-actions/setup-gcloud@v0.2.0
         with:
           project_id: ${{secrets.PROJECT_ID}}
-          service_account_key: ${{secrets.GCP_SA_KEY}}
+          service_account_key: ${{secrets.GCP_SA_KEY_STG}}
 
       - name: Deploy
         uses: google-github-actions/deploy-appengine@v0.2.0
         with:
           deliverables: app.yaml
           project_id: ${{ secrets.PROJECT_ID }}
-          credentials: ${{ secrets.GCP_SA_KEY }}
+          credentials: ${{ secrets.GCP_SA_KEY_STG }}
           promote: true
           version: v1
