@@ -1,15 +1,16 @@
-import {Fragment, lazy, Suspense, useEffect} from 'react'
-import './scss/components/App.scss'
-import Portfolio from './components/Portfolio'
+import {lazy, Suspense, useEffect} from 'react'
 import {useDispatch} from 'react-redux'
 import ReactGA from 'react-ga'
 import {changeDarkMode, changeLanguage} from './slices/generalSettingsSlice'
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 
-const About = lazy(() => import('./components/About'))
+const Services = lazy(() => import('./components/Services'))
 const Blog = lazy(() => import('./components/Blog'))
-const Contact = lazy(() => import('./components/Contact'))
+const Projects = lazy(() => import('./components/Projects'))
+const Home = lazy(() => import('./components/Home'))
 
 const App = () => {
 
@@ -40,16 +41,24 @@ const App = () => {
     dispatch(changeDarkMode(themeName))
   }
 
+  const parent = (child) => {
+    return (
+      <>
+        <Header/>
+        {child}
+        <Footer/>
+      </>
+    )
+  }
+
   return (
     <BrowserRouter>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route exact path="/" element={<Portfolio/>}/>
-          <Route path="/about" element={<About/>}/>
-
-          <Route path="/blog" element={<Blog/>}/>
-          <Route path="/contact" element={<Contact/>}/>
-
+          <Route exact path="/" element={parent(<Home/>)}/>
+          <Route path="/services" element={parent(<Services/>)}/>
+          <Route path="/blog" element={parent(<Blog/>)}/>
+          <Route path="/projects" element={parent(<Projects/>)}/>
         </Routes>
       </Suspense>
     </BrowserRouter>

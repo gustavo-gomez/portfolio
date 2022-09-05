@@ -43,43 +43,43 @@ const Logo = () => {
       <defs>
         <linearGradient id="paint0_linear_240_1320" x1="0" y1="1.00244" x2="0" y2="48.0346"
                         gradientUnits="userSpaceOnUse">
-          <stop stop-color="#4D4F95"/>
-          <stop offset="1" stop-color="#2B2D66"/>
+          <stop stopColor="#4D4F95"/>
+          <stop offset="1" stopColor="#2B2D66"/>
         </linearGradient>
         <linearGradient id="paint1_linear_240_1320" x1="47.2366" y1="1.00244" x2="0" y2="1.00244"
                         gradientUnits="userSpaceOnUse">
-          <stop stop-color="#6357F6"/>
-          <stop offset="1" stop-color="#E6606C"/>
+          <stop stopColor="#6357F6"/>
+          <stop offset="1" stopColor="#E6606C"/>
         </linearGradient>
         <linearGradient id="paint2_linear_240_1320" x1="17.344" y1="15.8093" x2="10.2577" y2="22.9263"
                         gradientUnits="userSpaceOnUse">
-          <stop stop-color="#F7FCFF"/>
-          <stop offset="1" stop-color="#BBCEDD"/>
+          <stop stopColor="#F7FCFF"/>
+          <stop offset="1" stopColor="#BBCEDD"/>
         </linearGradient>
         <linearGradient id="paint3_linear_240_1320" x1="10.6086" y1="22.7266" x2="11.7363" y2="22.1924"
                         gradientUnits="userSpaceOnUse">
           <stop/>
-          <stop offset="1" stop-opacity="0"/>
+          <stop offset="1" stopOpacity="0"/>
         </linearGradient>
         <linearGradient id="paint4_linear_240_1320" x1="8.07211" y1="25.1761" x2="16.376" y2="33.5161"
                         gradientUnits="userSpaceOnUse">
-          <stop stop-color="white"/>
-          <stop offset="1" stop-color="#C6DAEA"/>
+          <stop stopColor="white"/>
+          <stop offset="1" stopColor="#C6DAEA"/>
         </linearGradient>
         <linearGradient id="paint5_linear_240_1320" x1="29.3401" y1="34.5042" x2="36.4264" y2="27.3872"
                         gradientUnits="userSpaceOnUse">
-          <stop stop-color="#F7FCFF"/>
-          <stop offset="1" stop-color="#BBCEDD"/>
+          <stop stopColor="#F7FCFF"/>
+          <stop offset="1" stopColor="#BBCEDD"/>
         </linearGradient>
         <linearGradient id="paint6_linear_240_1320" x1="36.0753" y1="27.5869" x2="34.9476" y2="28.1211"
                         gradientUnits="userSpaceOnUse">
           <stop/>
-          <stop offset="1" stop-opacity="0"/>
+          <stop offset="1" stopOpacity="0"/>
         </linearGradient>
         <linearGradient id="paint7_linear_240_1320" x1="38.6121" y1="25.1374" x2="30.3082" y2="16.7975"
                         gradientUnits="userSpaceOnUse">
-          <stop stop-color="white"/>
-          <stop offset="1" stop-color="#C6DAEA"/>
+          <stop stopColor="white"/>
+          <stop offset="1" stopColor="#C6DAEA"/>
         </linearGradient>
       </defs>
     </svg>

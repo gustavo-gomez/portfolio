@@ -2,25 +2,13 @@ import {ICON_TYPE} from "./Icon";
 
 export const LANGUAGES_TEXT = {
   "ES": {
-    info:
+    home:
       {
-        intro: 'Hola!!!! ',
+        intro: 'Hagamos realidad tu proyecto ',
         personalTitle: 'Ingeniero\nde Software',
         message: '¿Necesitas desarrollar un software? Contáctame!'
       },
-    contact: {
-      title: 'Estemos en contacto',
-      subTitle: '¿Tienes un proyecto en mente?',
-      description: 'Si deseas realizar un proyecto, puedes enviarme un mensaje',
-      mailSubject: 'Hola Gustavo'
-    },
-    about: {
-      title: 'Hola! Soy Gustavo',
-      description:
-        'Ingeniero de Software, apacionado por el desarrollo de\n' +
-        'software. Tengo experiencia participando en las diferentes\n' +
-        'etapas de desarrollo',
-    },
+
     sections: [
       {
         id: '/',
@@ -41,7 +29,7 @@ export const LANGUAGES_TEXT = {
     ]
   },
   "EN": {
-    info:
+    home:
       {
         intro: 'Hello! I\'m',
         personalTitle: 'Software\nEngineer',
