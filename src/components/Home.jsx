@@ -1,15 +1,10 @@
 import {useEffect} from 'react';
-import {LANGUAGES_TEXT} from '../util/Languages'
-import {selectedLanguage, currentDarkMode} from '../slices/generalSettingsSlice'
+import {currentDarkMode} from '../slices/generalSettingsSlice'
 import {useSelector} from 'react-redux';
-import robot_web from "../images/robot_web.gif"
-import photo from '../images/photo.webp'
-import Icon, {getSvg, ICON_TYPE} from "../util/Icon";
-import {useTranslation, initReactI18next} from "react-i18next";
+import {useTranslation} from "react-i18next";
 
 
 const Home = () => {
-  const language = useSelector(selectedLanguage);
   const themeColor = useSelector(currentDarkMode);
   const isDarkMode = themeColor === 'dark'
   const {t} = useTranslation("global");
@@ -30,7 +25,7 @@ const Home = () => {
         <span>{t('home.intro2')}</span>
       </span>
       <img
-        src={robot_web}
+        src={"https://storage.googleapis.com/gustavogomez-bucket/robot_n_4.gif"}
       />
     </section>
   );
