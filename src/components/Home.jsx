@@ -3,7 +3,7 @@ import {currentDarkMode} from '../slices/generalSettingsSlice'
 import {useSelector} from 'react-redux';
 import {useTranslation} from "react-i18next";
 
-
+// https://storage.googleapis.com/gustavogomez-bucket/shapes_services_light.gif
 const Home = () => {
   const themeColor = useSelector(currentDarkMode);
   const isDarkMode = themeColor === 'dark'
@@ -25,7 +25,7 @@ const Home = () => {
         <span>{t('home.intro2')}</span>
       </span>
       <img
-        src={"https://storage.googleapis.com/gustavogomez-bucket/robot_n_4.gif"}
+        src={"https://storage.googleapis.com/gustavogomez-bucket/robot_web_dark.gif"}
       />
     </section>
   );
