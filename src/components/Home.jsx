@@ -2,22 +2,25 @@ import {useEffect} from 'react';
 import {currentDarkMode} from '../slices/generalSettingsSlice'
 import {useSelector} from 'react-redux';
 import {useTranslation} from "react-i18next";
+import {BUCKET_IMAGES} from "../util/Languages";
+import {useBreakpoint} from "../hooks/useBreakpoint";
 
-// https://storage.googleapis.com/gustavogomez-bucket/shapes_services_light.gif
 const Home = () => {
   const themeColor = useSelector(currentDarkMode);
   const isDarkMode = themeColor === 'dark'
   const {t} = useTranslation("global");
+  const {isXS} = useBreakpoint();
 
   useEffect(() => {
   }, []);
 
+  let robotImage = "robot_"
+  robotImage += (isXS) ? "mobile_" : "web_"
+  robotImage += isDarkMode ? "dark" : "light"
+
   return (
     <section
       className={`home-container ${isDarkMode ? 'darkMode' : ''}`}
-      // style={{
-      //   backgroundImage: `url(${robot_web})`
-      // }}
     >
       <span className="home-intro">
         <span>{t('home.intro')}</span>
@@ -25,7 +28,7 @@ const Home = () => {
         <span>{t('home.intro2')}</span>
       </span>
       <img
-        src={"https://storage.googleapis.com/gustavogomez-bucket/robot_web_dark.gif"}
+        src={`${BUCKET_IMAGES}/${robotImage}.gif`}
       />
     </section>
   );

@@ -15,18 +15,18 @@ $purple_light_background: #E5E5F3;
 
 /* breakpoints */
 
-// Mobile devices
+// Mobile devices xs
 $mobile-max: 480px;
 
-// iPads, Tablets
+// iPads, Tablets sm
 $tablet-min: $mobile-max + 1;
 $tablet-max: 768px;
 
-// Small screens, laptops
+// Small screens, laptops md
 $desktop-xs-min: $tablet-max + 1;
 $desktop-xs-max: 1024px;
 
-// Desktops, large screens
+// Desktops, large screens lg
 $desktop-min: $desktop-xs-max + 1;
 $desktop-max: 1200px;
 
