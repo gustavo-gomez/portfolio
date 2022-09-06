@@ -3,8 +3,11 @@
 .home-container {
   display: flex;
   height: 80vh;
+  min-height: 600px;
   position: relative;
-  //padding-top: 4rem;
+  background: #3b3b7a;
+  color: #FBFBFB;
+  margin-top: 4rem;
 
   .home-intro {
     font-family: "Barlow Condensed";
@@ -14,32 +17,27 @@
     letter-spacing: 0px;
     z-index: 2;
     margin-left: 10%;
+    height: fit-content;
+    margin-top: 20px;
   }
 
   img {
     width: 100%;
-    height: 100%;
+    height: 91%;
     position: absolute;
-    //display: block;
-    //width: auto;
-    //height: auto;
     z-index: 1;
   }
 
 }
 
 .darkMode {
-  color: $letters_dark_mode !important;
-
-  img {
-    border-color: white !important;
-  }
+  background: #11213d !important;
 }
 
-html, body {
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
+//html, body {
+//  overflow-x: hidden;
+//  overflow-y: hidden;
+//}
 
 //@keyframes slideRightToLeft {
 //  0% {
@@ -63,24 +61,39 @@ html, body {
 //  }
 //}
 
-@media (max-width: 1500px) {
+@media (max-width: #{$desktop-max}) {
+  .home-container {
+    .home-intro {
+      font-size: 65px;
+    }
+  }
 }
 
-@media (max-width: 1300px) {
-
+@media (max-width: #{$desktop-xs-max}) {
+  .home-container {
+    .home-intro {
+      font-size: 57px;
+    }
+  }
 }
 
-@media (max-width: 1150px) {
+@media (max-width: #{$tablet-max}) {
+  .home-container {
+    .home-intro {
+      font-size: 52px;
+    }
+  }
 }
 
-@media (max-width: 1050px) {
-}
 
-@media (max-width: 950px) {
-}
-
-@media (max-width: 850px) {
-}
-
-@media (max-width: 700px) {
+@media (min-width: #{$mobile-max}) and (max-width: #{$tablet-max}) {
+  .home-container {
+    .home-intro {
+      font-size: 52px;
+    }
+    img {
+      object-fit: cover;
+      object-position: 86% 0;
+    }
+  }
 }
