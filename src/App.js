@@ -1,7 +1,7 @@
 import {lazy, Suspense, useEffect} from 'react'
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import ReactGA from 'react-ga'
-import {changeDarkMode, changeLanguage} from './slices/generalSettingsSlice'
+import {changeDarkMode, changeLanguage, currentDarkMode} from './slices/generalSettingsSlice'
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -16,6 +16,8 @@ const App = () => {
 
   const dispatch = useDispatch()
   // const location = useLocation()
+  const themeColor = useSelector(currentDarkMode);
+  const isDarkMode = themeColor === 'dark'
 
   useEffect(() => {
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => onChangeDarkMode(e))
@@ -43,11 +45,11 @@ const App = () => {
 
   const parent = (child) => {
     return (
-      <>
+      <div className={isDarkMode ? "darkMode" : ""}>
         <Header/>
         {child}
         <Footer/>
-      </>
+      </div>
     )
   }
 

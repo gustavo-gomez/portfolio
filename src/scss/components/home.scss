@@ -30,14 +30,172 @@
 
 }
 
-.darkMode {
-  background: #11213d !important;
+.about-me-container {
+  display: flex;
+  //height: 500px;
+  background: white;
+  flex-direction: column;
+
+  .section-title {
+    width: 100%;
+    display: flex;
+    height: fit-content;
+    justify-content: center;
+    padding-top: 20px;
+
+    .arrow-left, .arrow-right {
+      width: 20px;
+    }
+
+    .arrow-left {
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+
+    .about-me-title {
+      font-family: 'Barlow Condensed';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 56px;
+      background: linear-gradient(270deg, #6357F6 0%, #E6606C 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 0 10px;
+    }
+  }
+
+  .about-me-row1 {
+    display: flex;
+    width: 100%;
+    margin-top: 3rem;
+
+    .about-me-photo {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .about-me-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #686464;
+
+      .about-social-icons {
+        justify-content: center;
+        margin-bottom: 19px;
+        margin-left: 30px;
+
+        img {
+          cursor: pointer;
+          width: 50px;
+          margin-right: 15px;
+        }
+      }
+
+      .about-me-description {
+        margin-left: 30px;
+        max-width: 450px;
+        font-family: "Barlow";
+        font-size: 20px;
+        font-weight: 400;
+      }
+    }
+
+  }
+
+  .about-me-row2 {
+    font-family: "Barlow";
+    display: flex;
+    width: 100%;
+    margin-bottom: 2rem;
+
+    .about-me-education {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #686464;
+
+      .about-me-education-title {
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 27px;
+        text-align: left;
+      }
+
+      .about-me-education-description {
+        max-width: 450px;
+        font-family: "Barlow";
+        font-size: 20px;
+        font-weight: 400;
+      }
+    }
+
+    .about-me-kpis {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(2, 180px);
+      grid-auto-rows: 128px;
+      column-gap: 30px;
+      row-gap: 40px;
+      justify-content: center;
+      color: #FFFFFF;
+
+      .box1, .box2, .box3, .box4 {
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 32px;
+      }
+
+      .box1, .box4 {
+        background: linear-gradient(270deg, #6357F6 0%, #E6606C 100%), linear-gradient(180deg, #4D4F95 0%, #2B2D66 100%);
+        box-shadow: 0px 24px 48px rgba(0, 1, 44, 0.157184);
+      }
+
+      .box2, .box3 {
+        background: linear-gradient(180deg, #4D4F95 0%, #2B2D66 100%);
+        box-shadow: 0 24px 48px rgba(0, 1, 44, 0.157184);
+      }
+
+      .about-me-number {
+        font-family: "Barlow Condensed";
+        font-size: 40px;
+        font-weight: 300;
+      }
+
+      .about-me-text {
+        font-family: "Barlow";
+        font-size: 16px;
+        font-weight: 400;
+      }
+    }
+  }
 }
 
-//html, body {
-//  overflow-x: hidden;
-//  overflow-y: hidden;
-//}
+.darkMode {
+  .home-container {
+    background: #11213d !important;
+  }
+
+  .about-me-container {
+    background: #28344d;
+    //padding: 0 6rem;
+  }
+
+  .about-me-container .about-me-row1 .about-me-info,
+  .about-me-container .about-me-row2 .about-me-education {
+    color: #FFFFFF;
+  }
+}
 
 //@keyframes slideRightToLeft {
 //  0% {
@@ -75,14 +233,153 @@
       font-size: 57px;
     }
   }
+
+
+  .about-me-container {
+    padding: 0 20px 0 20px;
+
+    .section-title {
+      .arrow-left, .arrow-right {
+      }
+
+      .about-me-title {
+      }
+    }
+
+    .about-me-row1 {
+      .about-me-photo {
+      }
+
+      .about-me-info {
+
+        .about-social-icons {
+
+          img {
+          }
+        }
+
+        .about-me-description {
+          font-size: 18px;
+          margin: 0;
+        }
+      }
+
+    }
+
+    .about-me-row2 {
+      .about-me-education {
+        //padding: 0 0 0 20px;
+        //align-items: normal;
+        .about-me-education-title {
+          font-size: 22px;
+          //align-self: start;
+        }
+
+        .about-me-education-description {
+          font-size: 18px;
+        }
+      }
+
+      .about-me-kpis {
+        grid-template-columns: repeat(2, 160px);
+        grid-auto-rows: 128px;
+
+        .box1, .box2, .box3, .box4 {
+        }
+
+        .box1, .box4 {
+        }
+
+        .box2, .box3 {
+        }
+
+        .about-me-number {
+        }
+
+        .about-me-text {
+        }
+      }
+    }
+  }
+
+
 }
 
 @media (max-width: #{$tablet-max}) {
   .home-container {
     .home-intro {
-      font-size: 52px;
     }
   }
+
+
+  .about-me-container {
+    .section-title {
+      .arrow-left, .arrow-right {
+      }
+
+      .about-me-title {
+      }
+    }
+
+    .about-me-row1 {
+      flex-direction: column;
+
+      .about-me-photo {
+      }
+
+      .about-me-info {
+
+        .about-social-icons {
+          align-self: start;
+          margin-left: 0;
+          img {
+          }
+        }
+
+        .about-me-description {
+          max-width: unset;
+
+        }
+      }
+
+    }
+
+    .about-me-row2 {
+      margin-top: 32px;
+      flex-direction: column;
+
+      .about-me-education {
+        .about-me-education-title {
+          align-self: start;
+        }
+
+        .about-me-education-description {
+          max-width: unset;
+        }
+      }
+
+      .about-me-kpis {
+        margin-top: 32px;
+
+        .box1, .box2, .box3, .box4 {
+        }
+
+        .box1, .box4 {
+        }
+
+        .box2, .box3 {
+        }
+
+        .about-me-number {
+        }
+
+        .about-me-text {
+        }
+      }
+    }
+  }
+
+
 }
 
 
@@ -91,6 +388,7 @@
     .home-intro {
       font-size: 52px;
     }
+
     img {
       object-fit: cover;
       object-position: 86% 0;
