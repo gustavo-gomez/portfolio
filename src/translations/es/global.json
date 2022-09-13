@@ -2,5 +2,15 @@
   "home": {
     "intro": "Hagamos tu",
     "intro2": "proyecto realidad"
+  },
+  "aboutMe": {
+    "title": "Sombre Mí",
+    "description": "Apasionado por la tecnología, y poder transformar ideas en software que brinde solución a un problema. Me gustan los retos y me considero una persona autodidacta que le gusta aprender y explorar nuevas cosas.",
+    "education-title": "EDUCACIÓN",
+    "education": "Soy Ingeniero de Software, con más de 8 años de experiencia participando en el desarrollo de soluciones de software para diversas empresas en diferentes rubros. ",
+    "projectsNum": "6+",
+    "projects": "Proyectos",
+    "clientsNum": "12+",
+    "clients": "Clientes"
   }
 }
