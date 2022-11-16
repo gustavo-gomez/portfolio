@@ -12,5 +12,11 @@
     "projects": "Proyectos",
     "clientsNum": "12+",
     "clients": "Clientes"
+  },
+  "services": {
+    "title": "Servicios",
+    "service1": "Consultoría",
+    "service2": "Desarrollo Web",
+    "service3": "Aplicaciones Móviles"
   }
 }

@@ -1,0 +1,37 @@
+@import '../../abstracts/variables';
+
+.services-container {
+  display: flex;
+  flex-direction: column;
+  background-image: url(https://storage.googleapis.com/gustavogomez-bucket/shapes_services_light.gif);
+
+  .services {
+    display: flex;
+    padding: 0 60px;
+    margin-top: 100px;
+    margin-bottom: 90px;
+    justify-content: space-between;
+
+    .service {
+      height: 192px;
+      width: 270px;
+      border-radius: 12px;
+      border: 2px solid #FFFFFF14;
+      background: linear-gradient(180deg, #4D4F95 0%, #2B2D66 100%);
+      box-shadow: 0 24px 48px rgba(0, 1, 44, 0.157184);
+      position: relative;
+
+      img {
+        position: absolute;
+        top: -43%;
+        left: 18%;
+      }
+    }
+  }
+}
+
+.darkMode {
+  .services-container {
+    background-image: url(https://storage.googleapis.com/gustavogomez-bucket/shapes_services_dark.gif);
+  }
+}

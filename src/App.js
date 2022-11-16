@@ -8,9 +8,11 @@ import Footer from "./components/Footer";
 
 
 const Services = lazy(() => import('./components/Services'))
-const Blog = lazy(() => import('./components/Blog'))
+const Blog = lazy(() => import(/*webpackChunkName: "Blog"*/'./components/Blog'))
+// const Blog = lazy(() => import('./components/Blog'))
+
 const Projects = lazy(() => import('./components/Projects'))
-const Home = lazy(() => import('./components/Home'))
+const Home = lazy(() => import('./components/home/Home'))
 
 const App = () => {
 

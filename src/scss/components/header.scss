@@ -80,7 +80,7 @@
       }
 
       #menu-toggle:checked + .hamburger-menu .menu-button::before {
-        margin-top: 0px;
+        margin-top: 0;
         transform: rotate(405deg);
       }
 
@@ -89,7 +89,7 @@
       }
 
       #menu-toggle:checked + .hamburger-menu .menu-button::after {
-        margin-top: 0px;
+        margin-top: 0;
         transform: rotate(-405deg);
       }
     }

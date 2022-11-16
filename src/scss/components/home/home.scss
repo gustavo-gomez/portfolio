@@ -1,0 +1,96 @@
+@import '../../abstracts/variables';
+
+.home-container {
+  display: flex;
+  height: 80vh;
+  min-height: 600px;
+  position: relative;
+  background: #3b3b7a;
+  color: #FBFBFB;
+  margin-top: 4rem;
+
+  .home-intro {
+    font-family: "Barlow Condensed";
+    font-size: 72px;
+    font-weight: 300;
+    line-height: 80px;
+    letter-spacing: 0;
+    z-index: 2;
+    margin-left: 10%;
+    height: fit-content;
+    margin-top: 20px;
+  }
+
+  img {
+    width: 100%;
+    height: 91%;
+    position: absolute;
+    z-index: 1;
+  }
+
+}
+
+.darkMode {
+  .home-container {
+    background: #11213d !important;
+  }
+}
+
+//@keyframes slideRightToLeft {
+//  0% {
+//    transform: translateX(5%);
+//    opacity: 0;
+//  }
+//  100% {
+//    transform: translateX(0%);
+//    opacity: 1;
+//  }
+//}
+
+//@keyframes slideLeftToRight {
+//  0% {
+//    transform: translateX(-5%);
+//    opacity: 0;
+//  }
+//  100% {
+//    transform: translateX(0%);
+//    opacity: 1;
+//  }
+//}
+
+@media (max-width: #{$desktop-max}) {
+  .home-container {
+    .home-intro {
+      font-size: 65px;
+    }
+  }
+}
+
+@media (max-width: #{$desktop-xs-max}) {
+  .home-container {
+    .home-intro {
+      font-size: 57px;
+    }
+  }
+}
+
+@media (max-width: #{$tablet-max}) {
+  .home-container {
+    .home-intro {
+    }
+  }
+}
+
+
+@media (min-width: #{$mobile-max}) and (max-width: #{$tablet-max}) {
+  .home-container {
+    .home-intro {
+      font-size: 52px;
+    }
+
+    img {
+      object-fit: cover;
+      object-position: 86% 0;
+    }
+  }
+}

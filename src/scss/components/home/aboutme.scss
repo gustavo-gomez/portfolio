@@ -1,71 +1,10 @@
-@import '../abstracts/variables';
-
-.home-container {
-  display: flex;
-  height: 80vh;
-  min-height: 600px;
-  position: relative;
-  background: #3b3b7a;
-  color: #FBFBFB;
-  margin-top: 4rem;
-
-  .home-intro {
-    font-family: "Barlow Condensed";
-    font-size: 72px;
-    font-weight: 300;
-    line-height: 80px;
-    letter-spacing: 0px;
-    z-index: 2;
-    margin-left: 10%;
-    height: fit-content;
-    margin-top: 20px;
-  }
-
-  img {
-    width: 100%;
-    height: 91%;
-    position: absolute;
-    z-index: 1;
-  }
-
-}
+@import '../../abstracts/variables';
 
 .about-me-container {
   display: flex;
-  //height: 500px;
   background: white;
   flex-direction: column;
 
-  .section-title {
-    width: 100%;
-    display: flex;
-    height: fit-content;
-    justify-content: center;
-    padding-top: 20px;
-
-    .arrow-left, .arrow-right {
-      width: 20px;
-    }
-
-    .arrow-left {
-      -webkit-transform: rotate(180deg);
-      -moz-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-      -o-transform: rotate(180deg);
-      transform: rotate(180deg);
-    }
-
-    .about-me-title {
-      font-family: 'Barlow Condensed';
-      font-style: normal;
-      font-weight: 300;
-      font-size: 56px;
-      background: linear-gradient(270deg, #6357F6 0%, #E6606C 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin: 0 10px;
-    }
-  }
 
   .about-me-row1 {
     display: flex;
@@ -158,7 +97,7 @@
 
       .box1, .box4 {
         background: linear-gradient(270deg, #6357F6 0%, #E6606C 100%), linear-gradient(180deg, #4D4F95 0%, #2B2D66 100%);
-        box-shadow: 0px 24px 48px rgba(0, 1, 44, 0.157184);
+        box-shadow: 0 24px 48px rgba(0, 1, 44, 0.157184);
       }
 
       .box2, .box3 {
@@ -181,14 +120,40 @@
   }
 }
 
-.darkMode {
-  .home-container {
-    background: #11213d !important;
+.section-title {
+  width: 100%;
+  display: flex;
+  height: fit-content;
+  justify-content: center;
+  padding-top: 20px;
+
+  .arrow-left, .arrow-right {
+    width: 20px;
   }
 
+  .arrow-left {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+
+  .about-me-title {
+    font-family: 'Barlow Condensed';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 56px;
+    background: linear-gradient(270deg, #6357F6 0%, #E6606C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0 10px;
+  }
+}
+
+.darkMode {
   .about-me-container {
     background: #28344d;
-    //padding: 0 6rem;
   }
 
   .about-me-container .about-me-row1 .about-me-info,
@@ -197,82 +162,23 @@
   }
 }
 
-//@keyframes slideRightToLeft {
-//  0% {
-//    transform: translateX(5%);
-//    opacity: 0;
-//  }
-//  100% {
-//    transform: translateX(0%);
-//    opacity: 1;
-//  }
-//}
-
-//@keyframes slideLeftToRight {
-//  0% {
-//    transform: translateX(-5%);
-//    opacity: 0;
-//  }
-//  100% {
-//    transform: translateX(0%);
-//    opacity: 1;
-//  }
-//}
-
-@media (max-width: #{$desktop-max}) {
-  .home-container {
-    .home-intro {
-      font-size: 65px;
-    }
-  }
-}
-
 @media (max-width: #{$desktop-xs-max}) {
-  .home-container {
-    .home-intro {
-      font-size: 57px;
-    }
-  }
-
-
   .about-me-container {
     padding: 0 20px 0 20px;
 
-    .section-title {
-      .arrow-left, .arrow-right {
-      }
-
-      .about-me-title {
-      }
-    }
-
     .about-me-row1 {
-      .about-me-photo {
-      }
-
       .about-me-info {
-
-        .about-social-icons {
-
-          img {
-          }
-        }
-
         .about-me-description {
           font-size: 18px;
           margin: 0;
         }
       }
-
     }
 
     .about-me-row2 {
       .about-me-education {
-        //padding: 0 0 0 20px;
-        //align-items: normal;
         .about-me-education-title {
           font-size: 22px;
-          //align-self: start;
         }
 
         .about-me-education-description {
@@ -283,21 +189,6 @@
       .about-me-kpis {
         grid-template-columns: repeat(2, 160px);
         grid-auto-rows: 128px;
-
-        .box1, .box2, .box3, .box4 {
-        }
-
-        .box1, .box4 {
-        }
-
-        .box2, .box3 {
-        }
-
-        .about-me-number {
-        }
-
-        .about-me-text {
-        }
       }
     }
   }
@@ -306,42 +197,24 @@
 }
 
 @media (max-width: #{$tablet-max}) {
-  .home-container {
-    .home-intro {
-    }
-  }
-
-
   .about-me-container {
-    .section-title {
-      .arrow-left, .arrow-right {
-      }
-
-      .about-me-title {
-      }
-    }
-
     .about-me-row1 {
       flex-direction: column;
-
-      .about-me-photo {
-      }
 
       .about-me-info {
 
         .about-social-icons {
           align-self: start;
           margin-left: 0;
+
           img {
           }
         }
 
         .about-me-description {
           max-width: unset;
-
         }
       }
-
     }
 
     .about-me-row2 {
@@ -360,38 +233,7 @@
 
       .about-me-kpis {
         margin-top: 32px;
-
-        .box1, .box2, .box3, .box4 {
-        }
-
-        .box1, .box4 {
-        }
-
-        .box2, .box3 {
-        }
-
-        .about-me-number {
-        }
-
-        .about-me-text {
-        }
       }
-    }
-  }
-
-
-}
-
-
-@media (min-width: #{$mobile-max}) and (max-width: #{$tablet-max}) {
-  .home-container {
-    .home-intro {
-      font-size: 52px;
-    }
-
-    img {
-      object-fit: cover;
-      object-position: 86% 0;
     }
   }
 }
