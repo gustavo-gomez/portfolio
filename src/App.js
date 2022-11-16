@@ -4,12 +4,12 @@ import ReactGA from 'react-ga'
 import {changeDarkMode, changeLanguage, currentDarkMode} from './slices/generalSettingsSlice'
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Header from "./components/Header";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 
 
-const Services = lazy(() => import('./components/Services'))
-const Blog = lazy(() => import('./components/Blog'))
-const Projects = lazy(() => import('./components/Projects'))
+// const Services = lazy(() => import('./components/Services'))
+// const Blog = lazy(() => import('./components/Blog'))
+// const Projects = lazy(() => import('./components/Projects'))
 const Home = lazy(() => import('./components/Home'))
 
 const App = () => {
@@ -48,7 +48,7 @@ const App = () => {
       <div className={isDarkMode ? "darkMode" : ""}>
         <Header/>
         {child}
-        <Footer/>
+        {/*<Footer/>*/}
       </div>
     )
   }
@@ -58,9 +58,9 @@ const App = () => {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route exact path="/" element={parent(<Home/>)}/>
-          <Route path="/services" element={parent(<Services/>)}/>
-          <Route path="/blog" element={parent(<Blog/>)}/>
-          <Route path="/projects" element={parent(<Projects/>)}/>
+          {/*<Route path="/services" element={parent(<Services/>)}/>*/}
+          {/*<Route path="/blog" element={parent(<Blog/>)}/>*/}
+          {/*<Route path="/projects" element={parent(<Projects/>)}/>*/}
         </Routes>
       </Suspense>
     </BrowserRouter>

@@ -15,17 +15,22 @@ const getDeviceSize = () => {
     isSM: false,
     isMD: false,
     isLG: false,
-    width
+    width,
+    isMobile: false
   };
 
   if (width <= Breakpoints.xs) {
     breakpoints.isXS = true;
+    breakpoints.isMobile = true;
   } else if (width > Breakpoints.xs && width <= Breakpoints.sm) {
     breakpoints.isSM = true;
+    breakpoints.isMobile = true;
   } else if (width > Breakpoints.sm && width <= Breakpoints.md) {
     breakpoints.isMD = true;
+    breakpoints.isMobile = false;
   } else if (width > Breakpoints.md) {
     breakpoints.isLG = true;
+    breakpoints.isMobile = false;
   }
   return breakpoints;
 };
