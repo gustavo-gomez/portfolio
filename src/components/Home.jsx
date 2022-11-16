@@ -22,8 +22,8 @@ const Home = () => {
   robotImage += (isXS) ? "mobile_" : "web_"
   robotImage += isDarkMode ? "dark" : "light"
 
-  const building = BUCKET_IMAGES + "/building_" + ((isMobile) ? "mobile" : "web") + ".png"
-
+  // const building = BUCKET_IMAGES + "/building_" + ((isMobile) ? "mobile" : "web") + ".png"
+  const building = BUCKET_IMAGES + "/building_" + ((isMobile) ? "mobile.svg" : "web.png")
   return (
     <div style={{
       height: "90vh",
