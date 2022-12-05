@@ -13,19 +13,94 @@
     justify-content: space-between;
 
     .service {
-      height: 192px;
       width: 270px;
+      height: 192px;
       border-radius: 12px;
+      position: relative;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .flip-card {
+      perspective: 1000px;
+      background-color: transparent;
+
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+
+        .flip-card-back {
+          display: flex;
+          flex-direction: column;
+
+          .title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: 500;
+
+            svg {
+              width: 80px;
+              height: 90px;
+            }
+          }
+
+          .description {
+            font-size: 18px;
+            font-weight: 400;
+          }
+        }
+
+        .flip-card-front {
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-family: "Barlow Condensed";
+          font-size: 28px;
+          font-weight: 300;
+          line-height: 42px;
+          color: #FFFFFF;
+        }
+      }
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden; /* Safari */
+      backface-visibility: hidden;
+    }
+
+    .flip-card-front {
       border: 2px solid #FFFFFF14;
       background: linear-gradient(180deg, #4D4F95 0%, #2B2D66 100%);
       box-shadow: 0 24px 48px rgba(0, 1, 44, 0.157184);
-      position: relative;
-
-      img {
+      svg {
         position: absolute;
         top: -43%;
         left: 18%;
       }
+    }
+
+    .flip-card-back {
+      border: 2px solid #ac5cab;
+      background: linear-gradient(180deg, #4D4F95 0%, #2B2D66 100%);
+      box-shadow: 0 24px 48px rgba(0, 1, 44, 0.157184);
+      color: white;
+      transform: rotateY(180deg);
     }
   }
 }

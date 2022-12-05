@@ -12,5 +12,14 @@
     "projects": "Proyectos",
     "clientsNum": "12+",
     "clients": "Clientes"
+  },
+  "services": {
+    "title": "Servicios",
+    "service1": "Consultoría",
+    "service1Description": "Consultoría y orientación al cliente en sus productos y servicios digitales",
+    "service2": "Desarrollo Web",
+    "service2Description": "Desarrollo de cualquier tipo \nde página o sistema web",
+    "service3": "Aplicaciones Móviles",
+    "service3Description": "Desarrollo de aplicaciones móviles para iOS y android"
   }
 }
