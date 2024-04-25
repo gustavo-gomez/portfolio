@@ -1,7 +1,7 @@
 # [START app_yaml]
 runtime: nodejs18
 
-service: my-next-app
+#service: stg
 
 handlers:
   - url: /.*
