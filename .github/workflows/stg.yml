@@ -1,34 +1,46 @@
-name: DeployStaging
+name: Deploy to Cloud Run
+
+env:
+  SERVICE_NAME: next-app-project
+
 on:
   push:
-    branches: [ nextjs ]
+    branches:
+      - nextjs
+  pull_request:
+    branches:
+      - nextjs
+
 jobs:
-  Deploy_to_GAE:
+  dockerize-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Repo
+      - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
+      - name: Google Cloud Auth
+        uses: 'google-github-actions/auth@v2'
         with:
-          node-version: 18.x
-
-      - run: npm install
-      - run: npm run build
-      #      - run: npm run test
-
-      - name: Setup Google Cloud SDK
-        uses: google-github-actions/setup-gcloud@v0.2.0
-        with:
-          project_id: ${{secrets.PROJECT_ID_STG}}
-          service_account_key: ${{secrets.GCP_SA_KEY_STG}}
-
-      - name: Deploy
-        uses: google-github-actions/deploy-appengine@v0.2.0
-        with:
-          deliverables: app.yaml
+          credentials_json: '${{ secrets.GCP_SA_KEY_STG }}'
           project_id: ${{ secrets.PROJECT_ID_STG }}
-          credentials: ${{ secrets.GCP_SA_KEY_STG}}
-          promote: true
-          version: v1
+
+      - name: Set up Cloud SDK
+        uses: 'google-github-actions/setup-gcloud@v2'
+
+      - name: Configure Docker
+        run: |
+          gcloud auth configure-docker
+
+      - name: Build and Push Docker Image
+        run: |
+          docker build -t gcr.io/${{ secrets.PROJECT_ID_STG }}/${{ secrets.DOCKER_IMAGE_NAME_STG }}:latest .
+          docker push gcr.io/${{ secrets.PROJECT_ID_STG }}/${{ secrets.DOCKER_IMAGE_NAME_STG }}:latest
+
+      - name: Deploy to Cloud Run
+        run: |
+          gcloud run deploy $SERVICE_NAME \
+            --image gcr.io/${{ secrets.PROJECT_ID_STG }}/${{ secrets.DOCKER_IMAGE_NAME_STG }}:latest \
+            --platform managed \
+            --region us-central1 \
+            --allow-unauthenticated
