@@ -1,7 +1,7 @@
-name: Deploy to Cloud Run
+name: Deploy to Cloud Run PROD
 
 env:
-  SERVICE_NAME: portfolio-stg
+  SERVICE_NAME: portfolio-prod
 
 on:
   push:
