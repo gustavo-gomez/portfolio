@@ -7,7 +7,7 @@ const Header = () => {
       <div className="justify-between flex w-[90%]">
         <Logo/>
         <nav className="flex justify-between items-center">
-          <a className='font-bold text-base leading-5 text-center mr-10 cursor-pointer ' href="/">Homeee</a>
+          <a className='font-bold text-base leading-5 text-center mr-10 cursor-pointer ' href="/">Home</a>
           <a className='font-bold text-base leading-5 text-center mr-10 cursor-pointer' href="/services">Servicios</a>
           <a className='font-bold text-base leading-5 text-center mr-10 cursor-pointer' href="/portfolio">Portfolio</a>
           <a className='font-bold text-base leading-5 text-center mr-10 cursor-pointer' href="/blog">Blog</a>
