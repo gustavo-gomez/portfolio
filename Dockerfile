@@ -8,13 +8,13 @@ WORKDIR /app
 COPY package.json ./
 
 # Install dependencies
-RUN yarn install --frozen-lockfile
+RUN npm install
 
 # Copy the app's source code to the container
 COPY . .
 
 # Build the Next app
-RUN yarn build
+RUN npm run build
 
 # Serve the production build
-CMD ["npm", "start"]
+CMD ["npm", "run", "start"]
