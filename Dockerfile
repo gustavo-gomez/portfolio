@@ -5,7 +5,7 @@ FROM node:18.17.0-alpine
 WORKDIR /app
 
 # Copy package.json and yarn.lock to the container
-COPY package.json yarn.lock ./
+COPY package.json ./
 
 # Install dependencies
 RUN yarn install --frozen-lockfile
@@ -17,4 +17,4 @@ COPY . .
 RUN yarn build
 
 # Serve the production build
-CMD ["yarn", "start"]
+CMD ["npm", "start"]
