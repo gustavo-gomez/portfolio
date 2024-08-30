@@ -10,6 +10,10 @@ on:
   pull_request:
     branches:
       - nextjs
+  workflow_dispatch:
+    inputs:
+        logLevel:
+          description: 'Log level'
 
 jobs:
   dockerize-and-deploy:
