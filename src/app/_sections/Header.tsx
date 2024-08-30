@@ -4,50 +4,87 @@ import Image from "next/image";
 import sunSVG from "@/app/assets/sun.svg";
 import moonSVG from "@/app/assets/moon.svg";
 import {useTheme} from "next-themes";
+import {useEffect, useState} from "react";
 
 const navOptions = [
   {
     name: 'Home',
-    link: '/'
+    id: 'home'
   },
   {
     name: 'Servicios',
-    link: '/services'
+    id: 'services'
   },
-  {
-    name: 'Portfolio',
-    link: '/portfolio'
-  },
-  {
-    name: 'Blog',
-    link: '/blog'
-  },
+  // {
+  //   name: 'Portfolio',
+  //   link: '/portfolio'
+  // },
 ]
 
 const Header = () => {
   const {theme, setTheme} = useTheme()
+  const [activeSection, setActiveSection] = useState<string>('home');
+
+  useEffect(() => {
+    window.addEventListener('scroll', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    }
+  }, []);
+
+
+  const handleScroll = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({behavior: 'smooth'});
+    }
+  }
+
+  const onScroll = () => {
+    const scrollPosition = window.scrollY;
+    let currentSection = '';
+    navOptions.forEach(option => {
+      const element = document.getElementById(option.id);
+      if (element) {
+        const offsetTop = element.offsetTop;
+        const offsetHeight = element.offsetHeight;
+        if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+          currentSection = option.id;
+        }
+      }
+    });
+    setActiveSection(currentSection);
+  }
 
   return (
-    <div
-      className="w-full h-20 flex items-center justify-center px-5 fixed top-0 z-100 bg-white dark:bg-[#12203D] text-black dark:text-white">
+    <header
+      className="w-full h-20 flex items-center justify-center px-5 fixed top-0 z-100 bg-bg-primary dark:bg-bg-dark text-txt-primary dark:text-txt-primary-dark">
       <div className="justify-between flex w-[90%]">
         <Logo/>
-        <nav className="flex justify-between items-center">
-          {
-            navOptions.map((option, index) => (
-              <a key={index} href={option.link} className='font-bold text-base leading-5 text-center mr-10 cursor-pointer'>{option.name}</a>
-            ))
-          }
-        </nav>
-        <div className='flex border-2 rounded-xl border-[#6b611f] cursor-pointer'>
-          {
-            theme === 'dark' ?
-              <Image src={sunSVG} alt={'sun'} width={25} className='mx-1' onClick={() => setTheme('light')}/>
-              : <Image src={moonSVG} alt={'moon'} width={25} className='mx-1' onClick={() => setTheme('dark')}/>
-          }
+        <div className="flex">
+          <nav className="flex justify-between items-center">
+            {
+              navOptions.map((option, index) => (
+                <span
+                  key={index}
+                  onClick={() => handleScroll(option.id)}
+                  className={` text-base leading-5 text-center mr-10 cursor-pointer ${activeSection === option.id ? 'text-[#1B75BC] font-bold' : ''}`}
+                >
+                   {option.name}
+                </span>
+              ))
+            }
+          </nav>
+          <div className='flex border-2 rounded-xl border-[#6b611f] cursor-pointer'>
+            {
+              theme === 'dark' ?
+                <Image src={sunSVG} alt={'sun'} width={25} className='mx-1' onClick={() => setTheme('light')}/>
+                : <Image src={moonSVG} alt={'moon'} width={25} className='mx-1' onClick={() => setTheme('dark')}/>
+            }
+          </div>
         </div>
       </div>
-    </div>
+    </header>
   )
 }
 

@@ -1,0 +1,9 @@
+.floating-background{
+    height: 100vh;
+    background-image: url("/public/github.svg");
+    background-repeat: no-repeat;
+    background-position: 50px 100px, 150px 300px; /* Ajusta estas posiciones */
+    background-size: 50px 50px, 30px 30px; /* Tamaños de las imágenes */
+    animation: float 10s infinite linear; /* Animación opcional */
+    margin-top: 5rem;
+}
