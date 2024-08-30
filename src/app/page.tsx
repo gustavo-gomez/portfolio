@@ -1,11 +1,8 @@
 'use client'
-import type {AppProps} from 'next/app';
 import Image from "next/image";
 import arrow from "@/app/assets/arrow_section.svg";
 
-{/*<section id='aboutMe' className="text-white pt-24 h-screen" style={{backgroundImage: "url('https://storage.googleapis.com/portafolio-assets/shapes_project_dark.gif')"}}>*/
-}
-export default function Home(pageProps: AppProps) {
+export default function Home() {
 
   return (
     <main className="bg-bg-primary text-txt-primary dark:bg-bg-dark dark:text-txt-primary-dark">
