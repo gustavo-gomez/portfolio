@@ -58,8 +58,8 @@ const Header = () => {
 
   return (
     <header
-      className="w-full h-20 flex items-center justify-center px-5 fixed top-0 z-100 bg-bg-primary dark:bg-bg-dark text-txt-primary dark:text-txt-primary-dark">
-      <div className="justify-between flex w-[90%]">
+      className="w-full h-20 flex items-center sm:justify-center px-1 sm:px-5 fixed top-0 z-10 bg-bg-primary dark:bg-bg-dark text-txt-primary dark:text-txt-primary-dark shadow-md">
+      <div className="justify-between flex w-full sm:w-[90%]">
         <Logo/>
         <div className="flex">
           <nav className="flex justify-between items-center">

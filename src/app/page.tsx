@@ -5,16 +5,18 @@ import arrow from "@/app/assets/arrow_section.svg";
 export default function Home() {
 
   return (
-    <main className="bg-bg-primary text-txt-primary dark:bg-bg-dark dark:text-txt-primary-dark">
-      <section id='home' className="text-white pt-24 h-screen ">
-        <div className="flex flex-col sm:flex-row w-full justify-center pt-5 ">
+    <div className="bg-bg-primary dark:bg-bg-dark text-txt-primary  dark:text-txt-primary-dark">
+      <section id='home' className=" text-white pt-24 h-screen ">
+        <div className="flex flex-col sm:flex-row w-full justify-center pt-5 items-center">
           <Image
             src={'https://storage.googleapis.com/portafolio-assets/photo1.webp'}
             alt={'profile-photo'}
+            className='w-[200px] sm:w-[300px] h-[220px] sm:h-[300px]'
             width={300}
             height={300}
+            loading='eager'
           />
-          <div className='flex justify-center flex-col max-w-xl container gap-5 text-gray-800 dark:text-gray-300 '>
+          <div className='flex justify-center flex-col max-w-xl gap-5 text-gray-800 dark:text-gray-300 mx-5 sm:mx-0'>
             <p className='text-3xl sm:text-5xl font-bold tracking-tight'>Hey, soy Gustavo</p>
             <p className='text-xl '>
               <strong className='font-bold bg-gradient-custom bg-clip-text text-transparent'>
@@ -39,6 +41,6 @@ export default function Home() {
         </div>
       </section>
 
-    </main>
+    </div>
   );
 }
