@@ -39,14 +39,19 @@ export const metadata: Metadata = {
       type: 'icon',
     },
     {
-      url: '/favicon.ico',
+      url: '/logo192.png',
       sizes: '192x192',
       type: 'icon',
     },
     {
-      url: '/favicon.ico',
+      url: '/logo512.png',
       sizes: '512x512',
       type: 'icon',
+    },
+    {
+      url: '/apple-touch-icon.png',
+      sizes: '180x180',
+      type: 'apple-touch-icon',
     }
   ],
 };
