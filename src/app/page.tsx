@@ -3,11 +3,17 @@ import Image from "next/image";
 import arrow from "@/app/assets/arrow_section.svg";
 
 export default function Home() {
+  const handleLinkedInClick = () => {
+    window.open('https://www.linkedin.com/in/gustavo-gomezf/');
+  };
 
+  const handleGitHubClick = () => {
+    window.open('https://github.com/gustavo-gomez');
+  };
   return (
     <div className="bg-bg-primary dark:bg-bg-dark text-txt-primary  dark:text-txt-primary-dark">
       <section id='home' className=" text-white pt-24 h-screen ">
-        <div className="flex flex-col sm:flex-row w-full justify-center pt-5 items-center">
+        <div className="flex flex-col sm:flex-row w-full justify-center pt-5 items-center gap-6">
           <Image
             src={'https://storage.googleapis.com/portafolio-assets/photo1.webp'}
             alt={'profile-photo'}
@@ -16,7 +22,7 @@ export default function Home() {
             height={300}
             loading='eager'
           />
-          <div className='flex justify-center flex-col max-w-xl gap-5 text-gray-800 dark:text-gray-300 mx-5 sm:mx-0'>
+          <div className='flex justify-center flex-col max-w-xl gap-5 text-gray-800 dark:text-gray-300 mx-8 sm:mx-0 '>
             <p className='text-3xl sm:text-5xl font-bold tracking-tight'>Hey, soy Gustavo</p>
             <p className='text-xl '>
               <strong className='font-bold bg-gradient-custom bg-clip-text text-transparent'>
@@ -25,6 +31,24 @@ export default function Home() {
               +10 años de experiencia en el desarrollo de software, especializado en el desarrollo
               <strong className='bg-gradient-custom bg-clip-text text-transparent'>{" web y mobile"}</strong>
             </p>
+            <div className='flex gap-4 '>
+              <Image
+                src='/linkedin.svg'
+                alt='linkedin'
+                onClick={handleLinkedInClick}
+                className='cursor-pointer hover:scale-110'
+                width={35}
+                height={35}
+              />
+              <Image
+                src='/github.svg'
+                alt='github'
+                onClick={handleGitHubClick}
+                className='cursor-pointer hover:scale-110'
+                width={35}
+                height={35}
+              />
+            </div>
           </div>
         </div>
       </section>
