@@ -16,8 +16,6 @@ export const metadata: Metadata = {
     images: [
       {
         url: 'https://storage.googleapis.com/portafolio-assets/og-image.png',
-        width: 1200,
-        height: 630,
       }
     ],
     url: 'https://stg.gustavogomez.dev/'
@@ -28,7 +26,7 @@ export const metadata: Metadata = {
     description: "Desarrollo personalizado de software web y mobile.",
     images: [
       {
-        url: 'https://stg.gustavogomez.dev/favicon.ico',
+        url: 'https://storage.googleapis.com/portafolio-assets/og-image.png',
       },
     ],
   },
