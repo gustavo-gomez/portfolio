@@ -3,14 +3,16 @@
 @tailwind utilities;
 
 :root {
-    --foreground-rgb: 0, 0, 0;
-    --background-start-rgb: 214, 219, 220;
-    --background-end-rgb: 255, 255, 255;
-    --bg-primary: rgb(255, 255, 255);
-    --bg-dark: #12203D;
+    --bg-light: rgb(255, 255, 255);
+    --bg-dark: rgb(18, 32, 61);
+
     --text-primary: #686464;
     --text-primary-dark: #fff;
+
     --theme-primary: rgba(99, 87, 246, 1);
+
+    --primary-color: #6357F6;
+
 }
 
 @layer utilities {
@@ -18,3 +20,5 @@
         text-wrap: balance;
     }
 }
+
+

@@ -16,17 +16,13 @@ const config: Config = {
           'gradient-custom': 'linear-gradient(270deg, #6357F6 0%, #E6606C 100%)',
         },
         colors: {
-          "bg-primary": 'var(--bg-primary)',
+          "bg-primary": 'var(--bg-light)',
           "bg-dark": 'var(--bg-dark)',
           "txt-primary": 'var(--text-primary)',
           "txt-primary-dark": 'var(--text-primary-dark)',
           "primary": 'var(--theme-primary)',
         },
       },
-      fontFamily: {
-        'sectionTitle':
-          ['Barlow Condensed'],
-      }
     },
     plugins: [],
   }
