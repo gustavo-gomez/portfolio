@@ -1,10 +1,9 @@
+import React from "react";
 import type {Metadata} from "next";
-import {Inter} from "next/font/google";
+import {barlow} from "./fonts";
 import "./globals.css";
 import Header from "@/app/_sections/Header";
 import {ThemeProvider} from 'next-themes'
-
-const inter = Inter({subsets: ["latin"]});
 
 export const metadata: Metadata = {
   title: "Gustavo Gomez | Software Engineer",
@@ -63,7 +62,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-    <body className={`${inter.className} font-sectionTitle`}>
+    <body className={`${barlow.className}`}>
     <ThemeProvider attribute="class" defaultTheme="dark">
       <Header/>
       {children}

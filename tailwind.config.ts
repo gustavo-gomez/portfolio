@@ -10,17 +10,16 @@ const config: Config = {
     theme: {
       extend: {
         backgroundImage: {
-          "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-          "gradient-conic":
-            "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-          'gradient-custom': 'linear-gradient(270deg, #6357F6 0%, #E6606C 100%)',
+            'gradient-270': 'linear-gradient(270deg, #6357F6 0%, #E6606C 100%)',
+          'gradient-180': 'linear-gradient(180deg, #4D4F95 0%, #2B2D66 100%)',
+
         },
         colors: {
           "bg-primary": 'var(--bg-light)',
           "bg-dark": 'var(--bg-dark)',
           "txt-primary": 'var(--text-primary)',
           "txt-primary-dark": 'var(--text-primary-dark)',
-          "primary": 'var(--theme-primary)',
+          "primary": 'var(--primary-color)',
         },
       },
     },
