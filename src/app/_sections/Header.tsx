@@ -5,6 +5,7 @@ import sunSVG from "@/app/assets/sun.svg";
 import moonSVG from "@/app/assets/moon.svg";
 import {useTheme} from "next-themes";
 import {useEffect, useState} from "react";
+import {barlowCondensed, kanit} from "@/app/fonts";
 
 const navOptions = [
   {
@@ -82,6 +83,11 @@ const navOptions = [
 const Header = () => {
   const {theme, setTheme} = useTheme()
   const [activeSection, setActiveSection] = useState<string>('home');
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     window.addEventListener('scroll', onScroll);
@@ -90,21 +96,20 @@ const Header = () => {
     }
   }, []);
 
-
   const handleScroll = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({behavior: 'smooth'});
     }
   }
-
   const onScroll = () => {
     const scrollPosition = window.scrollY;
     let currentSection = '';
+    const headerHeight = 8 * 16; // 4rem in pixels
     navOptions.forEach(option => {
       const element = document.getElementById(option.id);
       if (element) {
-        const offsetTop = element.offsetTop;
+        const offsetTop = element.offsetTop - headerHeight;
         const offsetHeight = element.offsetHeight;
         if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
           currentSection = option.id;
@@ -113,15 +118,17 @@ const Header = () => {
     });
     setActiveSection(currentSection);
   }
+  if (!mounted) return null;
 
   return (
     <header
-      className="w-full h-20 flex items-center sm:justify-center px-5 sm:px-5 fixed top-0 z-10 bg-bg-principal-light dark:bg-bg-dark text-txt-primary dark:text-txt-primary-dark shadow-md">
-      <div className="justify-between flex w-full sm:w-[90%]">
+      className="w-full h-12 md:h-16 flex items-center sm:justify-center px-5 fixed top-0 z-10 bg-bg-principal-light dark:bg-bg-dark text-txt-primary dark:text-txt-primary-dark shadow-md">
+      <div className="justify-between flex w-full sm:w-[90%] max-w-8xl">
         <Logo/>
         <div className="flex">
           <nav
-            className="flex justify-around md:justify-between items-center bottom-4 fixed md:static left-[5%] w-11/12 bg-bg-dark-opacity-90 md:bg-inherit md:bg-opacity-30 backdrop-blur-xl md:backdrop-blur-0 md:shadow-sm shadow-[rgba(28, 39, 69, 0.4)]">
+            // className="flex p-1 md:p-0 justify-around md:justify-between items-center bottom-4 fixed md:static left-[5%] w-11/12 bg-bg-dark-opacity-90 md:bg-inherit md:bg-opacity-30 backdrop-blur-xl md:backdrop-blur-0 shadow-[0px_0px_8px] md:shadow-none shadow-[#212733]">
+            className="flex p-1 md:p-0 justify-around md:justify-between items-center bottom-0 fixed md:static left-[0%] w-full bg-bg-dark-opacity-90 md:bg-inherit md:bg-opacity-30 backdrop-blur-xl md:backdrop-blur-0 shadow-lg md:shadow-none shadow-[#212733]">
             {
               navOptions.map((option, index) => (
                 <span
@@ -134,16 +141,20 @@ const Header = () => {
                   >
                     {option?.icon}
                   </span>
-                  <span className='text-sm'>{option.name}</span>
+                  <span
+                    className={`text-sm md:text-lg ${barlowCondensed.className} md:${kanit.className}`}>{option.name}
+                  </span>
                 </span>
               ))
             }
           </nav>
-          <div className='flex border-2 rounded-xl border-[#6b611f] cursor-pointer'>
+          <div className='flex cursor-pointer'>
             {
               theme === 'dark' ?
-                <Image src={sunSVG} alt={'sun'} width={25} className='mx-1' onClick={() => setTheme('light')}/>
-                : <Image src={moonSVG} alt={'moon'} width={25} className='mx-1' onClick={() => setTheme('dark')}/>
+                <Image src={sunSVG} alt={'sun'} width={25} className='mx-1 '
+                       onClick={() => setTheme('light')}/>
+                : <Image src={moonSVG} alt={'moon'} width={25} className='mx-1'
+                         onClick={() => setTheme('dark')}/>
             }
           </div>
         </div>
