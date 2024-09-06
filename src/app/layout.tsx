@@ -4,7 +4,14 @@ import {barlow} from "./fonts";
 import "./globals.css";
 import Header from "@/app/_sections/Header";
 import {ThemeProvider} from 'next-themes'
+import type { Viewport } from 'next'
 
+// export const viewport: Viewport = {
+//   themeColor: [
+//     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+//     { media: "(prefers-color-scheme: dark)", color: "#000000" }
+//   ]
+// }
 export const metadata: Metadata = {
   title: "Gustavo Gomez | Software Engineer",
   description: "Desarrollo web y mobile",

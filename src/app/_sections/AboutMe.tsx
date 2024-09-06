@@ -4,7 +4,7 @@ export const AboutMe = () => {
 
   return (
     <section id={'aboutMe'}
-             className={'flex flex-col min-h-[calc(100vh-1rem)] md:min-h-[calc(100vh-8rem)] bg-bg-principal-light dark:bg-bg-dark2'}>
+             className={'flex flex-col section bg-bg-secondary-light dark:bg-bg-dark2'}>
       <Title title={'Sobre mi'}/>
       <div className='flex mt-6 md:mt-[20vh] px-4 md:px-20 flex-col md:flex-row '>
         <div className='flex flex-col flex-1 text-base sm:text-xl gap-10 pr-0 md:pr-10 justify-center'>

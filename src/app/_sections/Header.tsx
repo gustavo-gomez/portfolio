@@ -122,7 +122,7 @@ const Header = () => {
 
   return (
     <header
-      className="w-full h-12 md:h-16 flex items-center sm:justify-center px-5 fixed top-0 z-10 bg-bg-principal-light dark:bg-bg-dark text-txt-primary dark:text-txt-primary-dark shadow-md">
+      className="w-full h-12 md:h-16 flex items-center sm:justify-center px-5 fixed top-0 z-10 bg-bg-principal-light dark:bg-bg-dark text-txt-secondary dark:text-white shadow-md">
       <div className="justify-between flex w-full sm:w-[90%] max-w-8xl">
         <Logo/>
         <div className="flex">
@@ -134,10 +134,10 @@ const Header = () => {
                 <span
                   key={index}
                   onClick={() => handleScroll(option.id)}
-                  className={`flex flex-col items-center text-base leading-5 text-center mr-0 md:mr-10 cursor-pointer ${activeSection === option.id ? 'text-[#6357F6] font-bold' : ''}`}
+                  className={`flex flex-col items-center text-base leading-5 text-center mr-0 md:mr-10 cursor-pointer ${activeSection === option.id ? 'text-primary-light dark:text-primary-dark font-bold' : 'text-gray-800 dark:text-white'}`}
                 >
                   <span
-                    className={`md:hidden ${activeSection === option.id ? '[&>svg]:stroke-[#6357F6] font-bold' : '[&>svg]:stroke-white'}`}
+                    className={`md:hidden ${activeSection === option.id ? '[&>svg]:stroke-primary-light [&>svg]:dark:stroke-primary-dark font-bold' : '[&>svg]:stroke-gray-800 [&>svg]:dark:stroke-white'}`}
                   >
                     {option?.icon}
                   </span>
