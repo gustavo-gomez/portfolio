@@ -123,11 +123,10 @@ const Header = () => {
   return (
     <header
       className="w-full h-12 md:h-16 flex items-center sm:justify-center px-5 fixed top-0 z-10 bg-bg-principal-light dark:bg-bg-dark text-txt-secondary dark:text-white shadow-md">
-      <div className="justify-between flex w-full sm:w-[90%] max-w-8xl">
+      <div className="justify-between flex w-full sm:w-[90%] max-w-6xl">
         <Logo/>
         <div className="flex">
           <nav
-            // className="flex p-1 md:p-0 justify-around md:justify-between items-center bottom-4 fixed md:static left-[5%] w-11/12 bg-bg-dark-opacity-90 md:bg-inherit md:bg-opacity-30 backdrop-blur-xl md:backdrop-blur-0 shadow-[0px_0px_8px] md:shadow-none shadow-[#212733]">
             className="flex p-1 md:p-0 justify-around md:justify-between items-center bottom-0 fixed md:static left-[0%] w-full bg-bg-dark-opacity-90 md:bg-inherit md:bg-opacity-30 backdrop-blur-xl md:backdrop-blur-0 shadow-lg md:shadow-none shadow-[#212733]">
             {
               navOptions.map((option, index) => (

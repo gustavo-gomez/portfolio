@@ -34,7 +34,7 @@
 
 @layer components {
   .section {
-    @apply pt-20 w-full min-h-[calc(100vh)]
+    @apply flex flex-col pt-20 w-full min-h-[calc(100vh)] [&>div]:max-w-6xl items-center
     /*@apply pt-20 max-w-6xl min-h-fit*/
   }
 
