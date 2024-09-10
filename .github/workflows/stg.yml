@@ -1,4 +1,4 @@
-name: Deploy to Cloud Run
+name: Deploy to Cloud Run STG
 
 env:
   SERVICE_NAME: portfolio-stg
