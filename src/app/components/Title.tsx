@@ -1,4 +1,4 @@
-import {barlowCondensed} from "@/app/fonts";
+import {barlowCondensed} from "@/app/[locale]/fonts";
 
 const Title = ({title}: { title: string }) => {
   return (

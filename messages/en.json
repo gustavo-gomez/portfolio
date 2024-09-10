@@ -1,0 +1,29 @@
+{
+  "metadata": {
+    "title": "Gustavo Gomez | Software Engineer",
+    "description": "Web and mobile development",
+    "OPdescription": "Custom web and mobile software development."
+  },
+  "header": {
+    "home": "Home",
+    "about": "About me",
+    "services": "Services",
+    "projects": "Projects"
+  },
+  "home": {
+    "greeting": "Hello, I'm Gustavo",
+    "title": "Software Engineer",
+    "description": "+10 years of experience in software development, specialized in development"
+  },
+  "about": {
+    "title": "About me",
+    "description1": "Passionate about technology, and being able to transform ideas into software that provides a solution to a problem. I like challenges and consider myself a self-taught person who likes to learn and explore new things.",
+    "description2": "I am a Software Engineer, with more than 8 years of experience participating in the development of software solutions for various companies in different sectors"
+  },
+  "services": {
+    "title": "Services"
+  },
+  "projects": {
+    "title": "Projects"
+  }
+}

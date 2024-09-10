@@ -5,11 +5,12 @@ import sunSVG from "@/app/assets/sun.svg";
 import moonSVG from "@/app/assets/moon.svg";
 import {useTheme} from "next-themes";
 import {useEffect, useState} from "react";
-import {barlowCondensed, kanit} from "@/app/fonts";
+import {barlowCondensed, kanit} from "@/app/[locale]/fonts";
+import {useTranslations} from 'next-intl';
 
 const navOptions = [
   {
-    name: 'Home',
+    name: (t: any) => t('home'),
     id: 'home',
     icon: (
       <svg width="23" height="23" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -24,7 +25,7 @@ const navOptions = [
     )
   },
   {
-    name: 'Sobre mi',
+    name: (t: any) => t('about'),
     id: 'aboutMe',
     icon: (
       <svg width="23" height="23" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none">
@@ -35,7 +36,7 @@ const navOptions = [
     )
   },
   {
-    name: 'Servicios',
+    name: (t: any) => t('services'),
     id: 'services',
     icon: (
       <svg version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" width="23" height="23"
@@ -60,7 +61,7 @@ const navOptions = [
     )
   },
   {
-    name: 'Proyectos',
+    name: (t: any) => t('projects'),
     id: 'projects',
     icon: (
       <svg width="23" height="23" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -84,6 +85,7 @@ const Header = () => {
   const {theme, setTheme} = useTheme()
   const [activeSection, setActiveSection] = useState<string>('home');
   const [mounted, setMounted] = useState(false);
+  const t = useTranslations('header');
 
   useEffect(() => {
     setMounted(true);
@@ -141,7 +143,7 @@ const Header = () => {
                     {option?.icon}
                   </span>
                   <span
-                    className={`text-sm md:text-lg ${barlowCondensed.className} md:${kanit.className}`}>{option.name}
+                    className={`text-sm md:text-lg ${barlowCondensed.className} md:${kanit.className}`}>{option.name(t)}
                   </span>
                 </span>
               ))

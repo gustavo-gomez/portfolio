@@ -1,0 +1,29 @@
+{
+  "metadata": {
+    "title": "Gustavo Gomez | Ingeniero de Software",
+    "description": "Desarrollo web y mobile",
+    "OPdescription": "Desarrollo personalizado de software web y mobile."
+  },
+  "header": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "services": "Servicios",
+    "projects": "Proyectos"
+  },
+  "home": {
+    "greeting": "Hey, soy Gustavo",
+    "title": "Ingeniero de Software",
+    "description": "+10 años de experiencia en el desarrollo de software, especializado en el desarrollo"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "description1": "Apasionado por la tecnología, y poder transformar ideas en software que brinde solución a un problema. Me gustan los retos y me considero una persona autodidacta que le gusta aprender y explorar nuevas cosas.",
+    "description2": "Soy Ingeniero de Software, con más de 8 años de experiencia participando en el desarrollo de soluciones de software para diversas empresas en diferentes rubros"
+  },
+  "services": {
+    "title": "Servicios"
+  },
+  "projects": {
+    "title": "Proyectos"
+  }
+}
