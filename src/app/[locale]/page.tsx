@@ -5,8 +5,14 @@ import Icons from "@/app/components/Icons";
 import {Services} from "@/app/_sections/Services";
 import {Projects} from "@/app/_sections/Projects";
 import {useTranslations} from 'next-intl';
+import {unstable_setRequestLocale} from "next-intl/server";
 
-export default function Home() {
+type Props = {
+  params: {locale: string};
+};
+
+export default function Home({params: {locale}}: Props)  {
+  unstable_setRequestLocale(locale);
   const t = useTranslations('home');
   return (
     <div className=" md:px-0 min-w-80">

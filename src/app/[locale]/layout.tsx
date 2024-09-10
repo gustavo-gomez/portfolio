@@ -4,7 +4,7 @@ import "./globals.css";
 import Header from "@/app/_sections/Header";
 import {ThemeProvider} from 'next-themes'
 import {NextIntlClientProvider} from 'next-intl';
-import {getMessages, getTranslations} from 'next-intl/server';
+import {getMessages, getTranslations, unstable_setRequestLocale} from 'next-intl/server';
 import {routing} from "@/i18n/routing";
 
 type Props = {
@@ -15,7 +15,7 @@ type Props = {
 export async function generateMetadata({
                                          params: {locale}
                                        }: Omit<Props, 'children'>) {
-  const t = await getTranslations({locale, namespace: 'LocaleLayout'});
+  const t = await getTranslations({locale, namespace: 'metadata'});
 
   return {
     title: t('title'),
@@ -76,6 +76,7 @@ export default async function AppLayout({
                                           children,
                                           params: {locale}
                                         }: Props) {
+  unstable_setRequestLocale(locale);
   const messages = await getMessages();
   return (
     <html lang={locale} suppressHydrationWarning>
