@@ -6,6 +6,7 @@ import {ThemeProvider} from 'next-themes'
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages, getTranslations, unstable_setRequestLocale} from 'next-intl/server';
 import {routing} from "@/i18n/routing";
+import { GoogleTagManager } from '@next/third-parties/google'
 
 type Props = {
   children: ReactNode;
@@ -80,6 +81,7 @@ export default async function AppLayout({
   const messages = await getMessages();
   return (
     <html lang={locale} suppressHydrationWarning>
+    {process.env?.NEXT_PUBLIC_GTM_ID && <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />}
     <body className={`${barlow.className}`}>
     <ThemeProvider attribute="class" defaultTheme="dark">
       <NextIntlClientProvider messages={messages}>
