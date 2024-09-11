@@ -47,6 +47,4 @@ jobs:
             --image gcr.io/${{ secrets.PROJECT_ID }}/${{ secrets.DOCKER_IMAGE_NAME_PROD }}:latest \
             --platform managed \
             --region us-central1 \
-            --allow-unauthenticated \
-            --set-env-vars "NEXT_PUBLIC_GTM_ID=${{ secrets.NEXT_PUBLIC_GTM_ID }}"
-          
+            --allow-unauthenticated
