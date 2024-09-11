@@ -30,6 +30,8 @@ export default function Home({params: {locale}}: Props)  {
             priority={true}
           />
           <div className='flex justify-center flex-col max-w-xl mx-4 md:mx-0 '>
+            <p>{process.env.NEXT_PUBLIC_ENV_PROD ? "prod" : "no prod"}</p>
+            <p>{process.env.NEXT_PUBLIC_ENV_PROD}</p>
             <p
               className={`${barlowCondensed.className} text-xl md:text-3xl font-bold text-txt-secondary dark:text-white`}>{t('greeting')}</p>
             <p
