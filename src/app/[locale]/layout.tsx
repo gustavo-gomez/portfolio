@@ -6,6 +6,7 @@ import {ThemeProvider} from 'next-themes'
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages, getTranslations, unstable_setRequestLocale} from 'next-intl/server';
 import {routing} from "@/i18n/routing";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 type Props = {
   children: ReactNode;
@@ -81,6 +82,7 @@ export default async function AppLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
     <body className={`${barlow.className}`}>
+    {process.env.NODE_ENV === 'production' && <GoogleAnalytics gaId="G-PRCLXC250T" />}
     <ThemeProvider attribute="class" defaultTheme="dark">
       <NextIntlClientProvider messages={messages}>
         <Header/>

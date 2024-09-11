@@ -1,15 +1,19 @@
 name: Deploy to Cloud Run PROD
 
 env:
-  SERVICE_NAME: portfolio-prod
+  SERVICE_NAME: portfolio
 
 on:
   push:
     branches:
-      - production
+      - prod
   pull_request:
     branches:
-      - production
+      - prod
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
 
 jobs:
   dockerize-and-deploy:
