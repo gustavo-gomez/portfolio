@@ -82,7 +82,7 @@ export default async function AppLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
     <body className={`${barlow.className}`}>
-    <GoogleAnalytics gaId="G-PRCLXC250T" />
+    {process.env.NODE_ENV === 'production' && <GoogleAnalytics gaId="G-PRCLXC250T" />}
     <ThemeProvider attribute="class" defaultTheme="dark">
       <NextIntlClientProvider messages={messages}>
         <Header/>
