@@ -6,15 +6,23 @@ const config: Config = {
       "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
       "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     ],
-    screens: {
-      xs: "480px",
-      sm: "640px",
-      md: "768px",
-      lg: "976px",
-      xl: "1440px",
-    },
+    // screens: {
+    //   xs: "480px",
+    //   sm: "640px",
+    //   md: "768px",
+    //   lg: "976px",
+    //   xl: "1440px",
+    // },
     darkMode: "class",
     theme: {
+      screens:{
+        xs: "480px",
+        sm: "640px",
+        md: "768px",
+        lg: "976px",
+        lg2: "1200px",
+        xl: "1440px",
+      },
       extend: {
         backgroundColor: {
           'bg-dark-opacity-90': 'rgba(28, 39, 69, 0.4)'
