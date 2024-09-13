@@ -24,13 +24,14 @@ const config: Config = {
           'gradient-180': 'linear-gradient(180deg, #4D4F95 0%, #2B2D66 100%)',
         },
         colors: {
-          "bg-principal-light": 'var(--bg-principal-light)',
-          "bg-secondary-light": 'var(--bg-secondary-light)',
+          "light-bg-principal": 'var(--light-bg-principal)',
+          "light-bg-secondary": 'var(--light-bg-secondary)',
           "bg-dark": 'var(--bg-dark)',
           "bg-dark2": 'var(--bg-dark2)',
 
+          "light-primary": 'var(--light-primary)',
+          "light-secondary": 'var(--light-secondary)',
           "primary-dark": 'var(--primary-dark)',
-          "primary-light": 'var(--primary-light)',
           "txt-secondary": 'var(--secondary)',
           "primary": 'var(--primary-color)',
           "icons-buttons": 'var(--icons-buttons)',
