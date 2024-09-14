@@ -102,9 +102,15 @@ const Header = () => {
   const handleScroll = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({behavior: 'smooth'});
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - (3.5 * 16); // 5rem in pixels
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
   }
+
   const onScroll = () => {
     const scrollPosition = window.scrollY;
     let currentSection = '';
@@ -125,7 +131,7 @@ const Header = () => {
 
   return (
     <header
-      className="w-full h-12 md:h-16 flex items-center sm:justify-center px-5 fixed top-0 z-10 bg-bg-principal-light dark:bg-bg-dark text-txt-secondary dark:text-white shadow-md">
+      className="w-full h-14 flex items-center sm:justify-center px-5 fixed top-0 z-10 bg-light-bg-principal dark:bg-bg-dark text-txt-secondary dark:text-white shadow-md">
       <div className="justify-between flex w-full sm:w-[90%] max-w-6xl">
         {process.env.NODE_ENV === 'production' && <GoogleAnalytics gaId="G-PRCLXC250T" />}
         <Logo/>
@@ -137,15 +143,15 @@ const Header = () => {
                 <span
                   key={index}
                   onClick={() => handleScroll(option.id)}
-                  className={`flex flex-col items-center text-base leading-5 text-center mr-0 md:mr-10 cursor-pointer ${activeSection === option.id ? 'text-primary-light dark:text-primary-dark font-bold' : 'text-gray-800 dark:text-white'}`}
+                  className={`flex flex-col items-center text-base leading-5 text-center mr-0 md:mr-10 cursor-pointer ${activeSection === option.id ? 'text-light-primary dark:text-primary-dark font-bold' : 'text-gray-800 dark:text-white'}`}
                 >
                   <span
-                    className={`md:hidden ${activeSection === option.id ? '[&>svg]:stroke-primary-light [&>svg]:dark:stroke-primary-dark font-bold' : '[&>svg]:stroke-gray-800 [&>svg]:dark:stroke-white'}`}
+                    className={`md:hidden ${activeSection === option.id ? '[&>svg]:stroke-light-primary [&>svg]:dark:stroke-primary-dark font-bold' : '[&>svg]:stroke-gray-800 [&>svg]:dark:stroke-white'}`}
                   >
                     {option?.icon}
                   </span>
                   <span
-                    className={`text-sm md:text-lg ${barlowCondensed.className} md:${kanit.className}`}>{option.name(t)}
+                    className={`text-sm md:text-lg hover:text-light-secondary ${barlowCondensed.className} md:${kanit.className}`}>{option.name(t)}
                   </span>
                 </span>
               ))
