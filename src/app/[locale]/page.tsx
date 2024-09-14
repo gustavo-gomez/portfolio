@@ -1,7 +1,6 @@
 import Image from "next/image";
 import {barlowCondensed} from "@/app/[locale]/fonts";
 import {AboutMe} from "@/app/_sections/AboutMe";
-import Icons from "@/app/components/Icons";
 import {Services} from "@/app/_sections/Services";
 import {Projects} from "@/app/_sections/Projects";
 import {useTranslations} from 'next-intl';
@@ -16,44 +15,34 @@ export default function Home({params: {locale}}: Props) {
   const t = useTranslations('home');
   return (
     <div className=" md:px-0 min-w-80">
-      <section id='home' className="bg-bg-principal-light dark:bg-bg-dark flex h-screen">
-        <div className="flex flex-col lg:flex-row w-full justify-center items-center gap-6 ">
-          <Image
-            src={'https://storage.googleapis.com/portafolio-assets/photo1.webp'}
-            alt={'profile-photo'}
-            // className='w-[200px] md:w-[300px] h-auto md:h-auto'
-            // className='w-auto h-auto'
-            // style={{ width: 'auto', height: 'auto' }}
-            width={300}
-            height={300}
-            // loading='eager'
-            priority={true}
-          />
-          <div className='flex justify-center flex-col max-w-xl mx-4 md:mx-0 '>
+      <section
+        id='home'
+        className="flex justify-center  bg-light-bg-principal dark:bg-bg-dark h-[calc(100vh-7rem)] min-h-[600px] lg2:min-h-[769px] max-h-[500px] sm:max-h-[700px] lg:max-h-[800px] xl:max-h-[800px]"
+      >
+        <div className="flex flex-col lg:flex-row w-full max-w-7xl relative h-full items-center md:items-baseline ">
+
+          <div className='flex flex-col sm:max-w-lg sm:absolute left-8 top-10 xs:left-10 xs:top-10 sm:top-10 sm:left-28 md:top-32 lg:top-48 lg2:top-56 mt-16 md:mt-0 px-14 sm:px-2.5 md:px-0'>
             <p
-              className={`${barlowCondensed.className} text-xl md:text-3xl font-bold text-txt-secondary dark:text-white`}>{t('greeting')}</p>
-            <p
-              className={`${barlowCondensed.className} text-3xl md:text-5xl font-bold text-primary-light dark:text-primary-dark `}>
+              className={`${barlowCondensed.className} text-4xl sm:text-5xl lg:text-6xl lg2:text-7xl font-medium text-light-primary dark:text-primary-dark`}>
               {t('title')}
             </p>
-            <p className='text-lg md:text-xl my-5'>
-              {/*<strong className='font-bold bg-gradient-270 bg-clip-text text-transparent'>*/}
-              {/*  {"Ingeniero de Software. "}*/}
-              {/*</strong>*/}
-              {t('description')}
-              <strong
-                className='text-primary-light dark:text-primary-dark font-bold opacity-90'>{" web y mobile"}</strong>
-            </p>
-            <Icons/>
+            <p className='text-lg md:text-xl my-5'>{t('description')}</p>
           </div>
+
+          <Image
+            src={'/pc.webp'}
+            alt={'home-image'}
+            className='absolute right-0 bottom-0 max-w-screen-md w-[390px] xs:w-[390px] sm:w-[470px] md:w-[490px] lg:w-[540px] lg2:w-[680px] h-auto text-base md:text-2xl'
+            width={600}
+            height={0}
+            priority={true}
+          />
         </div>
       </section>
 
       <AboutMe/>
       <Services/>
       <Projects/>
-
-
     </div>
   );
 }
