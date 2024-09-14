@@ -18,9 +18,8 @@ const config: Config = {
       },
       extend: {
         backgroundColor: {
-          'bg-dark-opacity-90': 'rgba(28, 39, 69, 0.4)'
+          'bg-dark-opacity-90': 'rgba(28, 39, 69, 0.4)',
         },
-
         colors: {
           "light-bg-principal": 'var(--light-bg-principal)',
           "light-bg-secondary": 'var(--light-bg-secondary)',
@@ -35,7 +34,6 @@ const config: Config = {
           "icons-buttons": 'var(--icons-buttons)',
 
           "gradient-title": 'var(--gradient-title)',
-
         },
       },
     },

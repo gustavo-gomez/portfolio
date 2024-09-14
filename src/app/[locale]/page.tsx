@@ -17,7 +17,7 @@ export default function Home({params: {locale}}: Props) {
     <div className=" md:px-0 min-w-80">
       <section
         id='home'
-        className="flex justify-center  bg-light-bg-principal dark:bg-bg-dark h-[calc(100vh-7rem)] min-h-[600px] lg2:min-h-[769px] max-h-[500px] sm:max-h-[700px] lg:max-h-[800px] xl:max-h-[800px]"
+        className="flex justify-center  bg-light-bg-principal dark:bg-bg-dark h-[calc(100vh-7rem)] min-h-[600px] xs:min-h-[570px] sm:min-h-[700px] lg:min-h-[790px] lg2:min-h-[850px] max-h-[500px] sm:max-h-[700px] lg:max-h-[800px] xl:max-h-[800px]"
       >
         <div className="flex flex-col lg:flex-row w-full max-w-7xl relative h-full items-center md:items-baseline ">
 
@@ -32,7 +32,7 @@ export default function Home({params: {locale}}: Props) {
           <Image
             src={'/pc.webp'}
             alt={'home-image'}
-            className='absolute right-0 bottom-0 max-w-screen-md w-[390px] xs:w-[390px] sm:w-[470px] md:w-[490px] lg:w-[540px] lg2:w-[680px] h-auto text-base md:text-2xl'
+            className='absolute right-0 bottom-0 max-w-screen-md w-[360px] xs:w-[390px] sm:w-[470px] md:w-[490px] lg:w-[540px] lg2:w-[680px] h-auto text-base md:text-2xl'
             width={600}
             height={0}
             priority={true}

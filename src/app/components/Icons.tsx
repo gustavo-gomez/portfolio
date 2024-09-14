@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Icons = () => {
   return (
-    <div className='flex gap-4 '>
+    <div className='w-full flex gap-4 mb-10 justify-center'>
 
       <svg width="35" height="35" viewBox="0 0 48 48" fill="none"
            onClick={() => window.open('https://www.linkedin.com/in/gustavo-gomezf/')}
