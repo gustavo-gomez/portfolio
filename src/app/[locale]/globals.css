@@ -29,18 +29,9 @@
   --gradient-dark-2: #d3d9d4;
 }
 
-/*.test {*/
-/*  color: #212a31; !*rgba(33, 42, 49, 100%) *!*/
-/*  color: #2e3944;*/
-/*  color: #124e66; !*rgba(18, 78, 102, 100%); *!*/
-/*  color: #748d92; !* rgba(116, 141, 146, 0.1) *!*/
-/*  color: #d3d9d4;*/
-/*}*/
-
 @layer components {
   .section {
-    @apply flex flex-col w-full min-h-[calc(100vh)] [&>div]:max-w-6xl items-center
-    /*@apply pt-20 max-w-6xl min-h-fit*/
+    @apply flex flex-col w-full min-h-[500px] [&>div]:max-w-7xl items-center pb-28
   }
 
   .gradient-title {

@@ -6,13 +6,6 @@ const config: Config = {
       "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
       "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     ],
-    // screens: {
-    //   xs: "480px",
-    //   sm: "640px",
-    //   md: "768px",
-    //   lg: "976px",
-    //   xl: "1440px",
-    // },
     darkMode: "class",
     theme: {
       screens:{
@@ -27,10 +20,7 @@ const config: Config = {
         backgroundColor: {
           'bg-dark-opacity-90': 'rgba(28, 39, 69, 0.4)'
         },
-        backgroundImage: {
-          'gradient-270': 'linear-gradient(270deg, #212a31 0%, #748d92 100%)',
-          'gradient-180': 'linear-gradient(180deg, #4D4F95 0%, #2B2D66 100%)',
-        },
+
         colors: {
           "light-bg-principal": 'var(--light-bg-principal)',
           "light-bg-secondary": 'var(--light-bg-secondary)',
