@@ -27,7 +27,6 @@ export const Services = () => {
 
   return (
     <section id='services' className="text-white section bg-light-bg-principal dark:bg-bg-dark">
-
       <Title title={t('title')}/>
       <div className='flex w-full gap-10 lg:gap-20 mt-14 sm:mt-24 lg2:mt-36 justify-center flex-col md:flex-row items-center'>
         {
