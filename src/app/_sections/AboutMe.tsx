@@ -25,7 +25,7 @@ export const AboutMe = () => {
           <div className='flex flex-1 items-end min-h-[230px] flex-col justify-end'>
             <Icons/>
             <p
-              className='text-white lg:text-light-secondary text-base lg:text-lg bg-light-secondary lg:bg-white py-8 px-8 lg:pl-16 lg:pr-20 rounded-none lg:rounded-l-3xl !leading-8'
+              className='text-light-primary lg:text-light-secondary text-base lg:text-lg bg-light-secondary lg:bg-white py-8 px-8 lg:pl-16 lg:pr-20 rounded-none lg:rounded-l-3xl !leading-8'
             >
               {t('description1')}
             </p>
@@ -46,9 +46,9 @@ export const AboutMe = () => {
           </div>
           <div className='flex flex-[1.8] items-start lg:h-[230px]'>
             <p
-              className='text-light-primary lg:text-white text-base lg:text-lg bg-white lg:bg-light-secondary py-8 lgpy-12 px-8 lg:pl-16 lg:pr-20 rounded-none lg:rounded-l-3xl !leading-8'
+              className='text-primary-dark lg:text-white text-base lg:text-lg bg-white lg:bg-light-secondary py-8 lgpy-12 px-8 lg:pl-16 lg:pr-20 rounded-none lg:rounded-l-3xl !leading-8'
             >
-              {t('description1')}
+              {t('description2')}
             </p>
           </div>
         </div>
