@@ -17,7 +17,9 @@
   "about": {
     "title": "About me",
     "description1": "Passionate about technology, and being able to transform ideas into software that provides a solution to a problem. I like challenges and consider myself a self-taught person who likes to learn and explore new things.",
-    "description2": "I am a Software Engineer, with more than 8 years of experience participating in the development of software solutions for various companies in different sectors"
+    "description2": "I am a Software Engineer, with more than 8 years of experience participating in the development of software solutions for various companies in different sectors",
+    "projects": "Projects",
+    "clients": "Clients"
   },
   "services": {
     "title": "Services"

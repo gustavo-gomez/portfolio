@@ -131,27 +131,27 @@ const Header = () => {
 
   return (
     <header
-      className="w-full h-14 flex items-center sm:justify-center px-5 fixed top-0 z-10 bg-light-bg-principal dark:bg-bg-dark text-txt-secondary dark:text-white shadow-md">
+      className="w-full h-14 flex items-center sm:justify-center px-5 fixed top-0 z-10 bg-light-bg-principal dark:bg-dark-bg-principal text-txt-secondary dark:text-white shadow-md">
       <div className="justify-between flex w-full sm:w-[90%] max-w-6xl">
         {process.env.NODE_ENV === 'production' && <GoogleAnalytics gaId="G-PRCLXC250T" />}
         <Logo/>
         <div className="flex">
           <nav
-            className="flex p-1 md:p-0 justify-around md:justify-between items-center bottom-0 fixed md:static left-[0%] w-full bg-bg-dark-opacity-90 md:bg-inherit md:bg-opacity-30 backdrop-blur-xl md:backdrop-blur-0 shadow-lg md:shadow-none shadow-[#212733]">
+            className="flex p-1 md:p-0 justify-around md:justify-between items-center bottom-0 fixed md:static left-[0%] w-full bg-dark-bg-principal opacity-90 shadow-lg md:shadow-none shadow-[#212733]">
             {
               navOptions.map((option, index) => (
                 <span
                   key={index}
                   onClick={() => handleScroll(option.id)}
-                  className={`flex flex-col items-center text-base leading-5 text-center mr-0 md:mr-10 cursor-pointer ${activeSection === option.id ? 'text-light-primary dark:text-primary-dark font-bold' : 'text-gray-800 dark:text-white'}`}
+                  className={`flex flex-col items-center text-base leading-5 text-center mr-0 md:mr-10 cursor-pointer ${activeSection === option.id ? 'text-light-primary font-bold' : 'text-white md:text-gray-800 md:dark:text-white'}`}
                 >
                   <span
-                    className={`md:hidden ${activeSection === option.id ? '[&>svg]:stroke-light-primary [&>svg]:dark:stroke-primary-dark font-bold' : '[&>svg]:stroke-gray-800 [&>svg]:dark:stroke-white'}`}
+                    className={`md:hidden ${activeSection === option.id ? '[&>svg]:stroke-light-primary font-bold' : ' [&>svg]:stroke-white'}`}
                   >
                     {option?.icon}
                   </span>
                   <span
-                    className={`text-sm md:text-lg hover:text-light-secondary ${barlowCondensed.className} md:${kanit.className}`}>{option.name(t)}
+                    className={`text-sm md:text-lg ${barlowCondensed.className} md:${kanit.className}`}>{option.name(t)}
                   </span>
                 </span>
               ))

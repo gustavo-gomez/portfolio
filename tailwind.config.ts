@@ -23,8 +23,8 @@ const config: Config = {
         colors: {
           "light-bg-principal": 'var(--light-bg-principal)',
           "light-bg-secondary": 'var(--light-bg-secondary)',
-          "bg-dark": 'var(--bg-dark)',
-          "bg-dark2": 'var(--bg-dark2)',
+          "dark-bg-principal": 'var(--dark-bg-principal)',
+          "dark-bg-secondary": 'var(--dark-bg-secondary)',
 
           "light-primary": 'var(--light-primary)',
           "light-secondary": 'var(--light-secondary)',

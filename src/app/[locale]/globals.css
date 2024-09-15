@@ -5,6 +5,8 @@
 :root {
   --light-bg-principal: #FFFCFC;
   --light-bg-secondary: #F0F1F2;
+  --dark-bg-principal: #012D3E;
+  --dark-bg-secondary: #124F66;
 
   --light-primary: #0BBF7D;
   --light-secondary: #124F66;
@@ -12,12 +14,7 @@
 
 
 
-
-  --bg-dark: rgba(33, 42, 49, 100%);
-  --bg-dark2: rgba(18, 78, 102, 60%);
-
   --primary-dark: rgba(18, 78, 102, 100%);
-  /*--primary-light: rgb(28, 122, 159);*/
   --secondary: rgb(18, 18, 19, 80%);
   --icons-buttons: rgba(116, 141, 146, 100%);
   --nav-background: rgb(40, 52, 77, 0.9);

@@ -6,8 +6,9 @@ import {barlowCondensed} from "@/app/[locale]/fonts";
 
 export const AboutMe = () => {
   const t = useTranslations('about');
+
   return (
-    <section id={'aboutMe'} className={'section bg-light-bg-secondary dark:bg-bg-dark2'}>
+    <section id={'aboutMe'} className={'section bg-light-bg-secondary dark:bg-dark-bg-secondary'}>
       <Title title={t('title')}/>
       <div className='flex flex-col'>
         <div className='flex'>  {/* Row 1 */}
@@ -16,8 +17,6 @@ export const AboutMe = () => {
               src={'https://storage.googleapis.com/portafolio-assets/profile_image.webp'}
               alt={'profile-photo'}
               className='flex w-[300px] lg:w-[320px] lg2:w-[350px] h-auto'
-              // className='w-auto h-auto'
-              // style={{ width: 'auto', height: 'auto' }}
               width={400}
               height={300}
               priority={true}
@@ -34,14 +33,15 @@ export const AboutMe = () => {
         </div>
 
         <div className='flex'>  {/* Row 2 */}
-          <div className={`${barlowCondensed.className} flex flex-[1.2] gap-6 text-light-secondary justify-center items-end`}>
+          <div
+            className={`${barlowCondensed.className} flex flex-[1.2] gap-6 text-light-secondary justify-center items-end`}>
             <div className='flex flex-col justify-center  w-36 h-32 number-box mb-10'>
               <span className='ml-5 font-bold text-6xl'>12+</span>
-              <span className='ml-5 text-lg'>Clientes</span>
+              <span className='ml-5 text-lg'>{t('clients')}</span>
             </div>
             <div className='flex flex-col justify-center  w-36 h-32 number-box'>
               <span className='ml-5 font-bold text-6xl'>6+</span>
-              <span className='ml-5 text-lg'>Proyectos</span>
+              <span className='ml-5 text-lg'>{t('projects')}</span>
             </div>
           </div>
           <div className='flex flex-[1.8] items-start min-h-[230px]'>
