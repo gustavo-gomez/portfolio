@@ -33,10 +33,12 @@ export default function Home({params: {locale}}: Props) {
             src={'/pc.webp'}
             alt={'home-image'}
             className='absolute right-0 bottom-0 max-w-screen-md w-[360px] xs:w-[390px] sm:w-[470px] md:w-[490px] lg:w-[540px] lg2:w-[680px] h-auto text-base md:text-2xl'
+            // className='absolute right-0 bottom-0 max-w-screen-md text-base md:text-2xl'
             width={600}
             height={0}
             priority={true}
             fetchPriority='high'
+            sizes='(max-width: 480px) 360px, (max-width: 640px) 390px, (max-width: 768px) 470px, (max-width: 976px) 490px, (max-width: 1200px) 540px, 680px'
           />
         </div>
       </section>
