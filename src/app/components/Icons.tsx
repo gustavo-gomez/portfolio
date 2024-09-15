@@ -1,11 +1,15 @@
 'use client'
+import {sendGAEvent} from '@next/third-parties/google'
 
 const Icons = () => {
   return (
     <div className='w-full flex gap-4 mb-10 justify-end lg:justify-center mr-8 lg:mr-0'>
 
       <svg width="35" height="35" viewBox="0 0 48 48" fill="none"
-           onClick={() => window.open('https://www.linkedin.com/in/gustavo-gomezf/')}
+           onClick={() => {
+             sendGAEvent('event', 'linkedin')
+             window.open('https://www.linkedin.com/in/gustavo-gomezf/')
+           }}
            className='cursor-pointer hover:scale-110'
            xmlns="http://www.w3.org/2000/svg">
         <circle cx="24" cy="24" r="24" className='fill-light-primary '/>
@@ -25,7 +29,11 @@ const Icons = () => {
         </defs>
       </svg>
 
-      <svg width="35" height="35" viewBox="0 0 48 48" onClick={() => window.open('https://github.com/gustavo-gomez')}
+      <svg width="35" height="35" viewBox="0 0 48 48"
+           onClick={() => {
+             sendGAEvent('event', 'github')
+             window.open('https://github.com/gustavo-gomez')
+           }}
            fill="none" className='cursor-pointer hover:scale-110' xmlns="http://www.w3.org/2000/svg">
         <g clipPath="url(#clip0_226_3756)">
           <path

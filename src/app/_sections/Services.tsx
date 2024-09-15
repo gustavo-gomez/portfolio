@@ -28,7 +28,7 @@ export const Services = () => {
   return (
     <section id='services' className="text-white section bg-light-bg-principal dark:bg-dark-bg-principal">
       <Title title={t('title')}/>
-      <div className='flex w-full gap-10 lg:gap-20 mt-14 sm:mt-24 lg2:mt-36 justify-center flex-col md:flex-row items-center'>
+      <div className='flex w-full gap-10 lg:gap-20 mt-14 md:mt-24 lg2:mt-36 justify-center flex-col md:flex-row items-center pb-16 md:pb-0'>
         {
           services.map(service => (
             <div

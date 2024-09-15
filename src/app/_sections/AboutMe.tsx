@@ -19,7 +19,7 @@ export const AboutMe = () => {
               className='flex w-[300px] lg:w-[320px] lg2:w-[350px] h-auto'
               width={400}
               height={300}
-              priority={true}
+              // priority={true}
             />
           </div>
           <div className='flex flex-1 items-end min-h-[230px] flex-col justify-end'>

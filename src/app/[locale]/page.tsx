@@ -36,6 +36,7 @@ export default function Home({params: {locale}}: Props) {
             width={600}
             height={0}
             priority={true}
+            fetchPriority='high'
           />
         </div>
       </section>
