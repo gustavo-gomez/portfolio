@@ -2,7 +2,7 @@
 
 const Icons = () => {
   return (
-    <div className='w-full flex gap-4 mb-10 justify-center'>
+    <div className='w-full flex gap-4 mb-10 justify-end lg:justify-center mr-8 lg:mr-0'>
 
       <svg width="35" height="35" viewBox="0 0 48 48" fill="none"
            onClick={() => window.open('https://www.linkedin.com/in/gustavo-gomezf/')}

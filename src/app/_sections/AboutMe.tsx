@@ -9,9 +9,9 @@ export const AboutMe = () => {
 
   return (
     <section id={'aboutMe'} className={'section bg-light-bg-secondary dark:bg-dark-bg-secondary'}>
-      <Title title={t('title')}/>
-      <div className='flex flex-col'>
-        <div className='flex'>  {/* Row 1 */}
+      <Title title={t('title')} changeStyle/>
+      <div className='flex flex-col pb-20'>
+        <div className='flex flex-col lg:flex-row'>  {/* Row 1 */}
           <div className='flex flex-1 items-center justify-center'>
             <Image
               src={'https://storage.googleapis.com/portafolio-assets/profile_image.webp'}
@@ -25,28 +25,28 @@ export const AboutMe = () => {
           <div className='flex flex-1 items-end min-h-[230px] flex-col justify-end'>
             <Icons/>
             <p
-              className='text-light-secondary text-base lg:text-lg bg-white py-8 pl-16 pr-20 rounded-l-3xl !leading-8'
+              className='text-white lg:text-light-secondary text-base lg:text-lg bg-light-secondary lg:bg-white py-8 px-8 lg:pl-16 lg:pr-20 rounded-none lg:rounded-l-3xl !leading-8'
             >
               {t('description1')}
             </p>
           </div>
         </div>
 
-        <div className='flex'>  {/* Row 2 */}
+        <div className='flex flex-col-reverse lg:flex-row gap-12 lg:gap-0'>  {/* Row 2 */}
           <div
-            className={`${barlowCondensed.className} flex flex-[1.2] gap-6 text-light-secondary justify-center items-end`}>
-            <div className='flex flex-col justify-center  w-36 h-32 number-box mb-10'>
-              <span className='ml-5 font-bold text-6xl'>12+</span>
+            className={`${barlowCondensed.className} flex flex-[1.2] gap-6 text-light-secondary dark:text-light-primary justify-center items-end`}>
+            <div className='flex flex-col justify-center w-36 h-32 number-box mb-0 lg:mb-10 shadow-xl'>
+              <span className='ml-5 font-bold text-6xl '>12+</span>
               <span className='ml-5 text-lg'>{t('clients')}</span>
             </div>
-            <div className='flex flex-col justify-center  w-36 h-32 number-box'>
+            <div className='flex flex-col justify-center w-36 h-32 number-box shadow-xl'>
               <span className='ml-5 font-bold text-6xl'>6+</span>
               <span className='ml-5 text-lg'>{t('projects')}</span>
             </div>
           </div>
-          <div className='flex flex-[1.8] items-start min-h-[230px]'>
+          <div className='flex flex-[1.8] items-start lg:h-[230px]'>
             <p
-              className='text-white text-base lg:text-lg bg-light-secondary py-16 pl-16 pr-20 rounded-l-3xl !leading-8'
+              className='text-light-primary lg:text-white text-base lg:text-lg bg-white lg:bg-light-secondary py-8 lgpy-12 px-8 lg:pl-16 lg:pr-20 rounded-none lg:rounded-l-3xl !leading-8'
             >
               {t('description1')}
             </p>

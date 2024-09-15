@@ -28,7 +28,7 @@
 
 @layer components {
   .section {
-    @apply flex flex-col w-full min-h-[500px] [&>div]:max-w-7xl items-center pb-28
+    @apply flex flex-col w-full min-h-[500px] [&>div]:max-w-7xl items-center
   }
 
   .gradient-title {
@@ -43,5 +43,9 @@
   border-radius: 12px;
   background-image: linear-gradient(var(--light-bg-secondary), var(--light-bg-secondary)),
   linear-gradient(to right,  var(--light-primary) 0%, var(--light-bg-secondary) 60%);
+}
 
+.dark .number-box{
+  background-image: linear-gradient(var(--dark-bg-secondary), var(--dark-bg-secondary)),
+  linear-gradient(to right,  var(--light-primary) 0%, var(--dark-bg-secondary) 60%);
 }

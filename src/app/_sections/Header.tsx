@@ -137,7 +137,7 @@ const Header = () => {
         <Logo/>
         <div className="flex">
           <nav
-            className="flex p-1 md:p-0 justify-around md:justify-between items-center bottom-0 fixed md:static left-[0%] w-full bg-dark-bg-principal opacity-90 shadow-lg md:shadow-none shadow-[#212733]">
+            className="flex p-1 md:p-0 justify-around md:justify-between items-center bottom-0 fixed md:static left-[0%] w-full bg-dark-bg-principal md:bg-inherit opacity-90 shadow-lg md:shadow-none shadow-[#212733]">
             {
               navOptions.map((option, index) => (
                 <span
