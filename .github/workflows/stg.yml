@@ -36,6 +36,11 @@ jobs:
         run: |
           gcloud auth configure-docker
 
+      - name: Create .env.stg file
+        run: |
+          echo "SERVICE_ENV=portfolio-stg" >> .env.stg
+          echo "NEXT_PUBLIC_SERVICE_ENV=portfolio-stg" >> .env.stg
+
       - name: Build and Push Docker Image
         run: |
           docker build --build-arg ENV_FILE=.env.stg -t gcr.io/${{ secrets.PROJECT_ID_STG }}/${{ secrets.DOCKER_IMAGE_NAME_STG }}:latest .
