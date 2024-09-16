@@ -37,6 +37,14 @@
     }
   },
   "projects": {
-    "title": "Proyectos"
+    "title": "Proyectos",
+    "agn": {
+      "title": "Sistema de Gestión y Monitoreo de Producción",
+      "description": "Solución completa para la gestión de trabajadores y producción. La app móvil permite escanear códigos QR, controlar horas y ubicaciones, con perfiles personalizados para supervisores, cocineros y guardias. La plataforma web ofrece a los administradores visualización en tiempo real de la producción diaria, con indicadores clave y la información generada por la app móvil, incluso sin conexión"
+    },
+    "lexsport": {
+      "title": "Sistema de Gestión de Personal y Producción",
+      "description": "Los supervisores pueden ingresar la producción diaria y registrar los horarios de inicio, pausas y finalización de los trabajadores para calcular automáticamente los pagos. Los administradores gestionan los perfiles de los trabajadores, los detalles de los productos y monitorean los pagos fácilmente en la plataforma."
+    }
   }
 }

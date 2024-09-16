@@ -56,22 +56,21 @@ export const Services = () => {
     <section id='services' className="text-white section bg-light-bg-principal dark:bg-dark-bg-principal">
       <Title title={t('title')}/>
       <div
-        className='flex w-full gap-10 lg:gap-20 mt-14 md:mt-24 lg2:mt-36 justify-center flex-col md:flex-row items-center pb-16 md:pb-0'>
+        className='flex w-full gap-10 lg:gap-20 mt-14 md:mt-24 justify-center flex-col md:flex-row items-center pb-16 md:pb-0'>
         {
           services.map(service => (
             <div
               key={service.id}
-              // className='flex flex-col bg-white dark:bg-dark-bg-principal shadow-stone-900 shadow-2xl items-center w-[270px] h-[257px] rounded-tr-[40px] rounded-br-[40px] rounded-bl-[40px]'
-              className='flex flex-col bg-white dark:bg-dark-bg-principal custom-shadow items-center w-[270px] h-[257px] rounded-tr-[40px] rounded-br-[40px] rounded-bl-[40px]'
+              className='flex flex-col bg-white dark:bg-dark-bg-principal custom-shadow-light dark:custom-shadow-dark items-center w-[270px] h-[257px] rounded-tr-[40px] rounded-br-[40px] rounded-bl-[40px]'
             >
               <div
-                // className='w-14 h-14 bg-light-primary self-start rounded-tr-[25px] rounded-br-[23px] rounded-bl-[28px]'
                 className='w-[90px] h-[85px] bg-light-primary self-start rounded-tr-[36px] rounded-br-[36px] rounded-bl-[36px] flex items-center justify-center'
               >
                 {service.icon}
               </div>
               <span className='text-2xl lg:text-3xl font-normal text-light-primary text-center'>{service.title}</span>
-              <p className='text-base lg:text-lg font-normal text-light-secondary dark:text-white mt-5 px-4'>{service.description}</p>
+              <p
+                className='text-base lg:text-lg font-normal text-light-secondary dark:text-white mt-5 px-4'>{service.description}</p>
             </div>
           ))
         }

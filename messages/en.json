@@ -37,6 +37,14 @@
     }
   },
   "projects": {
-    "title": "Projects"
+    "title": "Projects",
+    "agn": {
+      "title": "Production Management and Monitoring System",
+      "description": "Comprehensive solution for managing workers and production. The mobile app allows scanning QR codes, tracking hours and locations, with customized profiles for supervisors, cooks, and security guards. The web platform provides administrators with real-time production tracking, key performance indicators, and data generated from the mobile app, even without an internet connection."
+    },
+    "lexsport": {
+      "title": "Employment and Production Management System",
+      "description": "Supervisors can input daily production and track workers' schedules, including start, break, and end times, for automatic payment calculation. Admins manage worker profiles, product details, and easily monitor payments within the platform.."
+    }
   }
 }

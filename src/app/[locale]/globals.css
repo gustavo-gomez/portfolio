@@ -35,8 +35,11 @@
     @apply bg-clip-text text-transparent bg-gradient-to-l from-[--gradient-light-1] to-[--gradient-light-2] dark:from-[--gradient-dark-1] dark:to-[--gradient-dark-2]
   }
 
-  .custom-shadow {
+  .custom-shadow-dark {
     box-shadow: 0 0 34px 39px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)
+  }
+  .custom-shadow-light{
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)
   }
 }
 
