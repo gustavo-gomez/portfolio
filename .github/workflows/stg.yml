@@ -38,8 +38,7 @@ jobs:
 
       - name: Create .env.stg file
         run: |
-          echo "SERVICE_ENV=portfolio-stg" >> .env.stg
-          echo "NEXT_PUBLIC_SERVICE_ENV=portfolio-stg" >> .env.stg
+          echo "SERVICE_ENV=STG" >> .env.stg
 
       - name: Build and Push Docker Image
         run: |

@@ -41,16 +41,6 @@ export default function Home({params: {locale}}: Props) {
           />
         </div>
       </section>
-      {
-        process
-        .env?.NEXT_PUBLIC_SERVICE_ENV === 'portfolio-stg' &&
-          <div>NEXT_PUBLIC_SERVICE_ENV</div>
-      }
-      {
-        process
-        .env?.SERVICE_ENV === 'portfolio-stg' &&
-          <div>SERVICE_ENV</div>
-      }
   <AboutMe/>
   <Services/>
   <Projects/>
