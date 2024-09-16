@@ -3,6 +3,7 @@ import {useTranslations} from 'next-intl';
 import Image from "next/image";
 import Icons from "@/app/components/Icons";
 import {barlowCondensed} from "@/app/[locale]/fonts";
+import React from "react";
 
 export const AboutMe = () => {
   const t = useTranslations('about');

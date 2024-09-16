@@ -6,6 +6,7 @@ import {Projects} from "@/app/_sections/Projects";
 import {useTranslations} from 'next-intl';
 import {unstable_setRequestLocale} from "next-intl/server";
 import pcImage from "/public/pc.webp";
+import React from "react";
 
 type Props = {
   params: { locale: string };
@@ -22,7 +23,8 @@ export default function Home({params: {locale}}: Props) {
       >
         <div className="flex flex-col lg:flex-row w-full max-w-7xl relative h-full items-center md:items-baseline ">
 
-          <div className='flex flex-col sm:max-w-lg sm:absolute left-8 top-10 xs:left-10 xs:top-10 sm:top-10 sm:left-28 md:top-32 lg:top-48 lg2:top-56 mt-16 md:mt-0 px-14 sm:px-2.5 md:px-0'>
+          <div
+            className='flex flex-col sm:max-w-lg sm:absolute left-8 top-10 xs:left-10 xs:top-10 sm:top-10 sm:left-28 md:top-32 lg:top-48 lg2:top-56 mt-16 md:mt-0 px-14 sm:px-2.5 md:px-0'>
             <p
               className={`${barlowCondensed.className} text-4xl sm:text-5xl lg:text-6xl lg2:text-7xl font-medium text-light-primary`}>
               {t('title')}
@@ -39,7 +41,6 @@ export default function Home({params: {locale}}: Props) {
           />
         </div>
       </section>
-
       <AboutMe/>
       <Services/>
       <Projects/>

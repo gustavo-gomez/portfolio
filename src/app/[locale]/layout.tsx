@@ -6,6 +6,7 @@ import {ThemeProvider} from 'next-themes'
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages, getTranslations, unstable_setRequestLocale} from 'next-intl/server';
 import {routing} from "@/i18n/routing";
+import {GoogleAnalytics} from "@next/third-parties/google";
 
 type Props = {
   children: ReactNode;
@@ -16,56 +17,61 @@ export async function generateMetadata({
                                          params: {locale}
                                        }: Omit<Props, 'children'>) {
   const t = await getTranslations({locale, namespace: 'metadata'});
-
-  return {
-    title: t('title'),
-    description: t('description'),
-    keywords: ["software engineer", "web development", "mobile development", 'programacion', 'ingeniero de software', 'desarrollo web', 'desarrollo mobile'],
-    openGraph: {
+  if (process.env?.SERVICE_ENV !== 'PROD') {
+    return {
       title: t('title'),
-      description: t('OPdescription'),
-      images: [
+      description: t('description'),
+    }
+  } else
+    return {
+      title: t('title'),
+      description: t('description'),
+      keywords: t('keywords'),
+      openGraph: {
+        title: t('title'),
+        description: t('OPdescription'),
+        images: [
+          {
+            url: 'https://storage.googleapis.com/portafolio-assets/og-image.png',
+          }
+        ],
+        url: 'https://gustavogomez.dev/'
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: t('title'),
+        description: t('OPdescription'),
+        images: [
+          {
+            url: 'https://storage.googleapis.com/portafolio-assets/og-image.png',
+          },
+        ],
+      },
+      applicationName: 'Gustavo Gomez Portfolio',
+      robots: 'index, follow',
+      icons: [
         {
-          url: 'https://storage.googleapis.com/portafolio-assets/og-image.png',
+          url: '/favicon.ico',
+          sizes: '32x32',
+          type: 'icon',
+        },
+        {
+          url: '/logo192.png',
+          sizes: '192x192',
+          type: 'icon',
+        },
+        {
+          url: '/logo512.png',
+          sizes: '512x512',
+          type: 'icon',
+        },
+        {
+          url: '/apple-touch-icon.png',
+          sizes: '180x180',
+          type: 'apple-touch-icon',
         }
       ],
-      url: 'https://stg.gustavogomez.dev/'
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: t('title'),
-      description: t('OPdescription'),
-      images: [
-        {
-          url: 'https://storage.googleapis.com/portafolio-assets/og-image.png',
-        },
-      ],
-    },
-    applicationName: 'Gustavo Gomez Portfolio',
-    robots: 'index, follow',
-    icons: [
-      {
-        url: '/favicon.ico',
-        sizes: '32x32',
-        type: 'icon',
-      },
-      {
-        url: '/logo192.png',
-        sizes: '192x192',
-        type: 'icon',
-      },
-      {
-        url: '/logo512.png',
-        sizes: '512x512',
-        type: 'icon',
-      },
-      {
-        url: '/apple-touch-icon.png',
-        sizes: '180x180',
-        type: 'apple-touch-icon',
-      }
-    ],
-  };
+    };
 }
 
 export function generateStaticParams() {
@@ -84,6 +90,8 @@ export default async function AppLayout({
     <ThemeProvider attribute="class" defaultTheme="dark">
       <NextIntlClientProvider messages={messages}>
         <Header/>
+        {process.env?.SERVICE_ENV === 'PROD' && process.env.NODE_ENV === 'production' &&
+          <GoogleAnalytics gaId="G-PRCLXC250T"/>}
         {children}
       </NextIntlClientProvider>
     </ThemeProvider>
