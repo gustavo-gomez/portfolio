@@ -1,10 +1,12 @@
 'use client'
 import {sendGAEvent} from '@next/third-parties/google'
+import {useTranslations} from "next-intl";
 
 const Icons = () => {
+  const t = useTranslations('about');
   return (
-    <div className='w-full flex gap-4 mb-10 justify-end lg:justify-center mr-8 lg:mr-0'>
-
+    <div className='w-full flex gap-4 mb-4 lg:mb-10 lg:justify-center pl-6 lg:pl-0 lg:mr-0 items-center'>
+      {t('moreAboutMe')}
       <svg width="35" height="35" viewBox="0 0 48 48" fill="none"
            onClick={() => {
              sendGAEvent('event', 'linkedin')

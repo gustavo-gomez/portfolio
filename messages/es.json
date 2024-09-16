@@ -19,7 +19,8 @@
     "description1": "Hola soy Gustavo. Ingeniero de Software con más de 10 años de experiencia creando soluciones para empresas de distintos sectores, adaptando cada proyecto a sus necesidades y ofreciendo resultados claros y efectivos.",
     "description2": "Me especializo en transformar ideas en soluciones tecnológicas. Ofrezco desarrollo de software con atención al detalle, innovación y un compromiso total en cumplir con los objetivos del proyecto.",
     "projects": "Proyectos",
-    "clients": "Clientes"
+    "clients": "Clientes",
+    "moreAboutMe": "Conoce más sobre mi experiencia:"
   },
   "services": {
     "title": "Servicios",
@@ -38,6 +39,7 @@
   },
   "projects": {
     "title": "Proyectos",
+    "subTitle": "Algunos de los proyectos freelance en los que he trabajado:",
     "agn": {
       "title": "Sistema de Gestión y Monitoreo de Producción",
       "description": "Solución completa para la gestión de trabajadores y producción. La app móvil permite escanear códigos QR, controlar horas y ubicaciones, con perfiles personalizados para supervisores, cocineros y guardias. La plataforma web ofrece a los administradores visualización en tiempo real de la producción diaria, con indicadores clave y la información generada por la app móvil, incluso sin conexión"

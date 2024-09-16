@@ -24,14 +24,21 @@ export const Projects = () => {
   return (
     <section id='projects' className="text-white section bg-light-bg-secondary dark:bg-dark-bg-secondary">
       <Title title={t('title')} changeStyle/>
+      <p className='text-light-secondary text-lg dark:text-white w-full pl-4 sm:pl-16 mt-10'>{t('subTitle')}</p>
       <div
-        className='flex flex-col flex-wrap lg:flex-row  gap-12 mt-14 mb-20 mx-7 justify-center items-center lg:items-baseline '>
+        className='flex flex-col flex-wrap lg:flex-row gap-12 mt-5 mb-20 mx-7 justify-center items-center lg:items-baseline'>
         {
           projects.map(project => (
             <div key={project.id}
                  className='flex flex-col w-full lg:basis-1/2 rounded-2xl shadow-2xl dark:bg-white max-w-[500px] lg:max-w-[550px] '>
               <div className='w-full h-96 relative'>
-                <Image src={project.image} alt={project.id} className='w-full h-auto' fill objectFit='cover'/>
+                <Image
+                  src={project.image}
+                  alt={project.id}
+                  className='w-full h-auto'
+                  fill style={{objectFit: 'cover'}}
+                  sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                />
               </div>
               <div className='flex flex-col px-5 mb-5'>
                 <h3

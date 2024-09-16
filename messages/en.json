@@ -19,7 +19,8 @@
     "description1": "Hello I'm Gustavo. Software Engineer with over 10 years of experience creating solutions for companies from different sectors, adapting each project to their needs and offering clear and effective results.",
     "description2": "I specialize in transforming ideas into technological solutions. I offer software development with attention to detail, innovation and total commitment to meeting project objectives.",
     "projects": "Projects",
-    "clients": "Clients"
+    "clients": "Clients",
+    "moreAboutMe": "Learn more about my experience:"
   },
   "services": {
     "title": "Services",
@@ -38,6 +39,7 @@
   },
   "projects": {
     "title": "Projects",
+    "subTitle": "Some of the freelance projects I've worked on:",
     "agn": {
       "title": "Production Management and Monitoring System",
       "description": "Comprehensive solution for managing workers and production. The mobile app allows scanning QR codes, tracking hours and locations, with customized profiles for supervisors, cooks, and security guards. The web platform provides administrators with real-time production tracking, key performance indicators, and data generated from the mobile app, even without an internet connection."

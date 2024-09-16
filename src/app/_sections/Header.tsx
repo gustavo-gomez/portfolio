@@ -129,11 +129,12 @@ const Header = () => {
   }
   if (!mounted) return null;
 
+  const icon = theme === 'dark' ? sunSVG : moonSVG;
   return (
     <header
       className="w-full h-14 flex items-center sm:justify-center px-5 fixed top-0 z-10 bg-light-bg-principal dark:bg-dark-bg-principal text-txt-secondary dark:text-white shadow-md">
       <div className="justify-between flex w-full sm:w-[90%] max-w-6xl">
-        {process.env.NODE_ENV === 'production' && <GoogleAnalytics gaId="G-PRCLXC250T" />}
+        {process.env.NODE_ENV === 'production' && <GoogleAnalytics gaId="G-PRCLXC250T"/>}
         <Logo/>
         <div className="flex">
           <nav
@@ -159,11 +160,11 @@ const Header = () => {
           </nav>
           <div className='flex cursor-pointer'>
             {
-              theme === 'dark' ?
-                <Image src={sunSVG} alt={'sun'} width={25} className='mx-1 '
-                       onClick={() => setTheme('light')}/>
-                : <Image src={moonSVG} alt={'moon'} width={25} className='mx-1'
-                         onClick={() => setTheme('dark')}/>
+              <Image
+                src={icon}
+                alt={'theme-icon'}
+                className='mx-1 w-[25px] h-auto'
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} loading='eager'/>
             }
           </div>
         </div>
