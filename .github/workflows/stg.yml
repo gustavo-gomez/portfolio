@@ -21,7 +21,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Google Cloud Auth
         uses: 'google-github-actions/auth@v2'
@@ -36,9 +36,13 @@ jobs:
         run: |
           gcloud auth configure-docker
 
+      - name: Create .env.stg file
+        run: |
+          echo "SERVICE_ENV=STG" >> .env.stg
+
       - name: Build and Push Docker Image
         run: |
-          docker build -t gcr.io/${{ secrets.PROJECT_ID_STG }}/${{ secrets.DOCKER_IMAGE_NAME_STG }}:latest .
+          docker build --build-arg ENV_FILE=.env.stg -t gcr.io/${{ secrets.PROJECT_ID_STG }}/${{ secrets.DOCKER_IMAGE_NAME_STG }}:latest .
           docker push gcr.io/${{ secrets.PROJECT_ID_STG }}/${{ secrets.DOCKER_IMAGE_NAME_STG }}:latest
 
       - name: Deploy to Cloud Run
@@ -47,4 +51,4 @@ jobs:
             --image gcr.io/${{ secrets.PROJECT_ID_STG }}/${{ secrets.DOCKER_IMAGE_NAME_STG }}:latest \
             --platform managed \
             --region us-central1 \
-            --allow-unauthenticated
+            --allow-unauthenticated 
