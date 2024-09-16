@@ -41,11 +41,20 @@ export default function Home({params: {locale}}: Props) {
           />
         </div>
       </section>
-      <div className='block z-40'>process.env.NEXT_PUBLIC_ENVIRONMENT: {process.env?.NEXT_PUBLIC_ENVIRONMENT}</div>
-      <div className='block z-40'>process.env.ENVIRONMENT: {process.env?.ENVIRONMENT}</div>
-      <AboutMe/>
-      <Services/>
-      <Projects/>
-    </div>
-  );
+      {
+        process
+        .env?.NEXT_PUBLIC_ENVIRONMENT === 'STG' &&
+          <div>NEXT_PUBLIC_ENVIRONMENT</div>
+      }
+      {
+        process
+        .env?.ENVIRONMENT === 'STG' &&
+          <div>ENVIRONMENT</div>
+      }
+  <AboutMe/>
+  <Services/>
+  <Projects/>
+</div>
+)
+  ;
 }
