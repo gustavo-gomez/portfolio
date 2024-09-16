@@ -7,7 +7,6 @@ import {useTheme} from "next-themes";
 import React, {useEffect, useState} from "react";
 import {barlowCondensed, kanit} from "@/app/[locale]/fonts";
 import {useTranslations} from 'next-intl';
-import {GoogleAnalytics} from "@next/third-parties/google";
 
 const navOptions = [
   {
@@ -134,7 +133,6 @@ const Header = () => {
     <header
       className="w-full h-14 flex items-center sm:justify-center px-5 fixed top-0 z-10 bg-light-bg-principal dark:bg-dark-bg-principal text-txt-secondary dark:text-white shadow-md">
       <div className="justify-between flex w-full sm:w-[90%] max-w-6xl">
-        {process.env.NODE_ENV === 'production' && <GoogleAnalytics gaId="G-PRCLXC250T"/>}
         <Logo/>
         <div className="flex">
           <nav
