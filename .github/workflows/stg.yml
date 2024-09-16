@@ -47,5 +47,5 @@ jobs:
             --image gcr.io/${{ secrets.PROJECT_ID_STG }}/${{ secrets.DOCKER_IMAGE_NAME_STG }}:latest \
             --platform managed \
             --region us-central1 \
-            --allow-unauthenticated
+            --allow-unauthenticated \
             --set-env-vars ENVIRONMENT=STG
