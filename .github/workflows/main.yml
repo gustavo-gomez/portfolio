@@ -52,7 +52,6 @@ jobs:
             --platform managed \
             --region us-central1 \
             --allow-unauthenticated \
-            --execution-environment gen2 \
-            --memory 1Gi \
-            --cpu 1 \
+            --memory 2Gi \
+            --cpu 4 \
             --max-instances 10
