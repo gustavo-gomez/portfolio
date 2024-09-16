@@ -41,10 +41,9 @@ export default function Home({params: {locale}}: Props) {
           />
         </div>
       </section>
-  <AboutMe/>
-  <Services/>
-  <Projects/>
-</div>
-)
-  ;
+      <AboutMe/>
+      <Services/>
+      <Projects/>
+    </div>
+  );
 }

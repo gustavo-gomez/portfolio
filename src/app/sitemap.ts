@@ -2,7 +2,7 @@ import type {MetadataRoute} from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap | null {
   if (process.env?.SERVICE_ENV !== 'PROD') {
-    return null;
+    return [];
   }
 
   return [
