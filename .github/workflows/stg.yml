@@ -38,7 +38,7 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
-          docker build -t gcr.io/${{ secrets.PROJECT_ID_STG }}/${{ secrets.DOCKER_IMAGE_NAME_STG }}:latest .
+          docker build --build-arg ENV_FILE=.env.stg -t gcr.io/${{ secrets.PROJECT_ID_STG }}/${{ secrets.DOCKER_IMAGE_NAME_STG }}:latest .
           docker push gcr.io/${{ secrets.PROJECT_ID_STG }}/${{ secrets.DOCKER_IMAGE_NAME_STG }}:latest
 
       - name: Deploy to Cloud Run
@@ -47,5 +47,4 @@ jobs:
             --image gcr.io/${{ secrets.PROJECT_ID_STG }}/${{ secrets.DOCKER_IMAGE_NAME_STG }}:latest \
             --platform managed \
             --region us-central1 \
-            --allow-unauthenticated \
-            --set-env-vars ENVIRONMENT=STG
+            --allow-unauthenticated 

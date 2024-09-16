@@ -3,6 +3,7 @@ import {useTranslations} from 'next-intl';
 import Image from "next/image";
 import Icons from "@/app/components/Icons";
 import {barlowCondensed} from "@/app/[locale]/fonts";
+import React from "react";
 
 export const AboutMe = () => {
   const t = useTranslations('about');
@@ -10,6 +11,16 @@ export const AboutMe = () => {
   return (
     <section id={'aboutMe'} className={'section bg-light-bg-secondary dark:bg-dark-bg-secondary'}>
       <Title title={t('title')} changeStyle/>
+      {
+        process
+          .env?.NEXT_PUBLIC_SERVICE_ENV === 'portfolio-stg' &&
+        <div>NEXT_PUBLIC_SERVICE_ENV</div>
+      }
+      {
+        process
+          .env?.SERVICE_ENV === 'portfolio-stg' &&
+        <div>SERVICE_ENV</div>
+      }
       <div className='flex flex-col pb-20'>
         <div className='flex flex-col lg:flex-row'>  {/* Row 1 */}
           <div className='flex flex-1 items-center justify-center'>

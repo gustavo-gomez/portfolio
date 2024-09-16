@@ -13,6 +13,9 @@ RUN npm install
 # Copy the app's source code to the container
 COPY . .
 
+ARG ENV_FILE
+COPY ${ENV_FILE} .env
+
 # Build the Next app
 RUN npm run build
 
