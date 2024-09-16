@@ -43,13 +43,13 @@ export default function Home({params: {locale}}: Props) {
       </section>
       {
         process
-        .env?.NEXT_PUBLIC_ENVIRONMENT === 'STG' &&
-          <div>NEXT_PUBLIC_ENVIRONMENT</div>
+        .env?.NEXT_PUBLIC_SERVICE_NAME === 'portfolio-stg' &&
+          <div>NEXT_PUBLIC_SERVICE_NAME</div>
       }
       {
         process
-        .env?.ENVIRONMENT === 'STG' &&
-          <div>ENVIRONMENT</div>
+        .env?.SERVICE_NAME === 'portfolio-stg' &&
+          <div>SERVICE_NAME</div>
       }
   <AboutMe/>
   <Services/>
