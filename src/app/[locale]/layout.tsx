@@ -84,6 +84,7 @@ export default async function AppLayout({
     <ThemeProvider attribute="class" defaultTheme="dark">
       <NextIntlClientProvider messages={messages}>
         <Header/>
+
         {children}
       </NextIntlClientProvider>
     </ThemeProvider>

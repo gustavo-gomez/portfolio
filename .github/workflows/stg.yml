@@ -48,3 +48,4 @@ jobs:
             --platform managed \
             --region us-central1 \
             --allow-unauthenticated
+            --set-env-vars ENVIRONMENT=STG
