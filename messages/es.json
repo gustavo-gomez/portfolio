@@ -11,19 +11,42 @@
     "projects": "Proyectos"
   },
   "home": {
-    "greeting": "Hey, soy Gustavo",
-    "title": "Ingeniero de Software",
-    "description": "+10 años de experiencia en el desarrollo de software, especializado en el desarrollo"
+    "title": "Hagamos tu proyecto realidad",
+    "description": "¿Tienes una idea? La hago realidad con soluciones personalizadas en desarrollo web y móvil, creando tecnología eficiente y adaptada a tus necesidades"
   },
   "about": {
     "title": "Sobre mí",
-    "description1": "Apasionado por la tecnología, y poder transformar ideas en software que brinde solución a un problema. Me gustan los retos y me considero una persona autodidacta que le gusta aprender y explorar nuevas cosas.",
-    "description2": "Soy Ingeniero de Software, con más de 8 años de experiencia participando en el desarrollo de soluciones de software para diversas empresas en diferentes rubros"
+    "description1": "Hola soy Gustavo. Ingeniero de Software con más de 10 años de experiencia creando soluciones para empresas de distintos sectores, adaptando cada proyecto a sus necesidades y ofreciendo resultados claros y efectivos.",
+    "description2": "Me especializo en transformar ideas en soluciones tecnológicas. Ofrezco desarrollo de software con atención al detalle, innovación y un compromiso total en cumplir con los objetivos del proyecto.",
+    "projects": "Proyectos",
+    "clients": "Clientes",
+    "moreAboutMe": "Conoce más sobre mi experiencia:"
   },
   "services": {
-    "title": "Servicios"
+    "title": "Servicios",
+    "consulting": {
+      "title": "Consultoría",
+      "description": "Asesoría experta para llevar tu proyecto al éxito."
+    },
+    "web": {
+      "title": "Desarrollo Web",
+      "description": "Creación de sitios web funcionales y adaptados a tus necesidades."
+    },
+    "mobile": {
+      "title": "App Móviles",
+      "description": "Apps móviles personalizadas, diseñadas para cualquier plataforma."
+    }
   },
   "projects": {
-    "title": "Proyectos"
+    "title": "Proyectos",
+    "subTitle": "Algunos de los proyectos freelance en los que he trabajado:",
+    "agn": {
+      "title": "Sistema de Gestión y Monitoreo de Producción",
+      "description": "Solución completa para la gestión de trabajadores y producción. La app móvil permite escanear códigos QR, controlar horas y ubicaciones, con perfiles personalizados para supervisores, cocineros y guardias. La plataforma web ofrece a los administradores visualización en tiempo real de la producción diaria, con indicadores clave y la información generada por la app móvil, incluso sin conexión"
+    },
+    "lexsport": {
+      "title": "Sistema de Gestión de Personal y Producción",
+      "description": "Los supervisores pueden ingresar la producción diaria y registrar los horarios de inicio, pausas y finalización de los trabajadores para calcular automáticamente los pagos. Los administradores gestionan los perfiles de los trabajadores, los detalles de los productos y monitorean los pagos fácilmente en la plataforma."
+    }
   }
 }

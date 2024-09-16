@@ -3,16 +3,18 @@
 @tailwind utilities;
 
 :root {
-  /*best*/
-  --bg-principal-light: #e7ebef;
-  --bg-secondary-light: rgba(116, 141, 146, 100%);
-  --bg-dark: rgba(33, 42, 49, 100%);
-  --bg-dark2: rgba(18, 78, 102, 60%);
+  --light-bg-principal: #FFFCFC;
+  --light-bg-secondary: #F0F1F2;
+  --dark-bg-principal: #012D3E;
+  --dark-bg-secondary: #124F66;
+
+  --light-primary: #0BBF7D;
+  --light-secondary: #124F66;
+
+
+
 
   --primary-dark: rgba(18, 78, 102, 100%);
-  --primary-light: rgb(28, 122, 159);
-  /*--primary-dark: rgb(28, 122, 159);*/
-  /*--primary-light: rgba(18, 78, 102, 100%);*/
   --secondary: rgb(18, 18, 19, 80%);
   --icons-buttons: rgba(116, 141, 146, 100%);
   --nav-background: rgb(40, 52, 77, 0.9);
@@ -24,22 +26,33 @@
   --gradient-dark-2: #d3d9d4;
 }
 
-/*.test {*/
-/*  color: #212a31; !*rgba(33, 42, 49, 100%) *!*/
-/*  color: #2e3944;*/
-/*  color: #124e66; !*rgba(18, 78, 102, 100%); *!*/
-/*  color: #748d92; !* rgba(116, 141, 146, 0.1) *!*/
-/*  color: #d3d9d4;*/
-/*}*/
-
 @layer components {
   .section {
-    @apply flex flex-col pt-20 w-full min-h-[calc(100vh)] [&>div]:max-w-6xl items-center
-    /*@apply pt-20 max-w-6xl min-h-fit*/
+    @apply flex flex-col w-full min-h-[500px] [&>div]:max-w-7xl items-center
   }
 
   .gradient-title {
     @apply bg-clip-text text-transparent bg-gradient-to-l from-[--gradient-light-1] to-[--gradient-light-2] dark:from-[--gradient-dark-1] dark:to-[--gradient-dark-2]
   }
+
+  .custom-shadow-dark {
+    box-shadow: 0 0 34px 39px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)
+  }
+  .custom-shadow-light{
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)
+  }
 }
 
+.number-box{
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  border: double 0.2em transparent;
+  border-radius: 12px;
+  background-image: linear-gradient(var(--light-bg-secondary), var(--light-bg-secondary)),
+  linear-gradient(to right,  var(--light-primary) 0%, var(--light-bg-secondary) 60%);
+}
+
+.dark .number-box{
+  background-image: linear-gradient(var(--dark-bg-secondary), var(--dark-bg-secondary)),
+  linear-gradient(to right,  var(--light-primary) 0%, var(--dark-bg-secondary) 60%);
+}

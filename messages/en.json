@@ -11,19 +11,42 @@
     "projects": "Projects"
   },
   "home": {
-    "greeting": "Hello, I'm Gustavo",
-    "title": "Software Engineer",
-    "description": "+10 years of experience in software development, specialized in development"
+    "title": "Let's make your project a reality",
+    "description": "Do you have an idea? I make it a reality with custom solutions in web and mobile development, creating efficient technology adapted to your needs"
   },
   "about": {
     "title": "About me",
-    "description1": "Passionate about technology, and being able to transform ideas into software that provides a solution to a problem. I like challenges and consider myself a self-taught person who likes to learn and explore new things.",
-    "description2": "I am a Software Engineer, with more than 8 years of experience participating in the development of software solutions for various companies in different sectors"
+    "description1": "Hello I'm Gustavo. Software Engineer with over 10 years of experience creating solutions for companies from different sectors, adapting each project to their needs and offering clear and effective results.",
+    "description2": "I specialize in transforming ideas into technological solutions. I offer software development with attention to detail, innovation and total commitment to meeting project objectives.",
+    "projects": "Projects",
+    "clients": "Clients",
+    "moreAboutMe": "Learn more about my experience:"
   },
   "services": {
-    "title": "Services"
+    "title": "Services",
+    "consulting": {
+      "title": "Consulting",
+      "description": "Expert advice to make your project a success."
+    },
+    "web": {
+      "title": "Web Development",
+      "description": "Creation of functional websites adapted to your needs."
+    },
+    "mobile": {
+      "title": "Mobile Apps",
+      "description": "Custom mobile apps, designed for any platform."
+    }
   },
   "projects": {
-    "title": "Projects"
+    "title": "Projects",
+    "subTitle": "Some of the freelance projects I've worked on:",
+    "agn": {
+      "title": "Production Management and Monitoring System",
+      "description": "Comprehensive solution for managing workers and production. The mobile app allows scanning QR codes, tracking hours and locations, with customized profiles for supervisors, cooks, and security guards. The web platform provides administrators with real-time production tracking, key performance indicators, and data generated from the mobile app, even without an internet connection."
+    },
+    "lexsport": {
+      "title": "Employment and Production Management System",
+      "description": "Supervisors can input daily production and track workers' schedules, including start, break, and end times, for automatic payment calculation. Admins manage worker profiles, product details, and easily monitor payments within the platform.."
+    }
   }
 }

@@ -4,7 +4,7 @@ import Image from "next/image";
 import sunSVG from "@/app/assets/sun.svg";
 import moonSVG from "@/app/assets/moon.svg";
 import {useTheme} from "next-themes";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {barlowCondensed, kanit} from "@/app/[locale]/fonts";
 import {useTranslations} from 'next-intl';
 
@@ -101,9 +101,15 @@ const Header = () => {
   const handleScroll = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({behavior: 'smooth'});
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - (3.5 * 16); // 5rem in pixels
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
   }
+
   const onScroll = () => {
     const scrollPosition = window.scrollY;
     let currentSection = '';
@@ -122,23 +128,24 @@ const Header = () => {
   }
   if (!mounted) return null;
 
+  const icon = theme === 'dark' ? sunSVG : moonSVG;
   return (
     <header
-      className="w-full h-12 md:h-16 flex items-center sm:justify-center px-5 fixed top-0 z-10 bg-bg-principal-light dark:bg-bg-dark text-txt-secondary dark:text-white shadow-md">
+      className="w-full h-14 flex items-center sm:justify-center px-5 fixed top-0 z-10 bg-light-bg-principal dark:bg-dark-bg-principal text-txt-secondary dark:text-white shadow-md">
       <div className="justify-between flex w-full sm:w-[90%] max-w-6xl">
         <Logo/>
         <div className="flex">
           <nav
-            className="flex p-1 md:p-0 justify-around md:justify-between items-center bottom-0 fixed md:static left-[0%] w-full bg-bg-dark-opacity-90 md:bg-inherit md:bg-opacity-30 backdrop-blur-xl md:backdrop-blur-0 shadow-lg md:shadow-none shadow-[#212733]">
+            className="flex p-1 md:p-0 justify-around md:justify-between items-center bottom-0 fixed md:static left-[0%] w-full bg-dark-bg-principal md:bg-inherit opacity-90 shadow-lg md:shadow-none shadow-[#212733]">
             {
               navOptions.map((option, index) => (
                 <span
                   key={index}
                   onClick={() => handleScroll(option.id)}
-                  className={`flex flex-col items-center text-base leading-5 text-center mr-0 md:mr-10 cursor-pointer ${activeSection === option.id ? 'text-primary-light dark:text-primary-dark font-bold' : 'text-gray-800 dark:text-white'}`}
+                  className={`flex flex-col items-center text-base leading-5 text-center mr-0 md:mr-10 cursor-pointer ${activeSection === option.id ? 'text-light-primary font-bold' : 'text-white md:text-gray-800 md:dark:text-white'}`}
                 >
                   <span
-                    className={`md:hidden ${activeSection === option.id ? '[&>svg]:stroke-primary-light [&>svg]:dark:stroke-primary-dark font-bold' : '[&>svg]:stroke-gray-800 [&>svg]:dark:stroke-white'}`}
+                    className={`md:hidden ${activeSection === option.id ? '[&>svg]:stroke-light-primary font-bold' : ' [&>svg]:stroke-white'}`}
                   >
                     {option?.icon}
                   </span>
@@ -151,11 +158,11 @@ const Header = () => {
           </nav>
           <div className='flex cursor-pointer'>
             {
-              theme === 'dark' ?
-                <Image src={sunSVG} alt={'sun'} width={25} className='mx-1 '
-                       onClick={() => setTheme('light')}/>
-                : <Image src={moonSVG} alt={'moon'} width={25} className='mx-1'
-                         onClick={() => setTheme('dark')}/>
+              <Image
+                src={icon}
+                alt={'theme-icon'}
+                className='mx-1 w-[25px] h-auto'
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} loading='eager'/>
             }
           </div>
         </div>
