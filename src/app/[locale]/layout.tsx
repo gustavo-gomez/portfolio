@@ -6,8 +6,7 @@ import {ThemeProvider} from 'next-themes'
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages, getTranslations, unstable_setRequestLocale} from 'next-intl/server';
 import {routing} from "@/i18n/routing";
-import Script from "next/script";
-// import {GoogleAnalytics} from "@next/third-parties/google";
+import {GoogleAnalytics} from "@next/third-parties/google";
 
 type Props = {
   children: ReactNode;
@@ -128,21 +127,12 @@ export default async function AppLayout({
   const messages = await getMessages();
   return (
     <html lang={locale} suppressHydrationWarning>
-    <Script async src="https://www.googletagmanager.com/gtag/js?id=G-PRCLXC250T"></Script>
-    <Script id="google-analytics">
-      {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'PRCLXC250T');
-      `}
-    </Script>
-
     <body className={`${barlow.className}`}>
     <ThemeProvider attribute="class" defaultTheme="dark">
       <NextIntlClientProvider messages={messages}>
         <Header/>
-
+        {process.env?.SERVICE_ENV === 'PROD' && process.env.NODE_ENV === 'production' &&
+          <GoogleAnalytics gaId="G-PRCLXC250T"/>}
         {children}
       </NextIntlClientProvider>
     </ThemeProvider>
