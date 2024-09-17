@@ -41,7 +41,7 @@ export const AboutMe = () => {
               <span className='ml-5 text-lg'>{t('clients')}</span>
             </div>
             <div className='flex flex-col justify-center w-36 h-32 number-box shadow-xl'>
-              <span className='ml-5 font-bold text-6xl'>6+</span>
+              <span className='ml-5 font-bold text-6xl'>15+</span>
               <span className='ml-5 text-lg'>{t('projects')}</span>
             </div>
           </div>

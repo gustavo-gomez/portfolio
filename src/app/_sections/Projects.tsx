@@ -30,7 +30,7 @@ export const Projects = () => {
         {
           projects.map(project => (
             <div key={project.id}
-                 className='flex flex-col w-full lg:basis-1/2 rounded-2xl shadow-2xl dark:bg-white max-w-[500px] lg:max-w-[550px] '>
+                 className='flex flex-col w-full lg:basis-1/2 rounded-2xl shadow-2xl dark:bg-white max-w-[500px] lg:max-w-[550px] h-[600px]'>
               <div className='w-full h-96 relative'>
                 <Image
                   src={project.image}
